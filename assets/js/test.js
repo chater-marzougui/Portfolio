@@ -1,17 +1,5 @@
 const username = "chater-marzougui";
-
-const part1 = "githu";
-const part2 = "b_pat_1";
-const part3 = "1BEHM5T";
-const part4 = "A0UfjvX";
-const part5 = "zZVbJ7L_";
-const part6 = "7Pq90bF";
-const part7 = "wG4IKNl";
-const part8 = "hHlbkC2y";
-const part9 = "sviFaVTmrSf";
-const part10 = "tbEWMq1nhnC";
-const part11 = "ITNXK7OQIN8J850";
-const accessToken = part1 + part2 + part3 + part4 + part5 + part6 + part7 + part8 + part9 + part10 + part11;
+const accessToken = "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";
 const apiUrl = "https://api.github.com/graphql";
 
 const query = `query {
