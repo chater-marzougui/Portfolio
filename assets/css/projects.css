@@ -12,8 +12,9 @@
     color: aliceblue;
 }
 
-#projects .peojects-list {
+#projects .projects-list {
     display: flex;
+    gap: 2rem;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -80,7 +81,7 @@
 .cover:before {
     content: '';
     position: absolute;
-    border: 5px solid #d2b48c;
+    border: 5px solid #971D96;
     box-shadow: 0 0 12px rgba(0, 0, 0, .3);
     top: 15px;
     left: 15px;
@@ -91,28 +92,13 @@
     transform-style: preserve-3d;
     transform: translateZ(10px);
 }
-
-.cover:after {
-    border-radius: 15px;
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 140px;
-    z-index: 2;
-    transition: all 1.3s ease;
-    transform-style: preserve-3d;
-    transform: translateZ(10px);
-}
-
 .cover h1 {
     font-weight: 600;
     position: absolute;
     align-self: center;
     bottom: 70px;
     text-align: center;
-    color: white;
+    color: aliceblue;
     transform-style: preserve-3d;
     transition: all 1.3s ease;
     z-index: 3;
@@ -126,7 +112,7 @@
     margin-bottom: -0.5em;
     bottom: 32px;
     width: 90%;
-    color: white;
+    color: aliceblue;
     transform-style: preserve-3d;
     transition: all 1.3s ease;
     z-index: 4;
@@ -150,11 +136,6 @@
     justify-content: center;
     justify-items: center;
 }
-
-.card-back dialog{
-    justify-self: center;
-}
-
 
 .card-back p {
     color: aliceblue;
@@ -190,11 +171,11 @@
     justify-content: space-around;
     width: 90%;
     height: 45px;
-    border: 2px solid #d2b48c;
+    border: 2px solid #971D96;
     flex-direction: row;
     opacity: 0;
-    box-shadow: 4px 4px 15px #d2b48c;
-    background-color: #d2b48c15;
+    box-shadow: 4px 4px 15px #971D96;
+    background-color: #971D9615;
     transition: opacity 1s;
     z-index: 5;
 }
@@ -215,7 +196,7 @@
 }
 
 .card-back .splinks a:hover {
-    color: #d2b48c;
+    color: #971D96;
     scale: 1.4;
 }
 
@@ -230,9 +211,9 @@
     color: aliceblue;
     border-color: transparent;
     font-size: 17px;
-    box-shadow: -1px 3px 4px #d2b48c89;
+    box-shadow: -1px 3px 4px #971D9689;
     transition: all 0.4s ease-in;
-    background-color: #d2b48c;
+    background-color: #971D96;
 }
 
 .card-back button:hover {
@@ -251,8 +232,4 @@
 
 #projects .card:nth-child(2) .cover::before{
     background: url(../images/fsm.jpg) 0 0 / cover;
-}
-
-.col-md-4:nth-child(3) .cover::before{
-    background: url(../assets/images/YasmineBenAyed.jpg) 0 0 / cover;
 }
