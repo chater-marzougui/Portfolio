@@ -1,5 +1,5 @@
 const username = "chater-marzougui";
-const accessToken = "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";
+const accessToken = "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";
 const apiUrl = "https://api.github.com/graphql";
 
 const query = `
