@@ -166,11 +166,13 @@
     transform: translateZ(-25px);
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     bottom: 16px;
     border-radius: 15px;
     justify-content: space-around;
     width: 90%;
-    height: 45px;
+    height: 95px;
     border: 2px solid #971D96;
     flex-direction: row;
     opacity: 0;
@@ -190,14 +192,24 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1em;
+    column-gap: 10px;
     color: white;
     z-index: 5550;
 }
 
+.card-back .splinks h3 {
+    margin-block: 0;
+    font-size: 1rem;
+}
+
+.card-back .splinks i {
+    font-size: 1.35rem;
+}
+
 .card-back .splinks a:hover {
     color: #971D96;
-    scale: 1.4;
+    scale: 1.2;
 }
 
 .card-back button {
