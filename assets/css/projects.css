@@ -1,0 +1,258 @@
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+    height: 100%;
+}
+
+#projects h1 {
+    font-size: 32px;
+    color: aliceblue;
+}
+
+#projects .peojects-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+
+#projects .card {
+    border-radius: 15px;
+    position: relative;
+    height: 450px;
+    background-color: transparent;
+    width: 350px;
+    border-color: transparent;
+    justify-self: center;
+    margin: 30px 0 auto;
+    transition: all 1.3s ease;
+    perspective: 1200px;
+}
+
+#projects .card:hover p,
+#projects .card:hover .splinks,
+#projects .card:hover h2 {
+    opacity: 1 !important;
+}
+
+#projects .card:hover .cover {
+    transform: rotateX(0deg) rotateY(-180deg);
+}
+
+#projects .card:hover .cover:before {
+    transform: translateZ(30px);
+}
+
+#projects .card:hover .cover:after {
+    background-color: black;
+}
+
+#projects .card:hover .cover h1 {
+    transform: translateZ(60px);
+}
+
+#projects .card:hover .cover .job {
+    transform: translateZ(60px);
+}
+
+#projects .card:hover .cover .splinks a {
+    transform: rotatey(-180deg);
+}
+
+#projects .cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all 1.3s ease;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.cover:before {
+    content: '';
+    position: absolute;
+    border: 5px solid #d2b48c;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .3);
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 140px;
+    z-index: 2;
+    transition: all 1.3s ease;
+    transform-style: preserve-3d;
+    transform: translateZ(10px);
+}
+
+.cover:after {
+    border-radius: 15px;
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 140px;
+    z-index: 2;
+    transition: all 1.3s ease;
+    transform-style: preserve-3d;
+    transform: translateZ(10px);
+}
+
+.cover h1 {
+    font-weight: 600;
+    position: absolute;
+    align-self: center;
+    bottom: 70px;
+    text-align: center;
+    color: white;
+    transform-style: preserve-3d;
+    transition: all 1.3s ease;
+    z-index: 3;
+    font-size: 1.65em;
+    transform: translateZ(0px);
+}
+
+.cover .job {
+    font-weight: 200;
+    position: absolute;
+    margin-bottom: -0.5em;
+    bottom: 32px;
+    width: 90%;
+    color: white;
+    transform-style: preserve-3d;
+    transition: all 1.3s ease;
+    z-index: 4;
+    font-size: 1.1em;
+    text-align: center;
+    transform: translateZ(0px);
+}
+
+.card-back {
+    position: absolute;
+    height: 100%;
+    border-radius: 15px;
+    width: 100%;
+    background: #1F385B;
+    transform-style: preserve-3d;
+    transition: all 1.3s ease;
+    transform: translateZ(-1px);
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.card-back dialog{
+    justify-self: center;
+}
+
+
+.card-back p {
+    color: aliceblue;
+    transform-style: preserve-3d;
+    transform: translateZ(-8px) rotateY(180deg) !important;
+    transition: opacity 1s;
+    font-size: 17px;
+    text-align: justify;
+    width: 92%;
+    opacity: 0;
+    top: 38px;
+    position: absolute;
+}
+
+.card-back h2 {
+    color: aliceblue;
+    transform-style: preserve-3d;
+    transform: translateZ(-5px) rotateY(180deg) !important;
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    top: 5px;
+    font-size: 22px;
+}
+
+.card-back .splinks {
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    position: absolute;
+    display: flex;
+    bottom: 16px;
+    border-radius: 15px;
+    justify-content: space-around;
+    width: 90%;
+    height: 45px;
+    border: 2px solid #d2b48c;
+    flex-direction: row;
+    opacity: 0;
+    box-shadow: 4px 4px 15px #d2b48c;
+    background-color: #d2b48c15;
+    transition: opacity 1s;
+    z-index: 5;
+}
+
+.card-back .splinks a {
+    transform-style: preserve-3d;
+    transition: transform 1.3s ease, scale 0.4s ease;
+    transform: translateZ(-5px);
+    background: transparent;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    z-index: 5550;
+}
+
+.card-back .splinks a:hover {
+    color: #d2b48c;
+    scale: 1.4;
+}
+
+.card-back button {
+    transform-style: preserve-3d;
+    transform: rotateY(180deg) translateZ(15px);
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 75px;
+    color: aliceblue;
+    border-color: transparent;
+    font-size: 17px;
+    box-shadow: -1px 3px 4px #d2b48c89;
+    transition: all 0.4s ease-in;
+    background-color: #d2b48c;
+}
+
+.card-back button:hover {
+    background-color: aliceblue;
+    color: #051a34;
+}
+
+.projects-list .cover::before{
+    border-radius: 15px;
+}
+
+
+#projects .card:nth-child(1) .cover::before{
+    background: url(../images/pdp.png) 0 0 / cover;
+}
+
+#projects .card:nth-child(2) .cover::before{
+    background: url(../images/fsm.jpg) 0 0 / cover;
+}
+
+.col-md-4:nth-child(3) .cover::before{
+    background: url(../assets/images/YasmineBenAyed.jpg) 0 0 / cover;
+}

@@ -1,0 +1,256 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+      'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+/*
+::-webkit-scrollbar{
+    display: none;
+}*/
+
+#home {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+
+.navbar .nameOnNav {
+    text-decoration: none;
+    color: #0935FF;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 5000;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar.scrolled {
+    background: linear-gradient(120deg ,#331391cf ,#081A4ACF);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.navbar .barItems {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    column-gap: 1.8rem;
+    align-items: center;
+}
+
+.navbar .barItems a{
+    color: aliceblue;
+    text-decoration: none;
+    transition: color 0.4s ease,font-weight 0.1s ease;
+    font-size: 17px;
+}
+
+.navbar .barItems a:hover{
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.navbar .barItems a.active{
+    color: #971D96;
+    font-weight: 900;
+}
+
+.main-btn {
+    font-weight: 700;
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #0935FF;
+    text-decoration: none;
+    margin-right: 30px;
+    background-image: linear-gradient(to left, #0935FF 50%, #971D96 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease;
+}
+
+.main-btn:hover {
+    background-position: left bottom;
+}
+
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    opacity: 0.8;
+    overflow: hidden;
+    animation: move-stars linear infinite;
+}
+
+@keyframes move-stars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(2200px);
+    }
+}
+
+.home .home-front{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.home .basicInfo{
+    display: flex;
+    flex-direction: column;
+    padding-top: 13%;
+    padding-left: 8%;
+    height: 100%;
+    width: 60%;
+    z-index: 2;
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+.home .basicInfo .firstline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home .basicInfo .firstline div{
+    animation: wave-hand 2s infinite;
+}
+.home .basicInfo h1{
+     margin-block-end: 10px;
+     margin-block-start: 5px;
+}
+.home .basicInfo .thirdline{
+    font-size: 2rem;
+}
+
+.home .social-icons {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    font-size: 2rem;
+}
+
+.home .social-icons a{
+    transition: scale 0.4s ease,color 0.4s ease;
+    color: #0935FF;
+}
+
+.home .social-icons a:hover{
+    scale: 1.5;
+    color: #971D96;
+}
+
+.home .whiteline {
+    background-color: aliceblue;
+    width: 50px;
+    height: 2px;
+}
+
+.home .profile-pic{
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.home .home-front button {
+    font-size:30px;
+    color: #fff;
+    background: none;
+    border: none;
+    border-radius: 50%; 
+    position: relative;
+    z-index: 0;
+    transition: .3s;
+    cursor: default;
+    margin-bottom: 50px;
+}
+.home .home-front button:before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    padding: 10px;
+    border-radius: 50%; 
+    background: conic-gradient(
+          #4367FF ,
+          #0000 30deg 120deg,
+          #CC00FA 150deg 180deg,
+          #0000 210deg 300deg,
+          #4367FF 330deg
+      );
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: intersect
+  }
+  
+  .home .home-front button:before,
+  .home .home-front button:after {
+    animation: roll 8s infinite;
+    transition:.5s, 99999s 99999s transform;
+  }
+  
+@keyframes roll {
+    100% {
+      transform: rotate(360deg);
+      transition: .5s,600s linear transform;
+    } 
+}
+.home .home-front button>img{
+    border-radius: 50%;
+    left: -2px;
+    position: relative;
+    top: 2px;
+    opacity:0.9;
+}
+
+@keyframes wave-hand {
+    0%, 100% { transform: rotatez(0deg); } 
+    10%, 30%, 50% { transform: rotatez(-15deg)}
+    20%, 40%, 60% { transform: rotatez(15deg)}
+    70%, 80%, 90% {transform: rotatez(0deg)}
+}
+
+.my-jobs {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .1em solid #0935FF;
+    animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #0935FF; }
+}
