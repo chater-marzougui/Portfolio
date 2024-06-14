@@ -245,7 +245,7 @@
 }
 
 #projects .card:nth-child(1) .cover::before{
-    background: url(../images/Portfolio.jpg) 0 0 / 100% 100%;
+    background: url(../images/portfolio.jpg) 0 0 / 100% 100%;
 }
 #projects .card:nth-child(2) .cover::before{
     background: url(../images/indabax2024.jpg) 0 0 / cover;
