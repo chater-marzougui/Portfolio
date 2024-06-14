@@ -1,0 +1,113 @@
+.spaceBetween {
+    width: 100%;
+    height: 200px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+    height: auto;
+    min-height: 80%;
+}
+
+#contact h1 {
+    font-size: 32px;
+    color: aliceblue;
+}
+
+#contact p {
+    font-size: 18px;
+    color: aliceblue;
+    text-align: center;
+}
+  
+#projeclts::before{
+    content: "";
+    display:flex;
+    position: absolute;
+    left: 0;
+    margin-top: -100px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(44, 0, 62, 1) 0%, rgba(0, 0, 0, 0) 40%);
+    z-index: 1;
+}
+.contact-content input, textarea{
+    color: #971D96 !important;
+}
+  
+.contact-form {
+    max-width: 500px;
+    width: 70%;
+    padding: 20px;
+    background: #ffffff;
+    margin: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+  
+.contact-form label {
+    float: left;
+    font-size: 1.2em;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+  
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+  
+.contact-form button[type="submit"] {
+    background-color: #601cfc;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 10px;
+    }
+}
+  
+.contact-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+  
+.form-group {
+    margin-bottom: 15px;
+}
+
+#contact .contact-info {
+    width: 20%;
+    height: 300px;
+    background-color: aqua;
+}
+.form-group textarea {
+    height: 120px;
+}

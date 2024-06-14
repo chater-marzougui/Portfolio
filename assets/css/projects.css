@@ -4,12 +4,19 @@
     align-items: center;
     width: 100%;
     background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
-    height: 100%;
+    height: auto;
+    min-height: 100%;
 }
 
 #projects h1 {
-    font-size: 32px;
+    font-size: 30px;
     color: aliceblue;
+}
+
+#projects::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 
 #projects .projects-list {
@@ -98,6 +105,7 @@
     align-self: center;
     bottom: 70px;
     text-align: center;
+    margin: 5px;
     color: aliceblue;
     transform-style: preserve-3d;
     transition: all 1.3s ease;
@@ -167,7 +175,6 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     bottom: 16px;
     border-radius: 15px;
     justify-content: space-around;
@@ -237,11 +244,18 @@
     border-radius: 15px;
 }
 
-
 #projects .card:nth-child(1) .cover::before{
-    background: url(../images/pdp.png) 0 0 / cover;
+    background: url(../images/Portfolio.jpg) 0 0 / 100% 100%;
 }
-
 #projects .card:nth-child(2) .cover::before{
-    background: url(../images/fsm.jpg) 0 0 / cover;
+    background: url(../images/indabax2024.jpg) 0 0 / cover;
+}
+#projects .card:nth-child(3) .cover::before{
+    background: url(../images/Metaversity.jpg) 0 0 / 100% 100%;
+}
+#projects .card:nth-child(4) .cover::before{
+    background: url(../images/moodMuse.jpg) 0 0 / cover;
+}
+#projects .card:nth-child(5) .cover::before{
+    background: url(../images/RCCar.jpg) 0 0 / cover;
 }

@@ -113,6 +113,7 @@ body, html {
 
 .home .home-front{
     display: flex;
+    overflow: hidden;
     flex-direction: row;
     align-items: flex-end;
 }
@@ -120,7 +121,7 @@ body, html {
 .home .basicInfo{
     display: flex;
     flex-direction: column;
-    padding-top: 13%;
+    padding-top: 15%;
     padding-left: 8%;
     height: 100%;
     width: 60%;
