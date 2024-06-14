@@ -44,6 +44,9 @@
     align-items: center;
     transition: all 0.4s ease;
 }
+.resume li:hover{
+    border: 2px solid #971D96;
+}
 
 .resume li img {
     filter: invert();
@@ -68,9 +71,6 @@
 }
 .resume li:hover i,.resume li:hover img{
     opacity: 0;
-}
-.resume li:hover{
-    border: 2px solid #971D96;
 }
 
 .resume .card-container {
@@ -125,4 +125,26 @@
     min-width: 320px;
     height: 50%;
     margin: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .skills-container {
+        width: 95%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .emailtext {
+        font-size: 14px;
+    }
+    .resume h3 {
+        font-size: 14px;
+    }
+    .resume li {
+        width: 100px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .emailtext {
+        font-size: 12px;
+    }
 }

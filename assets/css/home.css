@@ -15,11 +15,13 @@ h1, p {
     color: aliceblue;
 }
 
-h2, h3, h4, h5{
+h2, h4, h5{
     color: aliceblue;
     margin-block: 0;
 }
-
+h3 {
+    margin-block: 0.1rem;
+}
 #home {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     width: 100%;
@@ -84,10 +86,57 @@ h2, h3, h4, h5{
     font-weight: 900;
 }
 
+@media only screen and (max-width: 900px) {
+    .navbar .barItems {
+        padding: 0;
+        column-gap: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #navbar .nameOnNav {
+        font-size: 20px !important;
+    }
+    #navbar .main-btn {
+        display: none !important;
+    }
+    .navbar .barItems {
+        padding: 0;
+    }
+    .navbar{
+        justify-content: space-around;
+    }
+    #navbar i {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #navbar .nameOnNav {
+        font-size: 0px !important;
+    }
+    #navbar .main-btn {
+        display: none !important;
+    }
+    #navbar i {
+        display: none !important;
+    }
+    .navbar{
+        justify-content: center;
+    }
+    .navbar .barItems a{
+        font-size: 12px;
+    }
+    .navbar .barItems {
+        padding: 0;
+        margin: 10px 0;
+    }
+}
+
 .main-btn {
     font-weight: 700;
     color: aliceblue;
-    padding: 5px;
+    padding: 8px;
     border-radius: 10px;
     background-color: #0935FF;
     text-decoration: none;
@@ -151,10 +200,6 @@ h2, h3, h4, h5{
     animation: wave-hand 2s infinite;
 }
 
-.home .basicInfo .thirdline{
-    font-size: 2rem;
-}
-
 .home .social-icons {
     margin-top: 2rem;
     display: flex;
@@ -198,7 +243,6 @@ h2, h3, h4, h5{
     z-index: 0;
     transition: .3s;
     cursor: default;
-    margin-bottom: 50px;
 }
 .home .home-front button:before {
     content: "";
@@ -260,4 +304,41 @@ h2, h3, h4, h5{
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: #0935FF; }
+}
+
+@media only screen and (max-width:1080px) {
+    #home .basicInfo {
+        font-size: 1.5rem;
+    }
+    #home {
+        height: auto;
+        padding-bottom: 100px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #home .basicInfo {
+        width: 100% !important;
+        font-size: 1.2rem;
+    }
+    #home {
+        height: auto;
+        padding-bottom: 0;
+    }
+    .home-front {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: start;
+    }
+    .home-front button{
+        margin: 50px;
+    }
+    #home .social-icons {
+        width: 90%;
+    }
+}
+@media only screen and (max-width:420px) {
+    #home .basicInfo {
+        font-size: 1rem;
+    }
 }

@@ -6,6 +6,7 @@
     background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
     height: auto;
     min-height: 100%;
+    user-select: none;
 }
 
 #projects h1 {
@@ -32,9 +33,9 @@
 #projects .card {
     border-radius: 15px;
     position: relative;
-    height: 450px;
+    height: 400px;
     background-color: transparent;
-    width: 350px;
+    width: 300px;
     border-color: transparent;
     justify-self: center;
     margin: 30px 0 auto;
@@ -150,7 +151,7 @@
     transform-style: preserve-3d;
     transform: translateZ(-8px) rotateY(180deg) !important;
     transition: opacity 1s;
-    font-size: 17px;
+    font-size: 15px;
     text-align: justify;
     width: 92%;
     opacity: 0;
@@ -206,7 +207,7 @@
 }
 
 .card-back .splinks h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .card-back .splinks i {

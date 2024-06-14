@@ -128,17 +128,17 @@
     letter-spacing: 1.9px;
     color: #bbb;
   }
-  
+
   .place {
-    margin-left: 62px;
+    margin-left: 42px;
   }
   
   .phone {
-    margin-left: 56px;
+    margin-left: 36px;
   }
   
   .gmail {
-    margin-left: 53px;
+    margin-left: 33px;
   }
   
   .contact-text a {
@@ -160,6 +160,7 @@
   }
   
   hr {
+    width: 70%;
     border-color: rgba(255,255,255,.6);
   }
 

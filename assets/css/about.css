@@ -22,7 +22,7 @@
 .about-me .content .intro{
     width: 50%;
     margin-right: 10%;
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 .about-me h2 {
@@ -164,3 +164,34 @@ td {
 .color-2 { background-color: #b867ad; }
 .color-3 { background-color: #942b84; }
 .color-4 { background-color: #971d96; }
+
+@media only screen and (max-width:900px) and (min-width:768px){
+    #about-me .content .intro {
+        margin-right: 0;
+    }
+    #about-me .content .intro{
+        width: 100%;
+    }
+    #about-me .education {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #about-me {
+        height: auto;
+    }
+    #about-me .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    #about-me .content .intro {
+        margin: 0;
+    }
+    #about-me .content .intro{
+        width: 100%;
+    }
+    #about-me .education {
+        width: 90%;
+    }
+}
