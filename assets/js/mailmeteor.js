@@ -25,9 +25,9 @@ function sendEmail() {
 }
 
 function getRandomAsteroidImage() {
-    const images = ['../assets/images/meteor1.png','../assets/images/meteor2.png',
-         '../assets/images/meteor3.png', '../assets/images/meteor2.png', '../assets/images/meteor3.png',
-         '../assets/images/meteor4.png', '../assets/images/meteor5.png', '../assets/images/meteor6.png'];
+    const images = ['https://chater-marzougui.github.io/Portfolio/assets/images/meteor1.png','https://chater-marzougui.github.io/Portfolio/assets/images/meteor2.png',
+         'https://chater-marzougui.github.io/Portfolio/assets/images/meteor3.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor2.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor3.png',
+         'https://chater-marzougui.github.io/Portfolio/assets/images/meteor4.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor5.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor6.png'];
     return images[getRandomInt(0, images.length)];
 }
 
