@@ -11,6 +11,14 @@ body, html {
 ::-webkit-scrollbar{
     display: none;
 }*/
+h1, p {
+    color: aliceblue;
+}
+
+h2, h3, h4, h5{
+    color: aliceblue;
+    margin-block: 0;
+}
 
 #home {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
@@ -19,6 +27,9 @@ body, html {
     height: 100%;
 }
 
+#home h1 {
+    margin-block: 0.5rem;
+}
 .navbar .nameOnNav {
     text-decoration: none;
     color: #0935FF;
@@ -107,7 +118,7 @@ body, html {
         transform: translateY(0);
     }
     to {
-        transform: translateY(2200px);
+        transform: translateY(2800px);
     }
 }
 
@@ -139,10 +150,7 @@ body, html {
 .home .basicInfo .firstline div{
     animation: wave-hand 2s infinite;
 }
-.home .basicInfo h1{
-     margin-block-end: 10px;
-     margin-block-start: 5px;
-}
+
 .home .basicInfo .thirdline{
     font-size: 2rem;
 }
@@ -226,10 +234,8 @@ body, html {
 }
 .home .home-front button>img{
     border-radius: 50%;
-    left: -2px;
     position: relative;
     top: 2px;
-    opacity:0.9;
 }
 
 @keyframes wave-hand {

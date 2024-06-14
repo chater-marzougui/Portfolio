@@ -18,7 +18,6 @@
     z-index: 2;
 }
 .resume h2 {
-    color: aliceblue;
     text-align: center;
     font-size: 1.4rem;
 }
@@ -104,7 +103,6 @@
 }
 
 .resume .resume-card a h3{
-    margin-block: 0 !important;
     text-align: center;
     position: relative;
 }
