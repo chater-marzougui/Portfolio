@@ -359,6 +359,7 @@ h3 {
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
+    opacity: 0.6;
 }
 
 @keyframes move-asteroid {
