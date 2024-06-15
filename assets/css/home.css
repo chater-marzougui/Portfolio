@@ -7,7 +7,9 @@ body, html {
     width: 100%;
     height: 100%;
 }
-
+body {
+    overflow: hidden;
+}
 ::-webkit-scrollbar{
     display: none;
 }
@@ -50,7 +52,7 @@ h3 {
 
 #loading-screen, #welcome-screen {
     display: flex;
-    position: absolute;
+    position: fixed;
     z-index: 5002;
     justify-content: center;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);

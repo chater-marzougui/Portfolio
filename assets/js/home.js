@@ -21,6 +21,7 @@ function showWelcomeMessage() {
             setTimeout(() => {
             welcomeMessage.style.display = "none";
             welcomeScreen.style.display = "none";
+            document.body.style.overflow = "auto";
             return;},1200);
         }
         setTimeout(Wtype, 100);
