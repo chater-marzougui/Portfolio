@@ -59,11 +59,11 @@ fetch(apiUrl, {
         let contributionColor;
         if (contributionCount === 0) {
           contributionColor = 0;
-        } else if (contributionCount === 1) {
+        } else if (contributionCount >= 1 && contributionCount <= 2) {
           contributionColor = 1;
-        } else if (contributionCount === 2) {
+        } else if (contributionCount >= 3 && contributionCount <= 4) {
           contributionColor = 2;
-        } else if (contributionCount === 3) {
+        } else if (contributionCount >= 5 && contributionCount <= 6) {
           contributionColor = 3;
         } else {
           contributionColor = 4;
