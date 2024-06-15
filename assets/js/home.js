@@ -1,3 +1,34 @@
+const loadingScreen = document.getElementById("loading-screen");
+const welcomeScreen = document.getElementById("welcome-screen");
+welcomeScreen.style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        showWelcomeMessage();
+    }, 1000);
+});
+
+function showWelcomeMessage() {
+    const welcomeMessage = document.getElementById("welcome-message");
+    welcomeScreen.style.display = "flex";
+    let charIndex = 0;
+    const welcomemess = "Welcome to My Portfolio   ";
+    function Wtype() {
+        const displayedText = welcomemess.substring(0, charIndex++)
+
+        welcomeMessage.textContent = displayedText;
+        if (charIndex === welcomemess.length) {
+            setTimeout(() => {
+            welcomeMessage.style.display = "none";
+            welcomeScreen.style.display = "none";
+            return;},1200);
+        }
+        setTimeout(Wtype, 100);
+    }
+
+    Wtype();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const starrySky = document.querySelector('.starry-sky');
     const starCount = 250;

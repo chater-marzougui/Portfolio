@@ -22,6 +22,43 @@ h2, h4, h5{
 h3 {
     margin-block: 0.1rem;
 }
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/loadingmeteor2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin 2s linear infinite;
+}
+
+.spinner img {
+    transform: rotateZ(180deg);
+    width: 250px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+#welcome-message {
+    font-size: 2em;
+    color: #0935FF;
+    text-align: center;
+}
+
+#loading-screen, #welcome-screen {
+    display: flex;
+    position: absolute;
+    z-index: 5002;
+    justify-content: center;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 #home {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     width: 100%;
@@ -154,6 +191,7 @@ h3 {
 
 .star {
     position: absolute;
+    z-index: 5004;
     background: white;
     border-radius: 50%;
     box-shadow: 0 0 10px white;
@@ -289,7 +327,7 @@ h3 {
     70%, 80%, 90% {transform: rotatez(0deg)}
 }
 
-.my-jobs {
+.my-jobs{
     overflow: hidden;
     white-space: nowrap;
     border-right: .1em solid #0935FF;
