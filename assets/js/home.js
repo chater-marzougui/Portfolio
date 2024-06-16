@@ -22,7 +22,8 @@ function showWelcomeMessage() {
             welcomeMessage.style.display = "none";
             welcomeScreen.style.display = "none";
             document.body.style.overflow = "auto";
-            return;},1200);
+            return;
+        },1200);
         }
         setTimeout(Wtype, 100);
     }
