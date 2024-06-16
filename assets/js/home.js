@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const jobs = [" Web Developer ", " Mobile Developer ", "n ICT Engineering Student "];
+    const jobs = [" Web Developer ", " Mobile Developer ", " ICT Engineering Student "];
     let jobIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -61,11 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function type() {
         const currentJob = jobs[jobIndex];
+        const n = jobIndex === 2 ? 'n ' : '';
         const displayedText = isDeleting 
             ? currentJob.substring(0, charIndex--) 
             : currentJob.substring(0, charIndex++);
 
-        document.querySelector('.my-jobs').textContent = displayedText;
+        const fullText = jobIndex === 2 
+            ? `<span style="color: white;">${n}</span><span style="color: #0935FF;">${displayedText}</span>`
+            : `<span style="color: #0935FF;">${displayedText}</span>`;
+
+        document.querySelector('.my-jobs').innerHTML = fullText;
 
         if (!isDeleting && charIndex === currentJob.length) {
             setTimeout(() => isDeleting = true, pauseTime);
@@ -81,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type();
 });
+
 
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
