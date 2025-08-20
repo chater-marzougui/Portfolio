@@ -8,12 +8,12 @@
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     justify-content: space-around;
     align-items: center;
+    align-content: center;
     background-color: transparent;
 }
 
 .skills-container {
     width: 55%;
-    margin-top: 6rem;
     padding: 20px;
     z-index: 2;
 }
@@ -79,7 +79,6 @@
     align-items: center;
     height: fit-content;
     z-index: 2;
-    padding-top: 10%;
     justify-content: center;
 }
 

@@ -45,3 +45,44 @@ function createAsteroid() {
 }
 
 setInterval(createAsteroid, 2000);
+
+
+function getStarProps() {
+  const phoneAdjust = window.innerWidth < 768 ? 1.25 : 1.05;
+  const prob = Math.random();
+  const size = Math.random() * 3;
+  const startX = Math.random() * 96 + 3;
+  const duration = Math.random() * 10 + 12;
+  const delay = Math.random() * 12;
+
+  let startY = 0;
+  if (prob < 0.3) {
+    startY = Math.random() * 97;
+  } else {
+    startY = (Math.random() * document.body.scrollHeight) / 2;
+  }
+
+  const endY = document.body.scrollHeight * phoneAdjust - startY;
+  return { startX, startY, size, duration, delay, endY };
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const starrySky = document.querySelector(".starry-sky");
+  const starCount = 200;
+
+  for (let i = 0; i < starCount; i++) {
+    let star = document.createElement("div");
+    star.classList.add("star");
+    const starProps = getStarProps();
+    star.style.width = `${starProps.size}px`;
+    star.style.height = `${starProps.size}px`;
+    star.style.top = `${starProps.startY}px`;
+    star.style.left = `${starProps.startX}%`;
+    star.style.animationDuration = `${starProps.duration}s`;
+    star.style.animationDelay = `${starProps.delay}s`;
+    star.style.setProperty("--start-y", starProps.startY + "px");
+    star.style.setProperty("--end-y", starProps.endY + "px");
+
+    starrySky.appendChild(star);
+  }
+});

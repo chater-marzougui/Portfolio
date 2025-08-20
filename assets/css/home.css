@@ -194,22 +194,25 @@ h3 {
 
 .star {
     position: absolute;
-    z-index: 5004;
+    z-index: 9999;
     background: white;
     border-radius: 50%;
     box-shadow: 0 0 10px white;
     opacity: 0.8;
     overflow: hidden;
     animation: move-stars linear infinite;
+    --start-y: 0;
+    --end-y: 120vh;
+
 }
 
 @keyframes move-stars {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(2800px);
-    }
+  from {
+    transform: translateY(var(--start-y));
+  }
+  to {
+    transform: translateY(var(--end-y));
+  }
 }
 
 .home .home-front{
