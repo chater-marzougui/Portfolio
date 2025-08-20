@@ -29,7 +29,7 @@ h3 {
 .spinner {
     width: 100px;
     height: 100px;
-    background-image: url('../images/loadingmeteor2.png');
+    background-image: url('../images/meteors/loadingmeteor2.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: spin 2s linear infinite;
