@@ -1,0 +1,97 @@
+{
+  "projects": [
+    {
+      "title": "Portfolio",
+      "technologies": "HTML, CSS, JavaScript",
+      "description": "A portfolio website made from scratch that showcases my skills and My different projects. Developed using HTML, CSS, and JavaScript.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Portfolio",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        },
+        {
+          "type": "live",
+          "url": "#",
+          "label": "Live Link",
+          "icon": "fa-solid fa-globe"
+        }
+      ]
+    },
+    {
+      "title": "IndabaX 2024 Website",
+      "titleStyle": "font-size: 24px;",
+      "technologies": "Html, CSS, JavaScript",
+      "description": "A professional website made for the famous event IndabaX Tunisia 2024, that was held on 18 & 19 May, in supcom. It includes all the necessary preparations for hosting a website (MetaTags and Google SEO). made with Html, css and JavaScript.",
+      "links": [
+        {
+          "type": "live",
+          "url": "https://www.indabaxtunisia.com/2024/",
+          "label": "Live Website",
+          "icon": "fa-solid fa-globe"
+        }
+      ],
+      "linksStyle": "height: 55px;"
+    },
+    {
+      "title": "Metaversity",
+      "technologies": "C# (Unity), Html, CSS, JavaScript, MetaMask (Blockchain)",
+      "description": "A project that leverages the power of VR and blockchain to enhance online education experience. Developed in Unity with C#, Metaversity creates an immersive VR environment where students can engage with their coursework in a more interactive and practical manner. With a comprehensive website which facilitates secure cryptocurrency transactions (with MetaMask).",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/mohamedghan/Hedera-Hackathon",
+          "label": "Website Link",
+          "icon": "fa-brands fa-github"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/MetaVersity",
+          "label": "Game Link",
+          "icon": "fa-brands fa-github"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/MetaVersity_platform",
+          "label": "Game Link (.exe)",
+          "icon": "fa-brands fa-github"
+        }
+      ]
+    },
+    {
+      "title": "MoodMuse",
+      "technologies": "Flutter, AI, ngrok",
+      "description": "This Flutter application utilizes the device's camera to capture an image of the user. The image is then processed by an AI model hosted on ngrok to analyze the user's mood. Based on that mood, the application generates a music playlist to enhance the emotional state. The integration of camera functionality, AI analysis, and music recommendation makes this app an immersive and personalized experience for users seeking to enhance their mood through music.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/MoodMuse",
+          "label": "Application",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "linksStyle": "height: 55px;"
+    },
+    {
+      "title": "RC Car Controller",
+      "technologies": "Flutter, Arduino, HTTP Communication",
+      "description": "A Flutter application designed to provide remote control capabilities for RC cars equipped with ESP8266 or ESP32 microcontrollers. It offers intuitive control modes, including a Button Control Mode to Navigate and steer the RC car using on-screen buttons for precise directional commands. Gyroscope Control Mode that Utilize the device's gyroscope sensor. With HTTP Communication to ensuring real-time responsiveness and control.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Flutter-Car-Control_Http",
+          "label": "Arduino Code",
+          "icon": "fa-brands fa-github"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/ESP8266-Car-Control-with-http",
+          "label": "Application",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "linksStyle": "height: 70px;"
+    }
+  ]
+}

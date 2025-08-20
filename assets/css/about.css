@@ -16,13 +16,13 @@
 
 .about-me .content {
     width: 90%;
+    justify-content: space-around;
+    align-items: center;
     display: flex;
 }
 
 .about-me .content .intro{
     width: 50%;
-    margin-right: 10%;
-    margin-top: 15%;
 }
 
 .about-me h2 {
@@ -58,7 +58,7 @@
 
 .card {
     width: 90%;
-    height: 230px;
+    height: 250px;
     background-color: transparent;
     margin-bottom: 20px;
 }
@@ -77,15 +77,15 @@
     transform: translateX(30%);/*100%*/
 }
 .card .details {
-    width: 70%;/*100%*/
+    width: 75%;
     height: 200px;
     background: #ffc107;
     transition: .5s;
     transform-origin: left;
-    transform: translateY(-230px) rotateY(-90deg);
+    transform: translateY(-250px) rotateY(-90deg);
 }
 .card:hover .details {
-    transform: translateY(-230px) rotateY(0deg);
+    transform: translateY(-250px) rotateY(0deg);
 }
 .card .details .center {
     padding: 10px 3px;
@@ -161,9 +161,9 @@ td {
   
 .color-0 { background-color: #ffffff; }
 .color-1 { background-color: #dcb3d6; }
-.color-2 { background-color: #b867ad; }
-.color-3 { background-color: #942b84; }
-.color-4 { background-color: #971d96; }
+.color-2 { background-color: #b867ad; } 
+.color-3 { background-color: #c635b0; }
+.color-4 { background-color: #8d1c8d; }
 
 @media only screen and (max-width:900px) and (min-width:768px){
     #about-me .content .intro {

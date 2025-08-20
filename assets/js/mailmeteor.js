@@ -1,66 +1,68 @@
 function sendEmail() {
-    const userEmail = document.getElementById("emailInput").value;
-    const userName = document.getElementById("name").value;
-    const userSubject = document.getElementById("subjectvalue").value;
-    const theMessage = document.getElementById("message").value;
+  const userEmail = document.getElementById("emailInput").value;
+  const userName = document.getElementById("name").value;
+  const userSubject = document.getElementById("subjectvalue").value;
+  const theMessage = document.getElementById("message").value;
 
-    Email.send({
-      SecureToken: "c99ebf76-7044-4a97-a3a3-986ee50089d5",
-      To: 'chater.mrezgui2002@gmail.com',
-      From: 'chater.forarduinouse@gmail.com',
-      Subject: userName  + " [" +userSubject +"]",
-      Body: "User Email: " + userEmail+ "<br><br>" + theMessage
-    }).then(
-        message => {
-            if (message === "OK") {
-                alert("Email sent successfully");
-            } else {
-                alert("Failed to send email: " + message);
-            }
-        }
-    );
- }
- function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+  Email.send({
+    SecureToken: "c99ebf76-7044-4a97-a3a3-986ee50089d5",
+    To: "chater.mrezgui2002@gmail.com",
+    From: "chater.forarduinouse@gmail.com",
+    Subject: userName + " [" + userSubject + "]",
+    Body: "User Email: " + userEmail + "<br><br>" + theMessage,
+  }).then((message) => {
+    if (message === "OK") {
+      alert("Email sent successfully");
+    } else {
+      alert("Failed to send email: " + message);
+    }
+  });
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function getRandomAsteroidImage() {
-    const images = ['https://chater-marzougui.github.io/Portfolio/assets/images/meteor1.png','https://chater-marzougui.github.io/Portfolio/assets/images/meteor2.png',
-         'https://chater-marzougui.github.io/Portfolio/assets/images/meteor3.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor2.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor3.png',
-         'https://chater-marzougui.github.io/Portfolio/assets/images/meteor4.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor5.png', 'https://chater-marzougui.github.io/Portfolio/assets/images/meteor6.png'];
-    return images[getRandomInt(0, images.length)];
-}
-
-function calculateRotationAngle(x, y) {
-    return Math.atan2(y, x) + 'rad';
+  const images = [
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor1.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor2.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor3.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor2.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor3.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor4.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor5.png",
+    "https://chater-marzougui.github.io/Portfolio/assets/images/meteor6.png",
+  ];
+  return images[getRandomInt(0, images.length)];
 }
 
 function createAsteroid() {
-    const asteroid = document.createElement('div');
-    asteroid.classList.add('asteroid');
+  const asteroid = document.createElement("div");
+  asteroid.classList.add("asteroid");
 
-    const startX = getRandomInt(0, window.innerWidth);
-    const startY = getRandomInt(0, window.innerHeight);
+  const startX = getRandomInt(
+    Math.floor(window.innerWidth / 2),
+    window.innerWidth
+  );
+  const startY = getRandomInt(0, Math.floor(window.innerHeight / 2));
 
-    asteroid.style.left = `${startX}px`;
-    asteroid.style.top = `${startY}px`;
-    asteroid.style.backgroundImage = `url('${getRandomAsteroidImage()}')`;
+  asteroid.style.left = `${startX}px`;
+  asteroid.style.top = `${startY}px`;
+  asteroid.style.backgroundImage = `url('${getRandomAsteroidImage()}')`;
 
-    const endX = startX - window.innerWidth;
-    const endY = window.innerHeight;
+  const endX = startX - window.innerWidth;
+  const endY = startY + 500;
+  console.log(`Asteroid from (${startX}, ${startY}) to (${endX}, ${endY})`);
 
-    asteroid.style.setProperty('--x-end', `${endX}px`);
-    asteroid.style.setProperty('--y-end', `${endY}px`);
+  asteroid.style.setProperty("--x-end", `${endX}px`);
+  asteroid.style.setProperty("--y-end", `${endY}px`);
+  asteroid.style.animation = `move-asteroid ${Math.random() * 3}s linear`;
 
-    const rotationAngle = calculateRotationAngle(endX, endY);
-    asteroid.style.setProperty('--rotation-angle', rotationAngle);
-
-    asteroid.style.animation = `move-asteroid ${Math.random() * 3}s linear`;
-
-    document.getElementById('asteroid-container').appendChild(asteroid);
-    asteroid.addEventListener('animationend', () => {
-        asteroid.remove();
-    });
+  document.getElementById("asteroid-container").appendChild(asteroid);
+  asteroid.addEventListener("animationend", () => {
+    asteroid.remove();
+  });
 }
 
 setInterval(createAsteroid, 2000);

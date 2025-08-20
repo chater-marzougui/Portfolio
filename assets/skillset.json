@@ -1,0 +1,158 @@
+{
+  "professionalSkillset": [
+    {
+      "name": "C++",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/cpp.svg",
+      "iconAlt": "C++ Icon"
+    },
+    {
+      "name": "Python",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-python"
+    },
+    {
+      "name": "NodeJS",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-node"
+    },
+    {
+      "name": "ExpressJS",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/express-js-icon.svg",
+      "iconAlt": "ExpressJS Icon"
+    },
+    {
+      "name": "React",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-react"
+    },
+    {
+      "name": "TypeScript",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/typescript-16-svgrepo-com.svg",
+      "iconAlt": "TypeScript Icon"
+    },
+    {
+      "name": "Powershell",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/powershell-format-svgrepo-com.svg",
+      "iconAlt": "Powershell Icon"
+    },
+    {
+      "name": "Dart",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/dart.svg",
+      "iconAlt": "Dart Icon"
+    },
+    {
+      "name": "HTML",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-html5"
+    },
+    {
+      "name": "CSS",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-css3-alt"
+    },
+    {
+      "name": "JavaScript",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-js"
+    },
+    {
+      "name": "PostgreSQL",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/Postgresql_elephant.svg",
+      "iconAlt": "PostgreSQL Icon",
+      "style": "width: 28px; filter: none"
+    },
+    {
+      "name": "MySQL",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/mysql.svg",
+      "iconAlt": "MySQL Icon",
+      "style": "width: 32px"
+    },
+    {
+      "name": "MongoDB",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/mongodb-logo-svgrepo-com.svg",
+      "iconAlt": "MongoDB Icon",
+      "style": "width: 75px; filter: none"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Git/Github",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-github"
+    },
+    {
+      "name": "Docker",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-docker"
+    },
+    {
+      "name": "VSCode",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/visualstudiocode.svg",
+      "iconAlt": "VSCode Icon"
+    },
+    {
+      "name": "Pycharm",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/pycharm.svg",
+      "iconAlt": "Pycharm Icon"
+    },
+    {
+      "name": "Android Studio",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/android-studio-icon.svg",
+      "iconAlt": "Android Studio Icon",
+      "style": "width: 30px; filter: none"
+    },
+    {
+      "name": "Firebase",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/firebase.svg",
+      "iconAlt": "Firebase Icon"
+    },
+    {
+      "name": "Flutter",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/flutter.svg",
+      "iconAlt": "Flutter Icon"
+    },
+    {
+      "name": "Arduino IDE",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/arduino.svg",
+      "iconAlt": "Arduino IDE Icon",
+      "style": "width: 32px"
+    },
+    {
+      "name": "Slack",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-slack"
+    },
+    {
+      "name": "Adobe Illustrator",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/adobeillustrator.svg",
+      "iconAlt": "Adobe Illustrator Icon"
+    },
+    {
+      "name": "Ubuntu",
+      "iconType": "fontawesome",
+      "iconClass": "fa-brands fa-ubuntu"
+    },
+    {
+      "name": "MatLab",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/matlab-svgrepo-com.svg",
+      "iconAlt": "MatLab Icon",
+      "style": "width: 32px"
+    }
+  ]
+}

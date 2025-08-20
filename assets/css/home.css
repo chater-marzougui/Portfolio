@@ -238,6 +238,7 @@ h3 {
 }
 
 .home .basicInfo .firstline div{
+    transform-origin: bottom right;
     animation: wave-hand 2s infinite;
 }
 

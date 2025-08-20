@@ -23,7 +23,7 @@ function showWelcomeMessage() {
             welcomeScreen.style.display = "none";
             document.body.style.overflow = "auto";
             return;
-        },1200);
+        },700);
         }
         setTimeout(Wtype, 100);
     }
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const jobs = [" Web Developer ", " Mobile Developer ", " ICT Engineering Student "];
+    const jobs = [" Web Developer ", " Mobile Developer ", " ICT Engineering Student ", " AI Enthusiast "];
     let jobIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

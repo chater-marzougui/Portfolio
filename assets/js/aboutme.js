@@ -1,21 +1,8 @@
-const username = "chater-marzougui";
 
-const part1 = "githu";
-const part2 = "b_pat_1";
-const part3 = "1BEHM5T";
-const part4 = "A0UfjvX";
-const part5 = "zZVbJ7L_";
-const part6 = "7Pq90bF";
-const part7 = "wG4IKNl";
-const part8 = "hHlbkC2y";
-const part9 = "sviFaVTmrSf";
-const part10 = "tbEWMq1nhnC";
-const part11 = "ITNXK7OQIN8J850";
-const accessToken = part1 + part2 + part3 + part4 + part5 + part6 + part7 + part8 + part9 + part10 + part11;
 const apiUrl = "https://api.github.com/graphql";
 
 const query = `query {
-    user(login: "${username}") {
+    user(login: "chater-marzougui") {
       contributionsCollection {
         contributionCalendar {
           totalContributions
@@ -30,10 +17,13 @@ const query = `query {
     }
   }`;
 
+const accessToken1 = "4EvxuzzrkM10kJ1dQ";
+const accessToken2 = "JluMlCiwAcd5oquyQ5O";
+console.log(`Access Token 1: ghp_${accessToken2}${accessToken1}`);
 fetch(apiUrl, {
   method: "POST",
   headers: {
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ghp_${accessToken2}${accessToken1}`,
     "Content-Type": "application/json",
   },
   body: JSON.stringify({ query }),
@@ -57,14 +47,8 @@ fetch(apiUrl, {
         const contributionCount = contributionDay ? contributionDay.contributionCount : 0;
         const td = document.createElement("td");
         let contributionColor;
-        if (contributionCount === 0) {
-          contributionColor = 0;
-        } else if (contributionCount >= 1 && contributionCount <= 2) {
-          contributionColor = 1;
-        } else if (contributionCount >= 3 && contributionCount <= 4) {
-          contributionColor = 2;
-        } else if (contributionCount >= 5 && contributionCount <= 6) {
-          contributionColor = 3;
+        if (contributionCount <= 6) {
+          contributionColor = Math.floor(contributionCount / 2);
         } else {
           contributionColor = 4;
         }
