@@ -1,5 +1,3 @@
-
-// Load contributions data from local JSON file
 fetch("/assets/contributions.json")
   .then((response) => response.json())
   .then((contributionsData) => {

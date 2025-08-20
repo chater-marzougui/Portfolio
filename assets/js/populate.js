@@ -1,5 +1,5 @@
 // Function to populate skills
-async function populateSkills(jsonFilePath = "/assets/skillset.json") {
+async function populateSkills(jsonFilePath = "./assets/skillset.json") {
   const response = await fetch(jsonFilePath);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -159,7 +159,7 @@ function createProjectCard(project) {
   return card;
 }
 
-async function loadProjects(jsonFilePath = "/assets/projects.json") {
+async function loadProjects(jsonFilePath = "./assets/projects.json") {
   try {
     // Fetch the JSON data
     const response = await fetch(jsonFilePath);
@@ -185,7 +185,6 @@ async function loadProjects(jsonFilePath = "/assets/projects.json") {
       projectsList.appendChild(projectCard);
     });
 
-    console.log(`Successfully loaded ${data.projects.length} projects`);
   } catch (error) {
     console.error("Error loading projects:", error);
 
