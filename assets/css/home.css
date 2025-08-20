@@ -214,17 +214,17 @@ h3 {
 
 .home .home-front{
     display: flex;
+    height: 100%;
     overflow: hidden;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
 }
 
 .home .basicInfo{
     display: flex;
     flex-direction: column;
-    padding-top: 15%;
-    padding-left: 8%;
-    height: 100%;
     width: 60%;
     z-index: 2;
     font-size: 2rem;
@@ -360,7 +360,8 @@ h3 {
 
 @media only screen and (max-width:768px) {
     #home .basicInfo {
-        width: 100% !important;
+        margin-top: 100px;
+        width: 90% !important;
         font-size: 1.2rem;
     }
     #home {

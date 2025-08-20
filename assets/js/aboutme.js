@@ -19,7 +19,6 @@ const query = `query {
 
 const accessToken1 = "4EvxuzzrkM10kJ1dQ";
 const accessToken2 = "JluMlCiwAcd5oquyQ5O";
-console.log(`Access Token 1: ghp_${accessToken2}${accessToken1}`);
 fetch(apiUrl, {
   method: "POST",
   headers: {

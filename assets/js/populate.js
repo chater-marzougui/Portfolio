@@ -185,7 +185,6 @@ async function loadProjects(jsonFilePath = "./assets/projects.json") {
       projectsList.appendChild(projectCard);
     });
 
-    console.log(`Successfully loaded ${data.projects.length} projects`);
   } catch (error) {
     console.error("Error loading projects:", error);
 
