@@ -1,0 +1,92 @@
+---
+name: Update Contributions Data
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  update-contributions:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Fetch contributions data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node -e "
+          const apiUrl = 'https://api.github.com/graphql';
+          const query = \`query {
+            user(login: \"chater-marzougui\") {
+              contributionsCollection {
+                contributionCalendar {
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      contributionCount
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          }\`;
+
+          const fs = require('fs');
+
+          fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Authorization': \`Bearer \${process.env.GITHUB_TOKEN}\`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ query })
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.errors) {
+              console.error('GraphQL errors:', data.errors);
+              process.exit(1);
+            }
+
+            const contributionsData = {
+              lastUpdated: new Date().toISOString(),
+              data: data.data.user.contributionsCollection.contributionCalendar
+            };
+
+            const filePath = 'assets/contributions.json';
+            fs.writeFileSync(filePath,
+              JSON.stringify(contributionsData, null, 2));
+            console.log('Contributions data updated successfully');
+          })
+          .catch(error => {
+            console.error('Error fetching contributions:', error);
+            process.exit(1);
+          });
+          "
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/contributions.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update contributions data"
+            git push
+          fi
