@@ -110,7 +110,14 @@
       "iconType": "image",
       "iconSrc": "./assets/images/svgs/android-studio-icon.svg",
       "iconAlt": "Android Studio Icon",
-      "style": "width: 30px; filter: none"
+      "style": "width: 28px; filter: none"
+    },
+    {
+      "name": "Postman",
+      "iconType": "image",
+      "iconSrc": "./assets/images/svgs/postman-icon.svg",
+      "iconAlt": "Postman Icon",
+      "style": "width: 28px; filter: none"
     },
     {
       "name": "Firebase",
