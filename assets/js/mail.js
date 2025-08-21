@@ -19,6 +19,18 @@ function showToast(message, type, actions = []) {
 }
 
 async function sendEmail() {
+  if (typeof Email === 'undefined') {
+    showToast(
+      "Email service is currently unavailable. Please try alternative contact methods.",
+      "error",
+      [
+        {href: "mailto:chater.mrezgui2002@gmail.com", text: "Try chater.mrezgui2002@gmail.com"},
+        {href: "mailto:chater.marzougui@supcom.tn", text: "Try chater.marzougui@supcom.tn"},
+      ]
+    );
+    return;
+  }
+
   const userEmail = document.getElementById("emailInput").value;
   const userName = document.getElementById("name").value;
   const userSubject = document.getElementById("subjectvalue").value;
@@ -47,6 +59,11 @@ async function sendEmail() {
 }
 
 function sendVisitEmail() {
+  if (typeof Email === 'undefined') {
+    console.log("Email service unavailable for visit tracking");
+    return;
+  }
+  
   if (localStorage.getItem("visited")) return;
   const nowTime = new Date().toLocaleString();
   Email.send({
