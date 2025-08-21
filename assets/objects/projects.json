@@ -22,7 +22,8 @@
     {
       "title": "Samsar",
       "technologies": "Flutter, Firebase, NOMINATIM, OverPass Turbo",
-      "description": "A Flutter application that helps you find the best places to visit in Tunisia. It uses Firebase for authentication and data storage, NOMINATIM for geolocation, and OverPass Turbo for querying OpenStreetMap data. The app provides a user-friendly interface to explore various tourist attractions, restaurants, and cultural sites across Tunisia.",
+      "description2": "A Flutter application that helps you find the best places to visit in Tunisia. It uses Firebase for authentication and data storage, NOMINATIM for geolocation, and OverPass Turbo for querying OpenStreetMap data. The app provides a user-friendly interface to explore various tourist attractions, restaurants, and cultural sites across Tunisia.",
+      "description": "A Flutter application tailored for the Tunisian real estate market. It serves as a platform for homeowners and real estate agents to list properties while allowing buyers and renters to browse listings on an interactive map. The app’s flagship features are the many filters available, positioning, and search capabilities. Samsar aims to streamline property transactions and enhance transparency and accessibility in the real estate market in Tunisia.",
       "links": [
         {
           "type": "github",
