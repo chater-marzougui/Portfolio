@@ -352,7 +352,11 @@ h3 {
 }
 
 @media only screen and (max-width:1080px) {
+    #home .home-front {
+        margin-top: 250px;
+    }
     #home .basicInfo {
+        margin-top: 100px;
         font-size: 1.5rem;
     }
     #home {
@@ -362,6 +366,9 @@ h3 {
 }
 
 @media only screen and (max-width:768px) {
+    #home .home-front {
+        margin-top: 0px;
+    }
     #home .basicInfo {
         margin-top: 100px;
         width: 90% !important;
