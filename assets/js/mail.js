@@ -18,7 +18,7 @@ function showToast(message, type, actions = []) {
   setTimeout(() => toast.remove(), toastTimeout);
 }
 
-async function sendEmail() {
+function sendEmail() {
   if (typeof Email === 'undefined') {
     showToast(
       "Email service is currently unavailable. Please try alternative contact methods.",
@@ -36,7 +36,7 @@ async function sendEmail() {
   const userSubject = document.getElementById("subjectvalue").value;
   const theMessage = document.getElementById("message").value;
 
-  await Email.send({
+  Email.send({
     SecureToken: "c99ebf76-7044-4a97-a3a3-986ee50089d5",
     To: "chater.mrezgui2002@gmail.com",
     From: "chater.forarduinouse@gmail.com",
@@ -60,7 +60,6 @@ async function sendEmail() {
 
 function sendVisitEmail() {
   if (typeof Email === 'undefined') {
-    console.log("Email service unavailable for visit tracking");
     return;
   }
   
