@@ -46,17 +46,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const pauseTime = 2000;
   const pauseBetweenJobs = 500;
 
+  // Function to check if a word starts with a vowel
+  function startsWithVowel(word) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    const firstLetter = word.trim().toLowerCase().charAt(0);
+    return vowels.includes(firstLetter);
+  }
+
   function type() {
     const currentJob = jobs[jobIndex];
-    const n = jobIndex === 2 ? "n " : "";
+    const article = startsWithVowel(currentJob) ? "n " : " ";
     const displayedText = isDeleting
       ? currentJob.substring(0, charIndex--)
       : currentJob.substring(0, charIndex++);
 
-    const fullText =
-      jobIndex === 2
-        ? `<span style="color: white;">${n}</span><span style="color: #0935FF;">${displayedText}</span>`
-        : `<span style="color: #0935FF;">${displayedText}</span>`;
+    const fullText = `<span style="color: white;">${article}</span><span style="color: #0935FF;">${displayedText}</span>`;
 
     document.querySelector(".my-jobs").innerHTML = fullText;
 
