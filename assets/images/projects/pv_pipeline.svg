@@ -1,0 +1,488 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="solarGradient2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="solarGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#00BFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="dataGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hardwareGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B1FA2;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Filters for glowing effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1a365d">
+    Real-Time PV Fault Detection Pipeline
+  </text>
+  
+  <!-- Stage 1: PV System Simulation -->
+  <g id="stage1" class="pipeline-stage">
+    <rect x="50" y="100" width="200" height="150" rx="15" fill="url(#solarGradient)" 
+          filter="url(#shadow)" stroke="#FF8C00" stroke-width="2">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Solar panels icon -->
+    <rect x="100" y="140" width="40" height="25" fill="#000080" stroke="#fff" stroke-width="1"/>
+    <rect x="105" y="145" width="30" height="15" fill="none" stroke="#fff" stroke-width="1"/>
+    <line x1="110" y1="145" x2="110" y2="160" stroke="#fff" stroke-width="1"/>
+    <line x1="115" y1="145" x2="115" y2="160" stroke="#fff" stroke-width="1"/>
+    <line x1="120" y1="145" x2="120" y2="160" stroke="#fff" stroke-width="1"/>
+    <line x1="125" y1="145" x2="125" y2="160" stroke="#fff" stroke-width="1"/>
+    <line x1="130" y1="145" x2="130" y2="160" stroke="#fff" stroke-width="1"/>
+    
+    <!-- MPPT Circuit -->
+    <circle cx="165" cy="155" r="22" fill="#FFE4B5" stroke="#8B4513" stroke-width="1"/>
+    <text x="165" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#8B4513">MPPT</text>
+
+    <!-- Fault indicators -->
+    <circle cx="100" cy="180" r="6" fill="#FF4500">
+      <animate attributeName="fill" values="#FF4500;#FFD700;#FF4500" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="180" r="6" fill="#32CD32">
+      <animate attributeName="fill" values="#32CD32;#90EE90;#32CD32" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="140" cy="180" r="6" fill="#FF69B4">
+      <animate attributeName="fill" values="#FF69B4;#FFB6C1;#FF69B4" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <text x="150" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">
+      PV System
+    </text>
+    <text x="150" y="225" text-anchor="middle" font-size="14" fill="#fff">
+      Simulink/Simscape
+    </text>
+    <text x="150" y="240" text-anchor="middle" font-size="13" fill="#fff">
+      20.25kW Array
+    </text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 270 175 L 320 175" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <circle cx="295" cy="175" r="3" fill="#4CAF50">
+    <animate attributeName="cx" values="270;320;270" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Stage 2: Data Generation -->
+  <g id="stage2" class="pipeline-stage">
+    <rect x="340" y="100" width="200" height="150" rx="15" fill="url(#dataGradient)" 
+          filter="url(#shadow)" stroke="#2E7D32" stroke-width="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Data visualization -->
+    <g transform="translate(370, 120)">
+      <!-- Chart bars -->
+      <rect x="0" y="30" width="15" height="40" fill="#90EE90">
+        <animate attributeName="height" values="40;60;40" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="20" y="20" width="15" height="50" fill="#98FB98">
+        <animate attributeName="height" values="50;70;50" dur="2.8s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="40" y="25" width="15" height="45" fill="#ADFF2F">
+        <animate attributeName="height" values="45;65;45" dur="3.2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="60" y="35" width="15" height="35" fill="#7CFC00">
+        <animate attributeName="height" values="35;55;35" dur="2.7s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Sine wave representing time series -->
+      <path d="M 90 50 Q 110 30 130 50 Q 150 70 170 50" stroke="#fff" stroke-width="2" fill="none">
+        <animate attributeName="d" 
+                 values="M 90 50 Q 110 30 130 50 Q 150 70 170 50;
+                         M 90 50 Q 110 70 130 50 Q 150 30 170 50;
+                         M 90 50 Q 110 30 130 50 Q 150 70 170 50" 
+                 dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <text x="440" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">
+      Data Generation
+    </text>
+    <text x="440" y="215" text-anchor="middle" font-size="14" fill="#fff">
+      5.8M Samples
+    </text>
+    <text x="440" y="230" text-anchor="middle" font-size="13" fill="#fff">
+      11 Years Simulation
+    </text>
+    <text x="440" y="245" text-anchor="middle" font-size="13" fill="#fff">
+      10 Features
+    </text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 560 175 L 610 175" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <circle cx="585" cy="175" r="3" fill="#2196F3">
+    <animate attributeName="cx" values="560;610;560" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Stage 3: AI/ML Training -->
+  <g id="stage3" class="pipeline-stage">
+    <rect x="630" y="100" width="200" height="150" rx="15" fill="url(#aiGradient)" 
+          filter="url(#shadow)" stroke="#1976D2" stroke-width="2">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Neural network visualization -->
+    <g transform="translate(660, 120)">
+      <!-- Input layer -->
+      <circle cx="20" cy="20" r="6" fill="#E3F2FD" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#E3F2FD;#BBDEFB;#E3F2FD" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="40" r="6" fill="#E3F2FD" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#E3F2FD;#BBDEFB;#E3F2FD" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="60" r="6" fill="#E3F2FD" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#E3F2FD;#BBDEFB;#E3F2FD" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Hidden layer -->
+      <circle cx="80" cy="15" r="6" fill="#BBDEFB" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#BBDEFB;#90CAF9;#BBDEFB" dur="2.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="35" r="6" fill="#BBDEFB" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#BBDEFB;#90CAF9;#BBDEFB" dur="2.1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="55" r="6" fill="#BBDEFB" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#BBDEFB;#90CAF9;#BBDEFB" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Output layer -->
+      <circle cx="140" cy="25" r="6" fill="#64B5F6" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#64B5F6;#42A5F5;#64B5F6" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="140" cy="45" r="6" fill="#64B5F6" stroke="#1976D2" stroke-width="2">
+        <animate attributeName="fill" values="#64B5F6;#42A5F5;#64B5F6" dur="2.7s" repeatCount="indefinite"/>
+      </circle>
+      <line x1="26" y1="20" x2="74" y2="15" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="26" y1="20" x2="74" y2="35" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="26" y1="20" x2="74" y2="55" stroke="#000" stroke-width="1" opacity="0.6"/>
+
+      <line x1="26" y1="40" x2="74" y2="15" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="26" y1="40" x2="74" y2="35" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="26" y1="40" x2="74" y2="55" stroke="#000" stroke-width="1" opacity="0.6"/>
+
+      <line x1="26" y1="60" x2="74" y2="15" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="26" y1="60" x2="74" y2="35" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="26" y1="60" x2="74" y2="55" stroke="#000" stroke-width="1" opacity="0.6"/>
+
+      <line x1="86" y1="15" x2="134" y2="25" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="86" y1="15" x2="134" y2="45" stroke="#000" stroke-width="1" opacity="0.6"/>
+      
+      <line x1="86" y1="35" x2="134" y2="25" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="86" y1="35" x2="134" y2="45" stroke="#000" stroke-width="1" opacity="0.6"/>
+      
+      <line x1="86" y1="55" x2="134" y2="25" stroke="#000" stroke-width="1" opacity="0.6"/>
+      <line x1="86" y1="55" x2="134" y2="45" stroke="#000" stroke-width="1" opacity="0.6"/>
+
+    </g>
+    
+    <text x="730" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">
+      ML Training
+    </text>
+    <text x="730" y="205" text-anchor="middle" font-size="14" fill="#fff">
+      Random Forest
+    </text>
+    <text x="730" y="220" text-anchor="middle" font-size="13" fill="#fff">
+      98.90% Accuracy
+    </text>
+    <text x="730" y="235" text-anchor="middle" font-size="13" fill="#fff">
+      6 Models Compared
+    </text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 850 175 L 900 175" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <circle cx="875" cy="175" r="3" fill="#9C27B0">
+    <animate attributeName="cx" values="850;900;850" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Stage 4: PIL Testing -->
+  <g id="stage4" class="pipeline-stage">
+    <rect x="920" y="100" width="200" height="150" rx="15" fill="url(#hardwareGradient)" 
+          filter="url(#shadow)" stroke="#7B1FA2" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- STM32 microcontroller -->
+    <g transform="translate(970, 120)">
+      <!-- MCU body -->
+      <rect x="22.5" y="20" width="60" height="40" rx="5" fill="#4A148C" stroke="#E1BEE7" stroke-width="2"/>
+      
+      <!-- Pins -->
+      <rect x="15" y="25" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="15" y="32" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="15" y="39" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="15" y="46" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="15" y="53" width="5" height="3" fill="#E1BEE7"/>
+      
+      <rect x="85" y="25" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="85" y="32" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="85" y="39" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="85" y="46" width="5" height="3" fill="#E1BEE7"/>
+      <rect x="85" y="53" width="5" height="3" fill="#E1BEE7"/>
+      
+      <!-- LED indicators -->
+      <circle cx="60" cy="30" r="3" fill="#00FF00">
+        <animate attributeName="fill" values="#00FF00;#32CD32;#00FF00" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="70" cy="30" r="3" fill="#FF4500">
+        <animate attributeName="fill" values="#FF4500;#FF6347;#FF4500" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- UART communication lines -->
+      <!-- <path d="M 50 10 L 50 0 M 50 70 L 50 80" stroke="#E1BEE7" stroke-width="2">
+        <animate attributeName="stroke" values="#E1BEE7;#CE93D8;#E1BEE7" dur="2s" repeatCount="indefinite"/>
+      </path> -->
+      
+      <!-- Data flow indicators -->
+      <circle cx="30" cy="25" r="4" fill="#FFD700">
+        <animate attributeName="cx" values="8;-7;8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="30" cy="37" r="4" fill="#FFD700">
+        <animate attributeName="cx" values="8;-7;8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="90" cy="40" r="4" fill="#00BFFF">
+        <animate attributeName="cx" values="105;125;105" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="90" cy="52" r="4" fill="#00BFFF">
+        <animate attributeName="cx" values="105;125;105" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <text x="1020" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">
+      PIL Testing
+    </text>
+    <text x="1020" y="205" text-anchor="middle" font-size="14" fill="#fff">
+      STM32F407VG
+    </text>
+    <text x="1020" y="220" text-anchor="middle" font-size="13" fill="#fff">
+      Real-time Validation
+    </text>
+    <text x="1020" y="235" text-anchor="middle" font-size="13" fill="#fff">
+      UART @ 115.2kbps
+    </text>
+  </g>
+
+  <!-- Performance Metrics Box -->
+  <g id="metrics" transform="translate(200, 320)">
+    <rect x="0" y="0" width="800" height="180" rx="15" fill="#ffffff" 
+          stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+    
+    <text x="400" y="25" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a365d">
+      Key Performance Metrics
+    </text>
+    
+    <!-- Metric cards -->
+    <g id="metric1">
+      <rect x="20" y="40" width="180" height="120" rx="10" fill="#e6fffa" stroke="#00b894" stroke-width="1"/>
+      <text x="110" y="60" text-anchor="middle" font-size="17" font-weight="bold" fill="#00b894">System Capacity</text>
+      <text x="110" y="95" text-anchor="middle" font-size="24" font-weight="bold" fill="#2d3748">20.25kW</text>
+      <text x="110" y="120" text-anchor="middle" font-size="15" fill="#4a5568">PV Array Power</text>
+      <text x="110" y="140" text-anchor="middle" font-size="15" fill="#4a5568">3×15 SUNPRO Panels</text>
+    </g>
+    
+    <g id="metric2">
+      <rect x="220" y="40" width="180" height="120" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="1"/>
+      <text x="310" y="60" text-anchor="middle" font-size="17" font-weight="bold" fill="#38a169">Dataset Size</text>
+      <text x="310" y="95" text-anchor="middle" font-size="22" font-weight="bold" fill="#2d3748">5.8M Samples</text>
+      <text x="310" y="120" text-anchor="middle" font-size="15" fill="#4a5568">11 Years Equivalent</text>
+      <text x="310" y="140" text-anchor="middle" font-size="15" fill="#4a5568">5-min Resolution</text>
+    </g>
+
+    <g id="metric3">
+      <rect x="420" y="40" width="180" height="120" rx="10" fill="#eff6ff" stroke="#3182ce" stroke-width="1"/>
+      <text x="510" y="60" text-anchor="middle" font-size="17" font-weight="bold" fill="#3182ce">ML Accuracy</text>
+      <text x="510" y="95" text-anchor="middle" font-size="24" font-weight="bold" fill="#2d3748">98.90%</text>
+      <text x="510" y="120" text-anchor="middle" font-size="15" fill="#4a5568">Random Forest</text>
+      <text x="510" y="140" text-anchor="middle" font-size="15" fill="#4a5568">Fault Detection</text>
+    </g>
+    
+    <g id="metric4">
+      <rect x="620" y="40" width="160" height="120" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="1"/>
+      <text x="700" y="60" text-anchor="middle" font-size="17" font-weight="bold" fill="#805ad5">Response Time</text>
+      <text x="700" y="95" text-anchor="middle" font-size="22" font-weight="bold" fill="#2d3748">&lt; 200ms</text>
+      <text x="700" y="120" text-anchor="middle" font-size="15" fill="#4a5568">Real-time PIL</text>
+      <text x="700" y="140" text-anchor="middle" font-size="15" fill="#4a5568">STM32 Hardware</text>
+    </g>
+  </g>
+
+  <!-- Data Flow Indicators -->
+  <g id="dataflow">
+    <!-- Environmental Data -->
+    <g transform="translate(150, 60)">
+      <circle cx="0" cy="-14" r="34" fill="#FFD700" stroke="#FFA500" stroke-width="2">
+        <animate attributeName="fill" values="#FFD700;#FFFF00;#FFD700" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="5" text-anchor="middle" font-size="52" fill="#333">☀️</text>
+      <text x="-70" y="15" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Irradiance</text>
+    </g>
+    
+    <g transform="translate(150, 310)">
+      <circle cx="0" cy="-8" r="22" fill="#87CEEB" stroke="#4682B4" stroke-width="2">
+        <animate attributeName="fill" values="#87CEEB;#B0E0E6;#87CEEB" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="25" text-anchor="middle" font-size="16" fill="#333">Temperature</text>
+      <text x="0" y="2" text-anchor="middle" font-size="24" fill="#333">🌡️</text>
+    </g>
+    
+    <!-- Fault Types -->
+    <g transform="translate(260, 530)">
+      <rect x="0" y="0" width="300" height="100" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1"/>
+      <text x="150" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#e53e3e">Fault Types Detected</text>
+      
+      <circle cx="50" cy="50" r="8" fill="#FF4500">
+        <animate attributeName="fill" values="#FF4500;#FF6347;#FF4500" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="50" y="75" text-anchor="middle" font-size="13" fill="#333">Short Circuit</text>
+      
+      <circle cx="150" cy="50" r="8" fill="#32CD32">
+        <animate attributeName="fill" values="#32CD32;#90EE90;#32CD32" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="150" y="75" text-anchor="middle" font-size="13" fill="#333">Open Circuit</text>
+      
+      <circle cx="250" cy="50" r="8" fill="#FF69B4">
+        <animate attributeName="fill" values="#FF69B4;#FFB6C1;#FF69B4" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="250" y="75" text-anchor="middle" font-size="13" fill="#333">Partial Shading</text>
+    </g>
+    
+    <!-- Digital Twin Label -->
+    <g transform="translate(620, 530)">
+      <rect x="0" y="0" width="350" height="100" rx="10" fill="#f7fafc" stroke="#4299e1" stroke-width="2"/>
+      <text x="175" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#2b6cb0">Digital Twin Architecture</text>
+      <text x="175" y="45" text-anchor="middle" font-size="14" fill="#4a5568">Real-time Virtual Representation</text>
+      <text x="175" y="65" text-anchor="middle" font-size="14" fill="#4a5568">Predictive Maintenance &amp; Fault Prevention</text>
+      <text x="175" y="85" text-anchor="middle" font-size="14" fill="#4a5568">Host ↔ Target Communication via UART</text>
+    </g>
+  </g>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Connecting lines between environmental inputs and Stage 1 -->
+  <path d="M 150 75 Q 100 75 100 150" stroke="#FFA500" stroke-width="4" fill="none" 
+        stroke-dasharray="5,5" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M 130 290 Q 75 255 100 180" stroke="#4682B4" stroke-width="4" fill="none" 
+        stroke-dasharray="5,5" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2.2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Status indicator -->
+  <g transform="translate(1050, 50)">
+    <circle cx="0" cy="0" r="8" fill="#00FF00">
+      <animate attributeName="fill" values="#00FF00;#32CD32;#00FF00" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="15" y="5" font-size="14" fill="#333">System Active</text>
+  </g>
+
+  <!-- Real-time clock -->
+  <g transform="translate(500, 300)">
+    <text x="0" y="0" font-size="0" font-weight="bold" fill="#444" id="clock">Real-time: Loading...</text>
+  </g>
+
+  <script>
+    <![CDATA[
+    // Update real-time clock
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById('clock').textContent = 'Real-time: ' + timeString;
+    }
+
+    // Update clock every second
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial call
+    
+    // Add interactive hover effects
+    const stages = document.querySelectorAll('.pipeline-stage');
+    stages.forEach((stage, index) => {
+      stage.addEventListener('mouseenter', function() {
+        this.style.filter = 'url(#glow)';
+        this.style.transform = 'scale(1.05)';
+        this.style.transformOrigin = 'center';
+        this.style.transition = 'all 0.3s ease';
+      });
+      
+      stage.addEventListener('mouseleave', function() {
+        this.style.filter = 'url(#shadow)';
+        this.style.transform = 'scale(1)';
+      });
+    });
+
+    // add animation for stages without hover with a delay
+    function animateStages() {
+      let metrric = 1;
+      stages.forEach((stage, index) => {
+      setTimeout(() => {
+        currentMetric = document.getElementById('metric' + (index + 1));
+        stage.style.filter = 'url(#glow)';
+        stage.style.transform = 'scale(1.05)';
+        stage.style.transformOrigin = 'center';
+        stage.style.transition = 'all 0.3s ease';
+
+
+        currentMetric.style.filter = 'url(#glow)';
+        currentMetric.style.transform = 'scale(1.05)';
+        currentMetric.style.transformOrigin = 'center';
+        currentMetric.style.transition = 'all 0.3s ease';
+
+        // Reset after 1 second
+        setTimeout(() => {
+        stage.style.filter = 'url(#shadow)';
+        stage.style.transform = 'scale(1)';
+        currentMetric.style.filter = 'url(#shadow)';
+        currentMetric.style.transform = 'scale(1)';
+        }, 1000);
+      }, index * 2000); // 2 second delay between each stage
+      });
+
+      // Repeat the entire animation after all stages complete
+      setTimeout(animateStages, stages.length * 2000);
+    }
+    window.addEventListener('load', animateStages);
+    ]]>
+  </script>
+</svg>

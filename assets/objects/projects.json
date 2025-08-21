@@ -3,7 +3,7 @@
     {
       "title": "Portfolio",
       "technologies": "HTML, CSS, JavaScript",
-      "description": "A portfolio website made from scratch that showcases my skills and My different projects. Developed using HTML, CSS, and JavaScript.",
+      "description": "A portfolio website made from scratch that showcases my skills and My different projects. Developed using HTML, CSS, JS, and Github Actions.",
       "links": [
         {
           "type": "github",
@@ -20,10 +20,23 @@
       ]
     },
     {
+      "title": "Samsar",
+      "technologies": "Flutter, Firebase, NOMINATIM, OverPass Turbo",
+      "description": "A Flutter application that helps you find the best places to visit in Tunisia. It uses Firebase for authentication and data storage, NOMINATIM for geolocation, and OverPass Turbo for querying OpenStreetMap data. The app provides a user-friendly interface to explore various tourist attractions, restaurants, and cultural sites across Tunisia.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Samsar",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ]
+    },
+    {
       "title": "IndabaX 2024 Website",
       "titleStyle": "font-size: 24px;",
       "technologies": "Html, CSS, JavaScript",
-      "description": "A professional website made for the famous event IndabaX Tunisia 2024, that was held on 18 & 19 May, in supcom. It includes all the necessary preparations for hosting a website (MetaTags and Google SEO). made with Html, css and JavaScript.",
+      "description": "A professional website made for the famous event IndabaX Tunisia, that was held on 18 & 19 May 2024, in supcom. It includes all the necessary preparations for hosting a website (MetaTags and Google SEO). made with Html, css and JavaScript.",
       "links": [
         {
           "type": "live",
@@ -33,31 +46,6 @@
         }
       ],
       "linksStyle": "height: 55px;"
-    },
-    {
-      "title": "Metaversity",
-      "technologies": "C# (Unity), Html, CSS, JavaScript, MetaMask (Blockchain)",
-      "description": "A project that leverages the power of VR and blockchain to enhance online education experience. Developed in Unity with C#, Metaversity creates an immersive VR environment where students can engage with their coursework in a more interactive and practical manner. With a comprehensive website which facilitates secure cryptocurrency transactions (with MetaMask).",
-      "links": [
-        {
-          "type": "github",
-          "url": "https://github.com/mohamedghan/Hedera-Hackathon",
-          "label": "Website Link",
-          "icon": "fa-brands fa-github"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/chater-marzougui/MetaVersity",
-          "label": "Game Link",
-          "icon": "fa-brands fa-github"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/chater-marzougui/MetaVersity_platform",
-          "label": "Game Link (.exe)",
-          "icon": "fa-brands fa-github"
-        }
-      ]
     },
     {
       "title": "MoodMuse",
@@ -92,6 +80,86 @@
         }
       ],
       "linksStyle": "height: 70px;"
+    },
+    {
+      "title": "Chater CLI Tools",
+      "technologies": "PowerShell, GEMINI API",
+      "description": "A comprehensive suite of 16 powerful PowerShell scripts designed to supercharge your command-line workflow. The collection provides a robust toolkit for developers, automating everything from Git operations and secure secret management to system monitoring, networking tasks, and even direct interaction with Google's Gemini AI. Streamline your daily processes and boost your productivity directly from the terminal.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Chater-CLI-Tools",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ]
+    },
+    {
+      "title": "Skill Issue Check",
+      "technologies": "HTML, CSS, JavaScript, Python, GEMINI API",
+      "description": "A tool that uses gemini to analyse documents (text, pdf), understand them, cuts them into parts and makes Multi-Answer questions so you can test your knowledge, with a hosted interface to show questions, give feedback and track progress.",
+      "links": [
+        {
+          "type": "live",
+          "url": "https://chater-marzougui.github.io/Skill-Issue-Check/",
+          "label": "Live Link",
+          "icon": "fa-solid fa-globe"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Skill-Issue-Check",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ]
+    },
+    {
+      "title": "Real Time Simulation of PV Performance Using PIL",
+      "titleStyle": "font-size: 20px;",
+      "technologies": "MATLAB, Simulink, Python, STM32",
+      "description": "A project focused on simulating the performance of photovoltaic panels in real-time using a processor-in-the-loop approach with MATLAB and Simulink. With PV Fault Detection System. This project combines Digital Twin technology with Processor-in-the-Loop (PIL) testing to provide comprehensive fault detection, AI-powered analytics (Random Forest, XGBoost, Gradient Boosting...), trained with python, and embedded system validation.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Real-Time-Simulation-of-Photovoltaic-Panel-Performance-Using-Processor-in-the-Loop-Matlab",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ]
+    },
+    {
+      "title": "Education Help Gemini",
+      "titleStyle": "font-size: 24px;",
+      "technologies": "HTML, CSS, JavaScript, GEMINI API",
+      "description": "A web application that uses Gemini to help students with their studies, a literal chatbot. It allows users to upload a document, which is then processed by Gemini, users then can you their document page by page and with gemini on the side explaining and answering questions.",
+      "links": [
+        {
+          "type": "live",
+          "url": "https://chater-marzougui.github.io/Education-Help-Gemini/",
+          "label": "Live Link",
+          "icon": "fa-solid fa-globe"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Education-Help-Gemini",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ]
+    },
+    {
+      "title": "The Flying Dutchman",
+      "titleStyle": "font-size: 24px;",
+      "technologies": "Flutter, Gemini AI API",
+      "description": "The Flying Dutchman is a Flutter-based mobile application that uses the Gemini AI API to provide users with instant answers to medical questions, specifically in the domain of human anatomy. Whether you're revising for an exam, teaching a class, or just curious, this app brings intelligent anatomy assistance right to your pocket.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/AI-Anatomy",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ]
     }
   ]
 }

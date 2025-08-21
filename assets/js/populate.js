@@ -126,6 +126,8 @@ function createProjectCard(project) {
   linksContainer.className = "splinks";
   if (project.linksStyle) {
     linksContainer.style.cssText = project.linksStyle;
+  } else {
+    linksContainer.style.cssText = "height: 70px;";
   }
 
   // Create links

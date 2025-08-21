@@ -28,6 +28,7 @@
     justify-content: center;
     align-items: center;
     width: 95%;
+    padding-bottom: 20px;
 }
 
 #projects .card {
@@ -248,14 +249,34 @@
     background: url(../images/projects/portfolio.jpg) 0 0 / 100% 100%;
 }
 #projects .card:nth-child(2) .cover::before{
-    background: url(../images/projects/indabax2024.jpg) 0 0 / cover;
+    background: url(../images/projects/samsar.png) 0 0 / cover;
 }
 #projects .card:nth-child(3) .cover::before{
-    background: url(../images/projects/Metaversity.jpg) 0 0 / 100% 100%;
+    background: url(../images/projects/indabax2024.jpg) 0 0 / 100% 100%;
 }
 #projects .card:nth-child(4) .cover::before{
     background: url(../images/projects/moodMuse.jpg) 0 0 / cover;
 }
 #projects .card:nth-child(5) .cover::before{
     background: url(../images/projects/RCCar.jpg) 0 0 / cover;
+}
+
+#projects .card:nth-child(6) .cover::before{
+    background: url(../images/projects/CLITools.png) 0 0 / cover;
+}
+
+#projects .card:nth-child(7) .cover::before{
+    background: url(../images/projects/skillissue.png) 0 0 / 100% 100%;
+}
+
+#projects .card:nth-child(8) .cover::before{
+    background: url(../images/projects/pv_pipeline.svg) 0 0 / 105% 100%;
+}
+
+#projects .card:nth-child(9) .cover::before{
+    background: url(../images/projects/educationhelp.png) 0 0 / 100% 100%;
+}
+
+#projects .card:nth-child(10) .cover::before{
+    background: url(../images/projects/aianatomy.jpg) 0 0 / 50% 100%;
 }
