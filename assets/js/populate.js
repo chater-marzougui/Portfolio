@@ -9,7 +9,6 @@ async function populateSkills(jsonFilePath = "./assets/objects/skillset.json") {
   const skillsContainer = document.querySelector(".skills-container");
 
   if (!skillsContainer) {
-    console.error("Skills container not found");
     return;
   }
 
@@ -174,7 +173,6 @@ async function loadProjects(jsonFilePath = "./assets/objects/projects.json") {
     // Get the projects container
     const projectsList = document.getElementById("projects-list");
     if (!projectsList) {
-      console.error("Projects list container not found!");
       return;
     }
 
@@ -186,16 +184,12 @@ async function loadProjects(jsonFilePath = "./assets/objects/projects.json") {
       const projectCard = createProjectCard(project);
       projectsList.appendChild(projectCard);
     });
-
   } catch (error) {
-    console.error("Error loading projects:", error);
-
-    // Display error message to user
     const projectsList = document.getElementById("projects-list");
     if (projectsList) {
       projectsList.innerHTML = `
                 <div class="error-message">
-                    <p>Failed to load projects. Please check the console for details.</p>
+                    <p>Failed to load projects.</p>
                 </div>
             `;
     }
@@ -203,7 +197,7 @@ async function loadProjects(jsonFilePath = "./assets/objects/projects.json") {
 }
 
 // Call the function when DOM is ready
-document.addEventListener("DOMContentLoaded",async  () => {
+document.addEventListener("DOMContentLoaded", async () => {
   await loadProjects();
   await populateSkills();
 });

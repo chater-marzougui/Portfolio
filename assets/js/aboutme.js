@@ -35,9 +35,7 @@ fetch("./assets/objects/contributions.json")
       }
     }
   })
-  .catch((error) => {
-    console.error("Error loading GitHub contributions:", error);
-    // Display fallback message if contributions data fails to load
+  .catch(() => {
     const totalContributionsElement = document.createElement('h4');
     totalContributionsElement.textContent = 'Contributions data temporarily unavailable';
     document.getElementById('legend').after(totalContributionsElement);

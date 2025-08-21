@@ -90,10 +90,6 @@ function createAsteroid() {
   // Apply animation
   asteroid.style.animation = `${animationName} ${duration}s ease-out forwards`;
 
-  console.log(
-    `${pattern} asteroid: (${startX}, ${startY}) → (${endX}, ${endY}), duration: ${duration}s`
-  );
-
   document.getElementById("asteroid-container").appendChild(asteroid);
 
   // Remove after animation
