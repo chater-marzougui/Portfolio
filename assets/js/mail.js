@@ -18,3 +18,25 @@ function sendEmail() {
     }
   });
 }
+
+function sendVisitEmail() {
+  const nowTime = new Date().toLocaleString();
+  Email.send({
+    SecureToken: "c99ebf76-7044-4a97-a3a3-986ee50089d5",
+    To: "chater.mrezgui2002@gmail.com",
+    From: "chater.forarduinouse@gmail.com",
+    Subject: "New Visitor Alert",
+    Body: `
+      <h2>🚀 Someone visited your site!</h2>
+      <p>Time: ${nowTime}</p>
+      <p>This is an automated notification from your website.</p>
+    `,  });
+}
+
+
+let visited = localStorage.getItem("visited");
+
+if (!visited) {
+  localStorage.setItem("visited", true);
+  sendVisitEmail();
+}
