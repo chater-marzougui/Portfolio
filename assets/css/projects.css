@@ -249,7 +249,7 @@
     background: url(../images/projects/portfolio.jpg) 0 0 / 100% 100%;
 }
 #projects .card:nth-child(2) .cover::before{
-    background: url(../images/projects/samsar.png) 0 0 / cover;
+    background: url(../images/projects/samsar.jpg) 0 0 / cover;
 }
 #projects .card:nth-child(3) .cover::before{
     background: url(../images/projects/indabax2024.jpg) 0 0 / 100% 100%;
