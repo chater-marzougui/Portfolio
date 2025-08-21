@@ -1,19 +1,26 @@
 #resume {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    padding: 60px 0;
+}
+
+.resume-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
     height: auto;
     min-height: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     justify-content: space-around;
     align-content: center;
-    background-color: transparent;
 }
 
 .skills-container {
-    width: 45%;
-    padding: 20px;
+    width: 48%;
+    padding: 20px 0;
     z-index: 2;
 }
 .resume h2 {
@@ -80,7 +87,8 @@
     z-index: 2;
     justify-content: center;
     width: 35%;
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 370px;
     position: sticky;
     top: 100px;
 }
