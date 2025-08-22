@@ -17,13 +17,13 @@
           "label": "Live Link",
           "icon": "fa-solid fa-globe"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 17px;"
     },
     {
       "title": "Samsar",
       "technologies": "Flutter, Firebase, NOMINATIM, OverPass Turbo",
-      "description2": "A Flutter application that helps you find the best places to visit in Tunisia. It uses Firebase for authentication and data storage, NOMINATIM for geolocation, and OverPass Turbo for querying OpenStreetMap data. The app provides a user-friendly interface to explore various tourist attractions, restaurants, and cultural sites across Tunisia.",
-      "description": "A Flutter application tailored for the Tunisian real estate market. It serves as a platform for homeowners and real estate agents to list properties while allowing buyers and renters to browse listings on an interactive map. The app’s flagship features are the many filters available, positioning, and search capabilities. Samsar aims to streamline property transactions and enhance transparency and accessibility in the real estate market in Tunisia.",
+      "description": "A Flutter application tailored for the Tunisian real estate market. It serves as a platform for homeowners and real estate agents to list properties while allowing buyers and renters to browse listings on an interactive map. The app’s flagship features are the many filters available, positioning, and search capabilities. Samsar aims to streamline property transactions and enhance transparency and accessibility.",
       "links": [
         {
           "type": "github",
@@ -31,7 +31,8 @@
           "label": "Repo Link",
           "icon": "fa-brands fa-github"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 15px;"
     },
     {
       "title": "IndabaX 2024 Website",
@@ -46,12 +47,13 @@
           "icon": "fa-solid fa-globe"
         }
       ],
-      "linksStyle": "height: 55px;"
+      "linksStyle": "height: 55px;",
+      "cardBackStyle": "font-size: 17px;"
     },
     {
       "title": "MoodMuse",
       "technologies": "Flutter, AI, ngrok",
-      "description": "This Flutter application utilizes the device's camera to capture an image of the user. The image is then processed by an AI model hosted on ngrok to analyze the user's mood. Based on that mood, the application generates a music playlist to enhance the emotional state. The integration of camera functionality, AI analysis, and music recommendation makes this app an immersive and personalized experience for users seeking to enhance their mood through music.",
+      "description": "This Flutter application utilizes the device's camera to capture an image of the user. The image is then processed by an AI model to analyze the user's mood. Based on that mood, the application generates a music playlist to enhance the emotional state. The integration of camera functionality, AI analysis, and music recommendation makes this app an immersive and personalized experience for users.",
       "links": [
         {
           "type": "github",
@@ -60,12 +62,13 @@
           "icon": "fa-brands fa-github"
         }
       ],
-      "linksStyle": "height: 55px;"
+      "linksStyle": "height: 55px;",
+      "cardBackStyle": "font-size: 15px;"
     },
     {
       "title": "RC Car Controller",
       "technologies": "Flutter, Arduino, HTTP Communication",
-      "description": "A Flutter application designed to provide remote control capabilities for RC cars equipped with ESP8266 or ESP32 microcontrollers. It offers intuitive control modes, including a Button Control Mode to Navigate and steer the RC car using on-screen buttons for precise directional commands. Gyroscope Control Mode that Utilize the device's gyroscope sensor. With HTTP Communication to ensuring real-time responsiveness and control.",
+      "description": "A Flutter application designed to provide remote control capabilities for RC cars equipped with ESP8266 or ESP32 microcontrollers. It offers intuitive control modes, including a Button Control Mode to Navigate and steer the RC car using on-screen buttons. Gyroscope Control Mode that Utilize the device's gyroscope sensor. With HTTP Communication to ensuring real-time responsiveness and control.",
       "links": [
         {
           "type": "github",
@@ -80,7 +83,8 @@
           "icon": "fa-brands fa-github"
         }
       ],
-      "linksStyle": "height: 70px;"
+      "linksStyle": "height: 50px;",
+      "cardBackStyle": "font-size: 15px;"
     },
     {
       "title": "Chater CLI Tools",
@@ -93,7 +97,8 @@
           "label": "Repo Link",
           "icon": "fa-brands fa-github"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 15px;"
     },
     {
       "title": "Skill Issue Check",
@@ -112,11 +117,12 @@
           "label": "Repo Link",
           "icon": "fa-brands fa-github"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 17px;"
     },
     {
       "title": "Real Time Simulation of PV Performance Using PIL",
-      "titleStyle": "font-size: 20px;",
+      "titleStyle": "font-size: 15px;",
       "technologies": "MATLAB, Simulink, Python, STM32",
       "description": "A project focused on simulating the performance of photovoltaic panels in real-time using a processor-in-the-loop approach with MATLAB and Simulink. With PV Fault Detection System. This project combines Digital Twin technology with Processor-in-the-Loop (PIL) testing to provide comprehensive fault detection, AI-powered analytics (Random Forest, XGBoost, Gradient Boosting...), trained with python, and embedded system validation.",
       "links": [
@@ -126,7 +132,8 @@
           "label": "Repo Link",
           "icon": "fa-brands fa-github"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 15px;"
     },
     {
       "title": "Education Help Gemini",
@@ -146,7 +153,8 @@
           "label": "Repo Link",
           "icon": "fa-brands fa-github"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 17px;"
     },
     {
       "title": "The Flying Dutchman",
@@ -160,7 +168,8 @@
           "label": "Repo Link",
           "icon": "fa-brands fa-github"
         }
-      ]
+      ],
+      "cardBackStyle": "font-size: 16px;"
     }
   ]
 }

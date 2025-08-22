@@ -126,7 +126,10 @@ function createProjectCard(project) {
   if (project.linksStyle) {
     linksContainer.style.cssText = project.linksStyle;
   } else {
-    linksContainer.style.cssText = "height: 70px;";
+    linksContainer.style.cssText = "height: 50px;";
+  }
+  if (project.cardBackStyle) {
+    cardBack.style.cssText = project.cardBackStyle;
   }
 
   // Create links
