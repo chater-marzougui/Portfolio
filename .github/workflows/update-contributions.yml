@@ -88,6 +88,6 @@ jobs:
             echo "No changes to commit"
           else
             commit_time="$(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-            git commit -m "Update contributions data: ${commit_time}"
+            git commit -m "AUTO Update contributions data: ${commit_time}"
             git push
           fi
