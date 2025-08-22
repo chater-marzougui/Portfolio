@@ -1,4 +1,4 @@
-fetch("./assets/objects/contributions.json")
+fetch("./assets/json/contributions.json")
   .then((response) => response.json())
   .then((contributionsData) => {
     const contributions = contributionsData.data;

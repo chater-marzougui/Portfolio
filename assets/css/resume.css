@@ -1,284 +1,298 @@
 #resume {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  padding: 60px 0;
 }
 
 .resume-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 90%;
-    height: auto;
-    min-height: 100%;
-    justify-content: space-around;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  height: auto;
+  min-height: 100%;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .skills-container {
-    width: 48%;
-    padding: 20px 0;
-    z-index: 2;
+  width: 48%;
+  padding: 20px 0;
+  z-index: 2;
 }
+
+/* Add this to any of your CSS files */
+.skills-container i[class*="fa-"] {
+  font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
+  font-weight: 200;
+}
+
 .resume h2 {
-    text-align: center;
-    font-size: 1.4rem;
-    font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(9, 53, 255, 0.5);
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: "Orbitron", "Lucida Console", "Monaco", monospace;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(9, 53, 255, 0.5);
 }
 .resume ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-inline-start: 0;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 0;
+  gap: 1rem;
 }
 .resume li {
-    list-style-type: none;
-    display: flex;
-    padding: 10px;
-    color: aliceblue;
-    border: 2px solid #fff;
-    border-radius: 20px;
-    height: 20px;
-    width: 130px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s ease;
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+  color: aliceblue;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  height: 20px;
+  width: 130px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
 }
-.resume li:hover{
-    border: 2px solid #971D96;
+.resume li:hover {
+  border: 2px solid #971d96;
 }
 
 .resume li img {
-    filter: invert();
-    width: 20px;
+  filter: invert();
+  width: 20px;
 }
 
-.resume i,.resume li img, .resume h3 {
-    position: absolute;
-    transition: all 0.6s ease ;
-    text-align: center;
-    font-size: 18px;
-    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.resume i,
+.resume li img,
+.resume h3 {
+  position: absolute;
+  transition: all 0.6s ease;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-.resume li i{
-    opacity: 1;
-    scale: 1.2;
+.resume li i {
+  opacity: 1;
+  scale: 1.2;
 }
 .resume li h3 {
-    opacity: 0;
+  opacity: 0;
 }
-.resume li:hover h3{
-    opacity: 1;
+.resume li:hover h3 {
+  opacity: 1;
 }
-.resume li:hover i,.resume li:hover img{
-    opacity: 0;
+.resume li:hover i,
+.resume li:hover img {
+  opacity: 0;
 }
 
 .resume .card-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    height: fit-content;
-    z-index: 2;
-    justify-content: center;
-    width: 35%;
-    min-width: 280px;
-    max-width: 370px;
-    position: sticky;
-    top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: fit-content;
+  z-index: 2;
+  justify-content: center;
+  width: 35%;
+  min-width: 280px;
+  max-width: 370px;
+  position: sticky;
+  top: 100px;
 }
 
 .resume .resume-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 40px 30px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .resume .resume-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(151, 29, 150, 0.1) 0%, rgba(9, 53, 255, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(151, 29, 150, 0.1) 0%,
+    rgba(9, 53, 255, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 .resume .resume-card:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .resume .resume-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(151, 29, 150, 0.3);
-    box-shadow: 0 20px 60px rgba(151, 29, 150, 0.2);
+  transform: translateY(-8px);
+  border-color: rgba(151, 29, 150, 0.3);
+  box-shadow: 0 20px 60px rgba(151, 29, 150, 0.2);
 }
 
 .resume .resume-card img {
-    width: 80px;
-    height: 80px;
-    filter: invert() brightness(0.9);
-    margin-bottom: 24px;
-    transition: all 0.4s ease;
+  width: 80px;
+  height: 80px;
+  filter: invert() brightness(0.9);
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
 }
 
 .resume .resume-card:hover img {
-    filter: invert() brightness(1);
-    transform: scale(1.1);
+  filter: invert() brightness(1);
+  transform: scale(1.1);
 }
 
 .resume .resume-card a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 32px;
-    margin: 0;
-    background: linear-gradient(135deg, #971D96 0%, #0935FF 100%);
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(151, 29, 150, 0.3);
-    min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  margin: 0;
+  background: linear-gradient(135deg, #971d96 0%, #0935ff 100%);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(151, 29, 150, 0.3);
+  min-width: 200px;
 }
 
 .resume .resume-card a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0935FF 0%, #971D96 100%);
-    transition: left 0.5s ease;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0935ff 0%, #971d96 100%);
+  transition: left 0.5s ease;
+  z-index: -1;
 }
 
 .resume .resume-card a:hover::before {
-    left: 0;
+  left: 0;
 }
 
 .resume .resume-card a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(151, 29, 150, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(151, 29, 150, 0.4);
 }
 
 .resume .resume-card a h3 {
-    margin: 0;
-    position: relative;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
-    text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
+  text-transform: uppercase;
 }
 
 .resume .resume-card a i {
-    font-size: 18px;
-    position: relative;
-    transition: transform 0.3s ease;
+  font-size: 18px;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .resume .resume-card a:hover i {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 /* Enhanced mobile responsiveness */
 @media screen and (max-width: 900px) {
-    .skills-container {
-        width: 95%;
-    }
-    
-    .resume .card-container {
-        width: 90%;
-        margin-top: 30px;
-        position: static;
-        align-items: center;
-    }
+  .skills-container {
+    width: 95%;
+  }
+
+  .resume .card-container {
+    width: 90%;
+    margin-top: 30px;
+    position: static;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .emailtext {
-        font-size: 14px;
-    }
-    .resume h3 {
-        font-size: 14px;
-    }
-    .resume li {
-        width: 100px;
-    }
-    
-    .resume .card-container {
-        width: 95%;
-        min-width: unset;
-    }
-    
-    .resume .resume-card {
-        padding: 30px 20px;
-    }
-    
-    .resume .resume-card img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .resume .resume-card a {
-        padding: 14px 24px;
-        font-size: 14px;
-        min-width: 160px;
-    }
-    
-    .resume .resume-card a h3 {
-        font-size: 14px;
-    }
-    
-    .resume .resume-card a i {
-        font-size: 16px;
-    }
+  .emailtext {
+    font-size: 14px;
+  }
+  .resume h3 {
+    font-size: 14px;
+  }
+  .resume li {
+    width: 100px;
+  }
+
+  .resume .card-container {
+    width: 95%;
+    min-width: unset;
+  }
+
+  .resume .resume-card {
+    padding: 30px 20px;
+  }
+
+  .resume .resume-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .resume .resume-card a {
+    padding: 14px 24px;
+    font-size: 14px;
+    min-width: 160px;
+  }
+
+  .resume .resume-card a h3 {
+    font-size: 14px;
+  }
+
+  .resume .resume-card a i {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 300px) {
-    .emailtext {
-        font-size: 12px;
-    }
-    
-    .resume .resume-card a {
-        padding: 12px 20px;
-        font-size: 13px;
-        min-width: 140px;
-    }
+  .emailtext {
+    font-size: 12px;
+  }
+
+  .resume .resume-card a {
+    padding: 12px 20px;
+    font-size: 13px;
+    min-width: 140px;
+  }
 }

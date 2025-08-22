@@ -144,7 +144,7 @@ Portfolio/
 │   ├── css/               # Stylesheets
 │   ├── js/                # JavaScript files
 │   ├── images/            # Images and icons
-│   ├── objects/           # JSON data files
+│   ├── json/           # JSON data files
 │   └── CV_Chater_Marzougui.pdf
 └── README.MD              # This file
 ```

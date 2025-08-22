@@ -68,7 +68,7 @@ jobs:
               data: data.data.user.contributionsCollection.contributionCalendar
             };
 
-            const filePath = 'assets/objects/contributions.json';
+            const filePath = 'assets/json/contributions.json';
             fs.writeFileSync(filePath,
               JSON.stringify(contributionsData, null, 2));
             console.log('Contributions data updated successfully');
@@ -83,7 +83,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add assets/objects/contributions.json
+          git add assets/json/contributions.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

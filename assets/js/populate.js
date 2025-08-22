@@ -1,5 +1,5 @@
 // Function to populate skills
-async function populateSkills(jsonFilePath = "./assets/objects/skillset.json") {
+async function populateSkills(jsonFilePath = "./assets/json/skillset.json") {
   const response = await fetch(jsonFilePath);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -29,6 +29,9 @@ async function populateSkills(jsonFilePath = "./assets/objects/skillset.json") {
     if (skill.iconType === "fontawesome") {
       iconElement = document.createElement("i");
       iconElement.className = skill.iconClass;
+      iconElement.style.fontFamily =
+        '"Font Awesome 6 Brands"';
+      iconElement.style.fontWeight = "200";
     } else {
       iconElement = document.createElement("img");
       iconElement.className = "icon";
@@ -163,7 +166,7 @@ function createProjectCard(project) {
   return card;
 }
 
-async function loadProjects(jsonFilePath = "./assets/objects/projects.json") {
+async function loadProjects(jsonFilePath = "./assets/json/projects.json") {
   try {
     // Fetch the JSON data
     const response = await fetch(jsonFilePath);

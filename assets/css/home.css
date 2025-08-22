@@ -91,8 +91,9 @@ h3 {
 }
 .navbar .nameOnNav {
   text-decoration: none;
+  flex-grow: 1;
   color: #0935ff;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 900;
   font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
   letter-spacing: 2px;
@@ -107,10 +108,9 @@ h3 {
   background-color: transparent;
   z-index: 5000;
   transition: all 0.3s ease-in-out;
-  padding: 5px 0;
+  padding: 5px 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -124,10 +124,11 @@ h3 {
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  max-width: 500px;
   width: 50%;
-  column-gap: 1.8rem;
   align-items: center;
+  padding: 0;
 }
 
 .navbar .barItems a {
@@ -147,12 +148,6 @@ h3 {
   text-shadow: 0 0 10px rgba(151, 29, 150, 0.6);
 }
 
-.navbar .barItems a:hover {
-  text-decoration: underline;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(151, 29, 150, 0.6);
-}
-
 .navbar .barItems a.active {
   color: #971d96;
   font-weight: 900;
@@ -160,24 +155,37 @@ h3 {
 }
 
 @media only screen and (max-width: 900px) {
-  .navbar .barItems {
-    padding: 0;
-    column-gap: 1.6rem;
+  #navbar .barItems {
+    padding-inline: 8px;
+    width: 45%;
+  }
+
+  #navbar .nameOnNav {
+    font-size: 17px;
+  }
+
+  #navbar .barItems a {
+    font-size: 15px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #navbar .nameOnNav {
-    font-size: 20px !important;
+  #navbar {
+    padding-inline: 0px;
+    justify-content: space-around;
+
   }
   #navbar .main-btn {
+    font-size: 13px !important;
+    margin: 0 5px;
+  }
+  #navbar .nameOnNav {
     display: none !important;
   }
-  .navbar .barItems {
+  #navbar .barItems {
     padding: 0;
-  }
-  .navbar {
-    justify-content: space-around;
+    width: 70%;
+    row-gap: 5%;
   }
   #navbar i {
     display: none !important;
@@ -194,26 +202,28 @@ h3 {
   #navbar i {
     display: none !important;
   }
-  .navbar {
+  #navbar {
     justify-content: center;
   }
-  .navbar .barItems a {
-    font-size: 12px;
+  #navbar .barItems a {
+    font-size: 13px;
   }
-  .navbar .barItems {
+  #navbar .barItems {
     padding: 0;
     margin: 10px 0;
+    width: 90%;
   }
 }
 
 .main-btn {
   font-weight: 600;
   color: aliceblue;
+  text-align: center;
   padding: 8px;
   border-radius: 10px;
   background-color: #0935ff;
   text-decoration: none;
-  margin-right: 30px;
+  margin-right: 50px;
   background-image: linear-gradient(to left, #0935ff 50%, #971d96 50%);
   background-size: 200% 100%;
   background-position: right bottom;
