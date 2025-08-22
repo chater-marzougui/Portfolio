@@ -75,7 +75,12 @@ The portfolio features an interactive and visually appealing design, including a
 - **Dynamic Content Loading:** JavaScript-powered dynamic content population from JSON data sources
 
 <br/>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ## Project Highlights
 This portfolio showcases a diverse range of projects demonstrating expertise across multiple technology stacks:
@@ -92,6 +97,12 @@ This portfolio showcases a diverse range of projects demonstrating expertise acr
 - [IndabaX Tunisia 2024](https://www.indabaxtunisia.com/2024/) - Professional event website
 - [Skill Issue Check](https://chater-marzougui.github.io/Skill-Issue-Check/) - AI-powered document analysis tool
 - [Education Help Gemini](https://chater-marzougui.github.io/Education-Help-Gemini/) - Interactive learning assistant
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ## Installation
 
@@ -137,7 +148,12 @@ Portfolio/
 │   └── CV_Chater_Marzougui.pdf
 └── README.MD              # This file
 ```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ## Contributing
 
@@ -151,12 +167,16 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 ## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
@@ -176,7 +196,12 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **Portfolio Website:** [chater-marzougui.io](https://chater-marzougui.github.io/Portfolio/)
 
 <br/>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<div align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/Back_to_Top-⬆️-blue?style=for-the-badge" alt="Back to Top">
+  </a>
+</div>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
