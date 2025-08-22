@@ -121,10 +121,11 @@
     padding: 0;
     color: #331391;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .card .details .center p {
     margin: 10px 0;
+    font-size: 14px;
     padding: 0;
     color: #000;
 }
@@ -195,6 +196,12 @@ td {
 }
 
 @media only screen and (max-width:768px) {
+    .card .details .center h1 {
+        font-size: 15px;
+    }
+    .card .details .center p {
+        font-size: 13px;
+    }
     #about-me {
         height: auto;
     }
