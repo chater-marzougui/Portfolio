@@ -12,6 +12,12 @@
 #projects h1 {
     font-size: 30px;
     color: aliceblue;
+    font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px rgba(9, 53, 255, 0.5);
+    text-align: center;
 }
 
 #projects::after{
@@ -110,6 +116,10 @@
     margin: 5px;
     color: aliceblue;
     transform-style: preserve-3d;
+    font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(9, 53, 255, 0.6);
     transition: all 1.3s ease;
     z-index: 3;
     font-size: 1.65em;
@@ -168,6 +178,11 @@
     transition: opacity 1s;
     position: absolute;
     top: 5px;
+    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(151, 29, 150, 0.5);
     font-size: 22px;
 }
 
@@ -209,6 +224,10 @@
 
 .card-back .splinks h3 {
     font-size: 0.9rem;
+    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .card-back .splinks i {

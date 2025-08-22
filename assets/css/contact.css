@@ -16,12 +16,22 @@
 #contact h1 {
     font-size: 32px;
     color: aliceblue;
+    font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px rgba(9, 53, 255, 0.5);
+    text-align: center;
 }
 
 #contact p {
     font-size: 18px;
     color: aliceblue;
     text-align: center;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
   
 #projeclts::before{
@@ -56,8 +66,11 @@
     float: left;
     font-size: 1.2em;
     color: #000;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 5px;
+    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
   
 .contact-form input[type="text"],
@@ -124,8 +137,8 @@
   }
   
   .contact-text {
-    font: 300 18px 'Lato', sans-serif;
-    letter-spacing: 1.9px;
+    font: 300 18px 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: 1px;
     color: #bbb;
   }
 
@@ -153,10 +166,11 @@
   }
   
   .copyright {
-    font: 200 14px 'Oswald', sans-serif;
+    font: 400 14px 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
     color: #555;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-align: center;
+    text-transform: uppercase;
   }
   
   hr {
@@ -226,7 +240,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
   font-size: 1.1em;
   animation: toast-in 0.35s ease;
 }
