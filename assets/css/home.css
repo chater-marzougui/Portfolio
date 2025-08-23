@@ -397,18 +397,18 @@ h3 {
   }
 }
 
-.home .basicInfo .firstline {
+.home .basicInfo .first-line {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.home .basicInfo .firstline div {
+.home .basicInfo .first-line div {
   transform-origin: bottom right;
   animation: wave-hand 2s infinite;
 }
 
-.home .basicInfo .thirdline h2 {
+.home .basicInfo .third-line h2 {
   height: 4rem;
   line-height: 1.2;
 }
@@ -504,22 +504,22 @@ h3 {
 @keyframes wave-hand {
   0%,
   100% {
-    transform: rotatez(0deg);
+    transform: rotateZ(0deg);
   }
   10%,
   30%,
   50% {
-    transform: rotatez(-15deg);
+    transform: rotateZ(-15deg);
   }
   20%,
   40%,
   60% {
-    transform: rotatez(15deg);
+    transform: rotateZ(15deg);
   }
   70%,
   80%,
   90% {
-    transform: rotatez(0deg);
+    transform: rotateZ(0deg);
   }
 }
 

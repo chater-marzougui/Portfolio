@@ -12,12 +12,12 @@ function showWelcomeMessage() {
   const welcomeMessage = document.getElementById("welcome-message");
   welcomeScreen.style.display = "flex";
   let charIndex = 0;
-  const welcomemess = "Welcome to My Portfolio   ";
-  function Wtype() {
-    const displayedText = welcomemess.substring(0, charIndex++);
+  const welcomeMess = "Welcome to My Portfolio   ";
+  function wType() {
+    const displayedText = welcomeMess.substring(0, charIndex++);
 
     welcomeMessage.textContent = displayedText;
-    if (charIndex === welcomemess.length) {
+    if (charIndex === welcomeMess.length) {
       setTimeout(() => {
         welcomeMessage.style.display = "none";
         welcomeScreen.style.display = "none";
@@ -25,10 +25,10 @@ function showWelcomeMessage() {
         return;
       }, 700);
     }
-    setTimeout(Wtype, 60);
+    setTimeout(wType, 60);
   }
 
-  Wtype();
+  wType();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

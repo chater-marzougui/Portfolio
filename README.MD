@@ -71,7 +71,6 @@ The portfolio features an interactive and visually appealing design, including a
 - **GitHub Integration:** Live GitHub contribution graph display via API
 - **SEO Optimized:** Proper meta tags, Open Graph protocol, and semantic HTML structure
 - **Performance Optimized:** Efficient loading with optimized assets and minimal dependencies
-- **Accessibility Features:** WCAG compliant with proper ARIA labels and keyboard navigation
 - **Dynamic Content Loading:** JavaScript-powered dynamic content population from JSON data sources
 
 <br/>

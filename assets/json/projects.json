@@ -103,7 +103,7 @@
     {
       "title": "Skill Issue Check",
       "technologies": "HTML, CSS, JavaScript, Python, GEMINI API",
-      "description": "A tool that uses gemini to analyse documents (text, pdf), understand them, cuts them into parts and makes Multi-Answer questions so you can test your knowledge, with a hosted interface to show questions, give feedback and track progress.",
+      "description": "A tool that uses gemini to analyze documents (text, pdf), understand them, cuts them into parts and makes Multi-Answer questions so you can test your knowledge, with a hosted interface to show questions, give feedback and track progress.",
       "links": [
         {
           "type": "live",

@@ -55,7 +55,7 @@
 }
 
 #projects .card:hover p,
-#projects .card:hover .splinks,
+#projects .card:hover .project-links,
 #projects .card:hover h2 {
     opacity: 1 !important;
 }
@@ -171,7 +171,7 @@
     font-size: 22px;
 }
 
-.card-back .splinks {
+.card-back .project-links {
     transform-style: preserve-3d;
     transform: translateZ(-1px) rotateY(180deg) !important;
     position: absolute;
@@ -191,7 +191,7 @@
     z-index: 5;
 }
 
-.card-back .splinks a {
+.card-back .project-links a {
     transform-style: preserve-3d;
     transition: transform 1.3s ease, scale 0.4s ease;
     transform: translateZ(-1px);
@@ -207,7 +207,7 @@
     z-index: 5550;
 }
 
-.card-back .splinks h3 {
+.card-back .project-links h3 {
     font-size: 0.9rem;
     font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
     font-weight: 600;
@@ -215,11 +215,11 @@
     letter-spacing: 0.5px;
 }
 
-.card-back .splinks i {
+.card-back .project-links i {
     font-size: 1.35rem;
 }
 
-.card-back .splinks a:hover {
+.card-back .project-links a:hover {
     color: var(--secondary-color);
     scale: 1.2;
 }
@@ -290,7 +290,7 @@
     background: url(../images/projects/samsar.jpg) 0 0 / cover;
 }
 #projects .card:nth-child(3) .cover::before{
-    background: url(../images/projects/indabax2024.jpg) 0 0 / 100% 100%;
+    background: url(../images/projects/indabaX2024.jpg) 0 0 / 100% 100%;
 }
 #projects .card:nth-child(4) .cover::before{
     background: url(../images/projects/moodMuse.jpg) 0 0 / cover;
@@ -304,7 +304,7 @@
 }
 
 #projects .card:nth-child(7) .cover::before{
-    background: url(../images/projects/skillissue.png) 0 0 / 100% 100%;
+    background: url(../images/projects/SkillIssue.png) 0 0 / 100% 100%;
 }
 
 #projects .card:nth-child(8) .cover::before{
@@ -312,9 +312,9 @@
 }
 
 #projects .card:nth-child(9) .cover::before{
-    background: url(../images/projects/educationhelp.png) 0 0 / 100% 100%;
+    background: url(../images/projects/educationHelp.png) 0 0 / 100% 100%;
 }
 
 #projects .card:nth-child(10) .cover::before{
-    background: url(../images/projects/aianatomy.jpg) 0 0 / 50% 100%;
+    background: url(../images/projects/AI-Anatomy.jpg) 0 0 / 50% 100%;
 }

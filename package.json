@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chater-marzougui/Portfolio.git"
+  },
+  "author": "Chater Marzougui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chater-marzougui/Portfolio/issues"
+  },
+  "homepage": "https://github.com/chater-marzougui/Portfolio#readme",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "path": "^0.12.7",
+    "clean-css": "^5.0.0",
+    "terser": "^5.0.0"
+  }
+}

@@ -125,7 +125,7 @@ function createProjectCard(project) {
 
   // Create links container
   const linksContainer = document.createElement("div");
-  linksContainer.className = "splinks";
+  linksContainer.className = "project-links";
   if (project.linksStyle) {
     linksContainer.style.cssText = project.linksStyle;
   } else {
