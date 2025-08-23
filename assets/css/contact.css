@@ -213,13 +213,33 @@
     align-items: center;
 }
 
-#footer .social-icons i{
+#footer .social-icons img{
+    width: 25px;
+    align-self: center;
+    justify-self: center;
+    aspect-ratio: 1/1;
+}
+
+#footer .social-icons i,
+#footer .social-icons img{
     color: #0935FF;
     transition: color 0.2s ease, scale 0.4s ease;
 }
-#footer .social-icons i:hover{
+#footer .social-icons i:hover,
+#footer .social-icons img:hover{
     scale: 1.2;
     color: #971D96;
+}
+
+@media screen and (max-width: 420px) {
+  #footer .container {
+    font-size: 1rem;
+    flex-direction: column-reverse;
+    row-gap: 12px;
+  }
+  #footer .social-icons {
+    font-size: 1.6rem;
+  }
 }
 
 /* Toast Styles */

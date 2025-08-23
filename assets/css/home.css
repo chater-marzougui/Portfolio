@@ -327,6 +327,14 @@ h3 {
   color: #0935ff;
 }
 
+.home .social-icons img {
+  width: 25px;
+  padding-top: 5px;
+  aspect-ratio: 1/1;
+  align-self: center;
+  justify-self: center;
+}
+
 .home .social-icons a:hover {
   scale: 1.5;
   color: #971d96;
@@ -465,6 +473,7 @@ h3 {
   }
   #home .social-icons {
     width: 90%;
+    align-self: center;
   }
   #home {
     padding-top: 50px;
@@ -474,8 +483,18 @@ h3 {
   #home .basicInfo {
     font-size: 1rem;
   }
+  #home .social-icons a {
+    font-size: 1.6rem;
+  }
+  #home .social-icons img {
+    width: 21px;
+    padding-top: 5px;
+  }
   #home {
     padding-top: 50px;
+  }
+  #home .whiteline {
+    width: 10%;
   }
 }
 

@@ -25,7 +25,7 @@ function showWelcomeMessage() {
         return;
       }, 700);
     }
-    setTimeout(Wtype, 100);
+    setTimeout(Wtype, 60);
   }
 
   Wtype();

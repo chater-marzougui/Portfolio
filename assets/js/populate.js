@@ -29,8 +29,7 @@ async function populateSkills(jsonFilePath = "./assets/json/skillset.json") {
     if (skill.iconType === "fontawesome") {
       iconElement = document.createElement("i");
       iconElement.className = skill.iconClass;
-      iconElement.style.fontFamily =
-        '"Font Awesome 6 Brands"';
+      iconElement.style.fontFamily = '"Font Awesome 6 Brands"';
       iconElement.style.fontWeight = "200";
     } else {
       iconElement = document.createElement("img");
@@ -202,17 +201,98 @@ async function loadProjects(jsonFilePath = "./assets/json/projects.json") {
   }
 }
 
-// Call the function when DOM is ready
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadProjects();
-  await populateSkills();
-});
+async function loadContributions() {
+  fetch("./assets/json/contributions.json")
+    .then((response) => response.json())
+    .then((contributionsData) => {
+      const contributions = contributionsData.data;
+      const totalContributions = contributions.totalContributions;
+      const weeks = contributions.weeks;
 
-async function loadContributions(username) {
-  const url = `https://github.com/users/${username}/contributions`;
-  const response = await fetch(url, { mode: "no-cors" }); // works because SVG returns correct headers
-  const svg = await response.text();
-  document.getElementById("contribution-graph").innerHTML = svg;
+      const totalContributionsElement = document.createElement("h4");
+      totalContributionsElement.textContent = `Total Contributions this year: ${totalContributions}`;
+      document.getElementById("legend").after(totalContributionsElement);
+
+      const contributionTable = document.getElementById("contribution-table");
+
+      // Only process weeks if they exist
+      if (weeks && weeks.length > 0) {
+        for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+          const row = document.createElement("tr");
+          for (
+            let weekIndex = 0;
+            weekIndex < Math.min(weeks.length, 53);
+            weekIndex++
+          ) {
+            const week = weeks[weekIndex];
+            const contributionDay =
+              week && week.contributionDays
+                ? week.contributionDays[dayOfWeek]
+                : null;
+            const contributionCount = contributionDay
+              ? contributionDay.contributionCount
+              : 0;
+            const td = document.createElement("td");
+            let contributionColor;
+            if (contributionCount <= 6) {
+              contributionColor = Math.floor(contributionCount / 2);
+            } else {
+              contributionColor = 4;
+            }
+            td.className = `color-${contributionColor}`;
+            if (weekIndex > 20) {
+              row.appendChild(td);
+            }
+          }
+          contributionTable.appendChild(row);
+        }
+      }
+    })
+    .catch(() => {
+      const totalContributionsElement = document.createElement("h4");
+      totalContributionsElement.textContent =
+        "Contributions data temporarily unavailable";
+      document.getElementById("legend").after(totalContributionsElement);
+    });
 }
 
-loadContributions("chater-marzougui");
+async function loadSocials() {
+  const socialIconsContainer = document.getElementById("social-icons");
+  const socialIconsFooterContainer = document.getElementById("social-icons-footer");
+  try {
+    const data = await fetch("./assets/json/socials.json");
+    const socials = await data.json();
+    const whiteLine = document.createElement("div");
+    whiteLine.className = "whiteline";
+    socialIconsContainer.appendChild(whiteLine);
+
+    // Populate social icons
+    socials.socials.forEach((social) => {
+      const a = document.createElement("a");
+      if (social.faIcon) {
+        const i = document.createElement("i");
+        i.className = social.faIcon;
+        i.style.fontFamily = '"Font Awesome 6 Brands"';
+        a.appendChild(i);
+      } else if (social.imgIcon) {
+        const img = document.createElement("img");
+        img.src = social.imgIcon;
+        img.alt = social.imgAlt;
+        a.appendChild(img);
+      }
+      a.href = social.url;
+      a.target = "_blank";
+      socialIconsContainer.appendChild(a);
+      socialIconsFooterContainer.appendChild(a.cloneNode(true));
+    });
+    socialIconsContainer.appendChild(whiteLine.cloneNode(true));
+  } catch (e) {}
+}
+
+// Call the function when DOM is ready
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadSocials();
+  await loadProjects();
+  await populateSkills();
+  await loadContributions();
+});
