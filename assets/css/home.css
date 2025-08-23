@@ -13,11 +13,50 @@ html {
 .internal-link {
   color: #0935ff;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(9, 53, 255, 0.5);
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .internal-link:hover {
+  color: #764ba2;
   text-decoration: underline;
+}
+
+.home-links,
+.section-links,
+.education-links,
+.resume-links,
+.projects-links {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.home-links::before,
+.section-links::before,
+.education-links::before,
+.resume-links::before,
+.projects-links::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(151, 29, 150, 0.1) 0%, rgba(9, 53, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
 }
 
 body {
