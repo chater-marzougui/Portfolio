@@ -486,6 +486,7 @@ h3 {
 @media only screen and (max-width: 420px) {
   #home {
     height: auto !important;
+    padding-top: 50px;
   }
   #home .home-front {
     height: 85vh !important;
@@ -500,9 +501,6 @@ h3 {
   #home .social-icons img {
     width: 21px;
     padding-top: 5px;
-  }
-  #home {
-    padding-top: 50px;
   }
   #home .whiteline {
     width: 10%;
