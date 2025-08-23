@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       // Redirect www to non-www
-      (function() {
-        if (window.location.hostname.startsWith('www.')) {
-          window.location.href = 'https://chater-marzougui.me' + window.location.pathname + window.location.search;
+      (function () {
+        if (window.location.hostname.startsWith("www.")) {
+          window.location.href =
+            "https://chater-marzougui.me" +
+            window.location.pathname +
+            window.location.search;
         }
       })();
     </script>
@@ -136,7 +139,7 @@
       }
     </script>
     <link rel="stylesheet" href="./assets/css/bundle.min.css" />
-</head>
+  </head>
   <body>
     <div id="toast-container"></div>
     <div id="loading-screen">
@@ -261,7 +264,10 @@
                   Founded in 1977, this institution aimed to decentralize higher
                   education and research in Tunisia
                 </p>
-                <a href="https://fsm.rnu.tn/" target="_blank" class="btn fac-btn"
+                <a
+                  href="https://fsm.rnu.tn/"
+                  target="_blank"
+                  class="btn fac-btn"
                   >Read More</a
                 >
               </div>
@@ -281,7 +287,10 @@
               src="./assets/images/svgs/resume.svg"
               alt="Resume Icon"
             />
-            <a href="./assets/CV_Chater_Marzougui.pdf" download class="btn resume-btn"
+            <a
+              href="./assets/CV_Chater_Marzougui.pdf"
+              download
+              class="btn resume-btn"
               ><i class="fa-solid fa-download"></i>
               <h3>Download my CV</h3></a
             >
@@ -425,5 +434,5 @@
     <!-- <script src="./assets/js/mail.js"></script> -->
     <!-- <script src="./assets/js/meteor.js"></script> -->
     <script src="./assets/js/bundle.min.js"></script>
-</body>
+  </body>
 </html>
