@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+    background: var(--bg-top);
     height: auto;
     min-height: 100%;
     user-select: none;
@@ -11,12 +11,12 @@
 
 #projects h1 {
     font-size: 30px;
-    color: aliceblue;
+    color: var(--text-color);
     font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    text-shadow: 0 0 25px rgba(9, 53, 255, 0.5);
+    text-shadow: 0 0 25px var(--text-shadow-color);
     text-align: center;
 }
 
@@ -51,7 +51,7 @@
     transform-style: preserve-3d;
     cursor: pointer;
     animation: cardFloat 5s ease-in-out infinite;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 10px 20px var(--box-shadow-color));
 }
 
 #projects .card:hover p,
@@ -84,7 +84,7 @@
 .cover:before {
     content: '';
     position: absolute;
-    border: 5px solid #971D96;
+    border: 5px solid var(--secondary-color);
     box-shadow: 0 0 12px rgba(0, 0, 0, .3);
     top: 15px;
     left: 15px;
@@ -101,7 +101,7 @@
     bottom: 70px;
     text-align: center;
     margin: 5px;
-    color: aliceblue;
+    color: var(--text-color);
     transform-style: preserve-3d;
     font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
     letter-spacing: 2px;
@@ -118,7 +118,7 @@
     margin-bottom: -0.5em;
     bottom: 32px;
     width: 90%;
-    color: aliceblue;
+    color: var(--text-color);
     transform-style: preserve-3d;
     transition: all 1.3s ease;
     z-index: 4;
@@ -143,7 +143,7 @@
 }
 
 .card-back p {
-    color: aliceblue;
+    color: var(--text-color);
     transform-style: preserve-3d;
     transform: translateZ(-1px) rotateY(180deg) !important;
     transition: opacity 1s;
@@ -156,7 +156,7 @@
 }
 
 .card-back h2 {
-    color: aliceblue;
+    color: var(--text-color);
     transform-style: preserve-3d;
     transform: translateZ(-1px) rotateY(180deg) !important;
     opacity: 0;
@@ -167,7 +167,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(151, 29, 150, 0.5);
+    text-shadow: 0 0 10px var(--box-shadow-color);
     font-size: 22px;
 }
 
@@ -182,10 +182,10 @@
     justify-content: space-around;
     width: 90%;
     height: 95px;
-    border: 2px solid #971D96;
+    border: 2px solid var(--secondary-color);
     flex-direction: row;
     opacity: 0;
-    box-shadow: 4px 4px 15px #971D96;
+    box-shadow: 4px 4px 15px var(--secondary-color);
     background-color: #971D9615;
     transition: opacity 1s;
     z-index: 5;
@@ -203,7 +203,7 @@
     text-decoration: none;
     font-size: 1em;
     column-gap: 10px;
-    color: white;
+    color: aliceblue;
     z-index: 5550;
 }
 
@@ -220,7 +220,7 @@
 }
 
 .card-back .splinks a:hover {
-    color: #971D96;
+    color: var(--secondary-color);
     scale: 1.2;
 }
 
@@ -232,16 +232,16 @@
     border-radius: 20px;
     position: absolute;
     bottom: 75px;
-    color: aliceblue;
+    color: var(--text-color);
     border-color: transparent;
     font-size: 17px;
     box-shadow: -1px 3px 4px #971D9689;
     transition: all 0.4s ease-in;
-    background-color: #971D96;
+    background-color: var(--secondary-color);
 }
 
 .card-back button:hover {
-    background-color: aliceblue;
+    background-color: var(--text-color);
     color: #051a34;
 }
 

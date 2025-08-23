@@ -5,13 +5,13 @@ html {
   font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial,
     sans-serif;
   width: 100%;
-  background-color: #1b2735;
+  background-color: var(--background-color);
   height: 100%;
   scroll-behavior: smooth;
 }
 
 .internal-link {
-  color: #0935ff;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -29,7 +29,7 @@ html {
 .projects-links {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: 24px;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ html {
   margin-top: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px var(--box-shadow-color);
 }
 
 .home-links::before,
@@ -55,8 +55,8 @@ html {
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(151, 29, 150, 0.1) 0%,
-    rgba(9, 53, 255, 0.1) 100%
+    var(--shadow-color) 0%,
+    var(--primary-box-shadow-color) 100%
   );
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -71,15 +71,15 @@ body {
 }
 h2,
 p {
-  color: aliceblue;
+  color: var(--text-color);
   font-family: "Orbitron", "Lucida Console", "Monaco", "Courier New", monospace;
-  text-shadow: 0 0 10px rgba(9, 53, 255, 0.3);
+  text-shadow: 0 0 10px var(--secondary-text-shadow-color);
 }
 
 h2,
 h4,
 h5 {
-  color: aliceblue;
+  color: var(--text-color);
   margin-block: 0;
   font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
   font-weight: 600;
@@ -117,7 +117,7 @@ h3 {
 
 #welcome-message {
   font-size: 2em;
-  color: #0935ff;
+  color: var(--primary-color);
   text-align: center;
 }
 
@@ -127,14 +127,14 @@ h3 {
   position: fixed;
   z-index: 5002;
   justify-content: center;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: var(--bg-bottom);
   align-items: center;
   width: 100%;
   height: 100%;
 }
 
 #home {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: var(--bg-bottom);
   width: 100%;
   user-select: none;
   height: 100%;
@@ -145,14 +145,14 @@ h3 {
 }
 .navbar .nameOnNav {
   text-decoration: none;
-  flex-grow: 1;
-  color: #0935ff;
+  color: var(--primary-color);
+  flex-grow: 3;
   font-size: 21px;
   font-weight: 900;
   font-family: "Orbitron", "Lucida Console", "Monaco", monospace;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(9, 53, 255, 0.5);
+  text-shadow: 0 0 15px var(--text-shadow-color);
 }
 
 .navbar {
@@ -162,7 +162,8 @@ h3 {
   background: rgba(51, 19, 145, 0);
   backdrop-filter: blur(0px);
   z-index: 5000;
-  transition: background-color 0.8s ease-in-out, backdrop-filter 0.8s ease-in-out;
+  transition: background-color 0.8s ease-in-out,
+    backdrop-filter 0.8s ease-in-out;
   padding: 5px 20px;
   display: flex;
   flex-direction: row;
@@ -178,15 +179,14 @@ h3 {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   justify-content: space-around;
-  max-width: 500px;
-  width: 50%;
   align-items: center;
-  padding: 0;
+  padding: 0 50px 0 0;
 }
 
 .navbar .barItems a {
-  color: aliceblue;
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.4s ease, font-weight 0.1s ease, text-shadow 0.3s ease;
   font-size: 17px;
@@ -199,13 +199,13 @@ h3 {
 .navbar .barItems a:hover {
   text-decoration: underline;
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(151, 29, 150, 0.6);
+  text-shadow: 0 0 10px var(--text-shadow-color);
 }
 
 .navbar .barItems a.active {
-  color: #971d96;
+  color: var(--secondary-color);
   font-weight: 900;
-  text-shadow: 0 0 15px rgba(151, 29, 150, 0.8);
+  text-shadow: 0 0 15px var(--highlight-color);
 }
 
 @media only screen and (max-width: 900px) {
@@ -228,7 +228,7 @@ h3 {
     padding-inline: 0px;
     justify-content: space-around;
   }
-  #navbar .main-btn {
+  #navbar .nav-btn {
     font-size: 13px !important;
     margin: 0 5px;
   }
@@ -249,7 +249,7 @@ h3 {
   #navbar .nameOnNav {
     font-size: 0px !important;
   }
-  #navbar .main-btn {
+  #navbar .nav-btn {
     display: none !important;
   }
   #navbar i {
@@ -268,37 +268,74 @@ h3 {
   }
 }
 
-.main-btn {
-  font-weight: 600;
-  color: aliceblue;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 8px;
-  border-radius: 10px;
-  background-color: #0935ff;
+  gap: 12px;
+  padding: 16px 32px;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 20%,
+    var(--primary-color) 80%
+  );
+  border: none;
+  border-radius: 50px;
   text-decoration: none;
-  margin-right: 50px;
-  background-image: linear-gradient(to left, #0935ff 50%, #971d96 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 0.5s ease;
+  color: aliceblue;
+  font-weight: 600;
+  font-size: 16px;
   font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  box-shadow: 0 0 20px rgba(9, 53, 255, 0.3);
+  box-shadow: 0 4px 20px var(--highlight-color);
 }
 
-.main-btn:hover {
-  background-position: left bottom;
-  box-shadow: 0 0 30px rgba(151, 29, 150, 0.5);
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 10%,
+    var(--secondary-color) 70%
+  );
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 0;
+  filter: drop-shadow(0 0 15px var(--highlight-color));
+}
+
+.btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--highlight-color);
+}
+
+.nav-btn {
+  font-weight: 600;
+  margin-right: 50px;
+  text-transform: uppercase;
+  width: auto;
+  padding: 8px 14px;
+  border-radius: 10px;
 }
 
 .star {
   position: absolute;
   z-index: 9999;
-  background: white;
+  background: aliceblue;
   border-radius: 50%;
-  box-shadow: 0 0 10px white;
+  box-shadow: 0 0 10px aliceblue;
   opacity: 0.8;
   overflow: hidden;
   animation: move-stars linear infinite;
@@ -331,13 +368,18 @@ h3 {
   width: 60%;
   z-index: 2;
   font-size: 1.9rem;
-  color: aliceblue;
-  text-shadow: 0 0 20px rgba(9, 53, 255, 0.4);
+  color: var(--text-color);
+  text-shadow: 0 0 20px var(--text-shadow-color);
 }
 
 .home .basicInfo h2 {
   margin: 0.2rem 0;
-  background: linear-gradient(45deg, #0935ff, #971d96, #0935ff);
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--primary-color)
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -382,7 +424,7 @@ h3 {
 
 .home .social-icons a {
   transition: scale 0.4s ease, color 0.4s ease;
-  color: #0935ff;
+  color: var(--primary-color);
 }
 
 .home .social-icons img {
@@ -395,11 +437,11 @@ h3 {
 
 .home .social-icons a:hover {
   scale: 1.5;
-  color: #971d96;
+  color: var(--secondary-color);
 }
 
 .home .whiteline {
-  background-color: #b0b0b0;
+  background-color: var(--secondary-text-color);
   width: 50px;
   height: 2px;
 }
@@ -414,7 +456,7 @@ h3 {
 .home .home-front button {
   justify-content: center;
   font-size: 30px;
-  color: #fff;
+  color: var(--text-color);
   background: none;
   border: none;
   border-radius: 50%;
@@ -436,7 +478,7 @@ h3 {
     #0000 210deg 300deg,
     #4367ff 330deg
   );
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(black 0 0) content-box, linear-gradient(black 0 0);
   -webkit-mask-composite: xor;
   mask-composite: intersect;
 }
@@ -484,7 +526,7 @@ h3 {
 .my-jobs {
   overflow: hidden;
   white-space: nowrap;
-  border-right: 0.1em solid #0935ff;
+  border-right: 0.1em solid var(--primary-color);
   animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
 }
 
@@ -503,7 +545,7 @@ h3 {
     border-color: transparent;
   }
   50% {
-    border-color: #0935ff;
+    border-color: var(--primary-color);
   }
 }
 

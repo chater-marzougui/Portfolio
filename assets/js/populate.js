@@ -240,7 +240,7 @@ async function loadContributions() {
             } else {
               contributionColor = 4;
             }
-            td.className = `color-${contributionColor}`;
+            td.className = `contrib-color-${contributionColor}`;
             if (weekIndex > 20) {
               row.appendChild(td);
             }

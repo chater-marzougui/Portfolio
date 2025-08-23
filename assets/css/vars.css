@@ -1,0 +1,23 @@
+:root {
+  --primary-color: #0935ff;
+  --secondary-color: #971d97;
+  --background-color: #1b2735;
+  --bg-top: radial-gradient(ellipse at top, var(--background-color) 0%, #090a0f 100%);
+  --bg-bottom: radial-gradient(ellipse at bottom, var(--background-color) 0%, #090a0f 100%);
+  --text-color: aliceblue;
+  --secondary-text-color: #bbb;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --primary-box-shadow-color: rgba(9, 53, 255, 0.1);
+  --box-shadow-color: rgba(0, 0, 0, 0.3);
+  --highlight-color: rgba(151, 29, 151, 0.4);
+  --shadow-color: rgba(151, 29, 151, 0.2);
+  --text-shadow-color: rgba(9, 53, 255, 0.5);
+  --secondary-text-shadow-color: rgba(9, 53, 255, 0.3);
+  --box-shadow-color: rgba(151, 29, 151, 0.5);
+  --contrib-color-0: #f6e8f6;
+  --contrib-color-1: #e4bfe3;
+  --contrib-color-2: #cd8ccd;
+  --contrib-color-3: #b659b6;
+  --contrib-color-4: #971d97;
+  --contrib-color-5: #5c0f5c;
+}

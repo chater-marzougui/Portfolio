@@ -77,6 +77,7 @@
     <link rel="canonical" href="https://chater-marzougui.me/Portfolio" />
     <title>Chater Marzougui's Portfolio</title>
 
+    <link rel="stylesheet" href="./assets/css/vars.css" />
     <link rel="stylesheet" href="./assets/css/home.css" />
     <link rel="stylesheet" href="./assets/css/about.css" />
     <link rel="stylesheet" href="./assets/css/projects.css" />
@@ -141,7 +142,6 @@
     <section id="navbar" class="navbar">
       <div class="Bar"></div>
       <a href="#" class="nameOnNav">Chater Marzougui</a>
-      <i></i>
       <ul class="barItems">
         <li><a href="#home">Home</a></li>
         <li><a href="#about-me">About</a></li>
@@ -149,7 +149,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="./assets/CV_Chater_Marzougui.pdf" download class="main-btn"
+      <a href="./assets/CV_Chater_Marzougui.pdf" download class="btn nav-btn"
         >Check my CV</a
       >
     </section>
@@ -162,10 +162,10 @@
             <div class="handemojie">👋🏻</div>
           </div>
           <div class="secondline">
-            <h2>I'm <span style="color: #0935ff">Chater Marzougui</span></h2>
+            <h2>I'm <span>Chater Marzougui</span></h2>
           </div>
           <div class="thirdline">
-            <h2>I'm a<span class="my-jobs" style="color: #0935ff"></span></h2>
+            <h2>I'm a<span class="my-jobs"></span></h2>
           </div>
           <div class="social-icons" id="social-icons"></div>
           <div class="home-links sr-only">
@@ -202,11 +202,11 @@
           <div id="contribution-graph"></div>
           <table id="contribution-table" aria-hidden="true"></table>
           <div id="legend" class="legend">
-            <span class="legend-item color-0">0</span>
-            <span class="legend-item color-1">1+ </span>
-            <span class="legend-item color-2">3+</span>
-            <span class="legend-item color-3">5+</span>
-            <span class="legend-item color-4">7+</span>
+            <span class="legend-item contrib-color-0">0</span>
+            <span class="legend-item contrib-color-1">1+ </span>
+            <span class="legend-item contrib-color-2">3+</span>
+            <span class="legend-item contrib-color-3">5+</span>
+            <span class="legend-item contrib-color-4">7+</span>
           </div>
           <div class="section-links sr-only">
             <p>
@@ -234,7 +234,7 @@
                 <a
                   href="https://www.supcom.tn/"
                   target="_blank"
-                  class="main-btn"
+                  class="btn fac-btn"
                   >Read More</a
                 >
               </div>
@@ -253,7 +253,7 @@
                   Founded in 1977, this institution aimed to decentralize higher
                   education and research in Tunisia
                 </p>
-                <a href="https://fsm.rnu.tn/" target="_blank" class="main-btn"
+                <a href="https://fsm.rnu.tn/" target="_blank" class="btn fac-btn"
                   >Read More</a
                 >
               </div>
@@ -273,7 +273,7 @@
               src="./assets/images/svgs/resume.svg"
               alt="Resume Icon"
             />
-            <a href="./assets/CV_Chater_Marzougui.pdf" download class="main-btn"
+            <a href="./assets/CV_Chater_Marzougui.pdf" download class="btn resume-btn"
               ><i class="fa-solid fa-download"></i>
               <h3>Download my CV</h3></a
             >
@@ -327,7 +327,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
           </div>
-          <button type="submit" class="main-btn">
+          <button type="submit" class="btn contact-btn">
             <h3>
               <i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp; Send Message
             </h3>

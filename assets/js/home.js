@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     console.log(displayedText);
 
-    const fullText = `<span style="color: white;">${article}</span><span style="color: #0935FF;">${displayedText}</span>`;
+    const fullText = `<span style="color: aliceblue;">${article}</span><span style="color: var(--primary-color);">${displayedText}</span>`;
 
     document.querySelector(".my-jobs").innerHTML = fullText;
 
