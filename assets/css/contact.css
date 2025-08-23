@@ -61,7 +61,7 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg-color);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   margin: 0;
@@ -133,7 +133,7 @@ textarea {
 .contact-form input[type="text"]::placeholder,
 .contact-form input[type="email"]::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--secondary-text-color);
 }
 
 .contact-form textarea {
@@ -228,7 +228,7 @@ textarea {
 
 hr {
   width: 70%;
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: var(--secondary-text-color);
 }
 
 #footer {

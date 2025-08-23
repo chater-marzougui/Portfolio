@@ -27,7 +27,7 @@ html {
 .education-links,
 .resume-links,
 .projects-links {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg-color);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   border-radius: 24px;
