@@ -60,20 +60,8 @@
     transform: rotateX(0deg) rotateY(-180deg);
 }
 
-#projects .card:hover .cover:before {
-    transform: translateZ(30px);
-}
-
 #projects .card:hover .cover:after {
     background-color: black;
-}
-
-#projects .card:hover .cover h1 {
-    transform: translateZ(60px);
-}
-
-#projects .card:hover .cover .job {
-    transform: translateZ(60px);
 }
 
 #projects .card:hover .cover .splinks a {
@@ -105,7 +93,6 @@
     z-index: 2;
     transition: all 1.3s ease;
     transform-style: preserve-3d;
-    transform: translateZ(10px);
 }
 .cover h1 {
     font-weight: 600;
@@ -123,7 +110,6 @@
     transition: all 1.3s ease;
     z-index: 3;
     font-size: 1.65em;
-    transform: translateZ(0px);
 }
 
 .cover .job {
@@ -138,7 +124,6 @@
     z-index: 4;
     font-size: 1.1em;
     text-align: center;
-    transform: translateZ(0px);
 }
 
 .card-back {
@@ -160,7 +145,7 @@
 .card-back p {
     color: aliceblue;
     transform-style: preserve-3d;
-    transform: translateZ(-8px) rotateY(180deg) !important;
+    transform: translateZ(-1px) rotateY(180deg) !important;
     transition: opacity 1s;
     font-size: 15px;
     text-align: justify;
@@ -173,7 +158,7 @@
 .card-back h2 {
     color: aliceblue;
     transform-style: preserve-3d;
-    transform: translateZ(-5px) rotateY(180deg) !important;
+    transform: translateZ(-1px) rotateY(180deg) !important;
     opacity: 0;
     transition: opacity 1s;
     position: absolute;
@@ -188,7 +173,7 @@
 
 .card-back .splinks {
     transform-style: preserve-3d;
-    transform: translateZ(-25px);
+    transform: translateZ(-1px);
     position: absolute;
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +194,7 @@
 .card-back .splinks a {
     transform-style: preserve-3d;
     transition: transform 1.3s ease, scale 0.4s ease;
-    transform: translateZ(-5px);
+    transform: translateZ(-1px);
     background: transparent;
     font-weight: 200;
     display: flex;
@@ -241,7 +226,7 @@
 
 .card-back button {
     transform-style: preserve-3d;
-    transform: rotateY(180deg) translateZ(15px);
+    transform: rotateY(180deg);
     width: 130px;
     height: 40px;
     border-radius: 20px;
