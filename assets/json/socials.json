@@ -1,29 +1,29 @@
 {
-    "socials": [
-        {
-            "platform": "LinkedIn",
-            "url": "https://www.linkedin.com/in/chater-marzougui-342125299/",
-            "faIcon": "fa-brands fa-linkedin"
-        },
-        {
-            "platform": "Facebook",
-            "url": "https://www.facebook.com/profile.php?id=100011887802388",
-            "faIcon": "fa-brands fa-facebook"
-        },
-        {
-            "platform": "Instagram",
-            "url": "https://www.instagram.com/chater.mrezgui/",
-            "faIcon": "fa-brands fa-instagram"
-        },
-        {
-            "platform": "GitHub",
-            "url": "https://github.com/chater-marzougui",
-            "faIcon": "fa-brands fa-github"
-        },
-        {
-            "platform": "Upwork",
-            "url": "https://www.upwork.com/freelancers/~01af6a0d15d2486011",
-            "faIcon": "fa-brands fa-square-upwork"
-        }
-    ]
+  "socials": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/chater-marzougui-342125299/",
+      "faIcon": "fa-brands fa-linkedin"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=100011887802388",
+      "faIcon": "fa-brands fa-facebook"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/chater.mrezgui/",
+      "faIcon": "fa-brands fa-instagram"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/chater-marzougui",
+      "faIcon": "fa-brands fa-github"
+    },
+    {
+      "platform": "Upwork",
+      "url": "https://www.upwork.com/freelancers/~01af6a0d15d2486011",
+      "faIcon": "fa-brands fa-square-upwork"
+    }
+  ]
 }
