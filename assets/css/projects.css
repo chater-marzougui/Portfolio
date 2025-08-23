@@ -46,8 +46,12 @@
     border-color: transparent;
     justify-self: center;
     margin: 30px 0 auto;
-    transition: all 1.3s ease;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     perspective: 1200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    animation: cardFloat 5s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
 #projects .card:hover p,
@@ -62,10 +66,6 @@
 
 #projects .card:hover .cover:after {
     background-color: black;
-}
-
-#projects .card:hover .cover .splinks a {
-    transform: rotatey(-180deg);
 }
 
 #projects .cover {
@@ -173,7 +173,7 @@
 
 .card-back .splinks {
     transform-style: preserve-3d;
-    transform: translateZ(-1px);
+    transform: translateZ(-1px) rotateY(180deg) !important;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
@@ -247,6 +247,40 @@
 
 .projects-list .cover::before{
     border-radius: 15px;
+}
+
+
+@keyframes backgroundFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(0.5deg); }
+    66% { transform: translateY(10px) rotate(-0.5deg); }
+}
+
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0px) rotateY(0deg); }
+    25% { transform: translateY(-6px) rotateY(8deg); }
+    50% { transform: translateY(0px) rotateY(0deg); }
+    75% { transform: translateY(-3px) rotateY(-6deg); }
+}
+
+    @keyframes cardFloatMobile {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+    }
+
+@media screen and (max-width: 420px) {
+    #projects .card {
+        width: 280px;
+        height: 380px;
+        margin: 20px 0;
+        transform: none;
+        animation: cardFloatMobile 4s ease-in-out infinite;
+    }
+
+    @keyframes cardFloatMobile {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+    }
 }
 
 #projects .card:nth-child(1) .cover::before{
