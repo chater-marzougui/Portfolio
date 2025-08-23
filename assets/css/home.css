@@ -47,16 +47,20 @@ html {
 .education-links::before,
 .resume-links::before,
 .projects-links::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(151, 29, 150, 0.1) 0%, rgba(9, 53, 255, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(151, 29, 150, 0.1) 0%,
+    rgba(9, 53, 255, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 body {
@@ -155,9 +159,10 @@ h3 {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: transparent;
+  background: linear-gradient(120deg, #33139100, #081a4a00);
+  backdrop-filter: blur(0px);
   z-index: 5000;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.8s ease-in-out, backdrop-filter 0.8s ease-in-out;
   padding: 5px 20px;
   display: flex;
   flex-direction: row;
@@ -165,9 +170,35 @@ h3 {
 }
 
 .navbar.scrolled {
-  background: linear-gradient(120deg, #331391cf, #081a4acf);
-  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
+  animation: navbar-appear 0.4s ease-in-out forwards;
+}
+
+@keyframes navbar-appear {
+  0% {
+    background: linear-gradient(120deg, #33139100, #081a4a00);
+    backdrop-filter: blur(0px);
+  }
+  20% {
+    background: linear-gradient(120deg, #33139129, #081a4a29);
+    backdrop-filter: blur(1px);
+  }
+  40% {
+    background: linear-gradient(120deg, #33139152, #081a4a52);
+    backdrop-filter: blur(2px);
+  }
+  60% {
+    background: linear-gradient(120deg, #3313917b, #081a4a7b);
+    backdrop-filter: blur(3px);
+  }
+  80% {
+    background: linear-gradient(120deg, #331391a4, #081a4aa4);
+    backdrop-filter: blur(4px);
+  }
+  100% {
+    background: linear-gradient(120deg, #331391cd, #081a4acd);
+    backdrop-filter: blur(5px);
+  }
 }
 
 .navbar .barItems {
