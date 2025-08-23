@@ -32,12 +32,6 @@ function showWelcomeMessage() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const jobs = [
-    " Web Developer ",
-    " Mobile Developer ",
-    " ICT Engineering Student ",
-    " AI Enthusiast ",
-  ];
   let jobIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -54,11 +48,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function type() {
+    const isMobile = window.innerWidth <= 768;
+    const jobs = [
+      " Web Developer ",
+      " Mobile Developer ",
+      isMobile ? " ICT Engineering<br>Student " : " ICT Engineering Student ",
+      " AI Enthusiast ",
+    ];
     const currentJob = jobs[jobIndex];
     const article = startsWithVowel(currentJob) ? "n " : " ";
-    const displayedText = isDeleting
-      ? currentJob.substring(0, charIndex--)
-      : currentJob.substring(0, charIndex++);
+    const hasBr = currentJob.includes("<br>");
+    let displayedText = "";
+    if (hasBr) {
+      const [firstLine, secondLine] = currentJob.split("<br>");
+      displayedText = isDeleting
+        ? currentJob.substring(0, charIndex--)
+        : currentJob.substring(0, charIndex++);
+
+      if (!isDeleting && charIndex === firstLine.length) {
+        charIndex += 3; // Skip the <br> tag
+      } else if (isDeleting && charIndex === (firstLine.length + 3)) {
+        charIndex -= 3;
+      }
+
+    } else {
+      displayedText = isDeleting
+        ? currentJob.substring(0, charIndex--)
+        : currentJob.substring(0, charIndex++);
+    }
+    console.log(displayedText);
 
     const fullText = `<span style="color: white;">${article}</span><span style="color: #0935FF;">${displayedText}</span>`;
 

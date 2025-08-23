@@ -15,7 +15,7 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
-h1,
+h2,
 p {
   color: aliceblue;
   font-family: 'Orbitron', 'Lucida Console', 'Monaco', 'Courier New', monospace;
@@ -86,7 +86,7 @@ h3 {
   height: 100%;
 }
 
-#home h1 {
+#home h2 {
   margin-block: 0.5rem;
 }
 .navbar .nameOnNav {
@@ -277,12 +277,12 @@ h3 {
   flex-direction: column;
   width: 60%;
   z-index: 2;
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: aliceblue;
   text-shadow: 0 0 20px rgba(9, 53, 255, 0.4);
 }
 
-.home .basicInfo h1 {
+.home .basicInfo h2 {
   margin: 0.2rem 0;
   background: linear-gradient(45deg, #0935ff, #971d96, #0935ff);
   background-size: 200% 200%;
@@ -312,8 +312,12 @@ h3 {
   animation: wave-hand 2s infinite;
 }
 
+.home .basicInfo .thirdline h2 {
+  height: 4rem;
+  line-height: 1.2;
+}
+
 .home .social-icons {
-  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -480,6 +484,13 @@ h3 {
   }
 }
 @media only screen and (max-width: 420px) {
+  #home {
+    height: auto !important;
+  }
+  #home .home-front {
+    height: 85vh !important;
+    gap: 40px;
+  }
   #home .basicInfo {
     font-size: 1rem;
   }
