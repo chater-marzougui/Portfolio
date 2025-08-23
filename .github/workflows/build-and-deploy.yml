@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Minify assets
         run: npm run build
         
       - name: Commit and push changes
@@ -35,6 +38,6 @@ jobs:
             echo "No changes to commit"
           else
             commit_time="$(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-            git commit -m "Auto-build: Bundle updated at ${commit_time}"
+            git commit -m "Auto-Minify: Bundle updated at ${commit_time}"
             git push
           fi
