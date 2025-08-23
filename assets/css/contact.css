@@ -55,7 +55,7 @@ textarea {
 }
 
 .contact-form {
-  max-width: 500px;
+  max-width: 400px;
   min-width: 300px;
   width: 70%;
   display: flex;
@@ -109,8 +109,8 @@ textarea {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: 95%;
-  padding: 12px;
+  width: 90%;
+  padding: 10px;
   margin-bottom: 20px;
   border: 1px solid var(--highlight-color);
   border-radius: 8px;
@@ -366,13 +366,12 @@ hr {
 }
 .toast {
   min-width: 280px;
-  max-width: 340px;
   margin-bottom: 12px;
   padding: 16px 24px;
   border-radius: 8px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
-  color: var(--text-color);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
   font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
@@ -380,17 +379,23 @@ hr {
   animation: toast-in 0.35s ease;
 }
 .toast-success {
-  background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
+  border: 2px solid #22c55e;
+  background: white;
 }
 .toast-error {
-  background: linear-gradient(90deg, #ef4444 60%, #dc2626 100%);
+  border: 2px solid #ef4444;
+  background: white;
 }
 .toast .toast-icon {
   font-size: 1.5em;
   flex-shrink: 0;
 }
+.toast .toast-action {
+  display: flex;
+  flex-direction: column;
+}
 .toast .toast-action a {
-  color: var(--text-color);
+  color: #1b1b1b;
   text-decoration: underline;
   margin-left: 8px;
   font-size: 0.95em;
