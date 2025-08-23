@@ -45,9 +45,6 @@ async function build() {
     const filteredCssFiles = cssFiles.filter(file => !file.includes('bundle.min.css'));
     const filteredJsFiles = jsFiles.filter(file => !file.includes('bundle.min.js'));
     
-    console.log('Found CSS files:', filteredCssFiles);
-    console.log('Found JS files:', filteredJsFiles);
-
     // Bundle and minify CSS
     if (filteredCssFiles.length > 0) {
       let cssContent = '';
@@ -93,77 +90,138 @@ async function updateHtmlFile(cssFiles, jsFiles) {
   let htmlContent = await fs.readFile(config.htmlPath, 'utf8');
   let modified = false;
 
-  // Comment out CSS files
+  // Comment out CSS files (only if not already commented)
   for (const cssFile of cssFiles) {
     const relativePath = path.relative('.', cssFile).replace(/\\/g, '/');
-    const cssLinkRegex = new RegExp(
-      `<link\\s+rel="stylesheet"\\s+href="\\.\/${relativePath.replace('./', '')}"\\s*\\/?>`,
+    const cleanPath = relativePath.replace('./', '');
+    
+    // Check if already commented out
+    const commentedCssRegex = new RegExp(
+      `<!--\\s*<link\\s+rel="stylesheet"\\s+href="\\.\/${cleanPath}"\\s*\\/?>\\s*-->`,
       'gi'
     );
     
-    if (cssLinkRegex.test(htmlContent)) {
-      htmlContent = htmlContent.replace(cssLinkRegex, (match) => {
-        console.log(`Commenting out CSS: ${match}`);
-        return `<!-- ${match} -->`;
-      });
-      modified = true;
+    // Only comment out if not already commented
+    if (!commentedCssRegex.test(htmlContent)) {
+      const cssLinkRegex = new RegExp(
+        `<link\\s+rel="stylesheet"\\s+href="\\.\/${cleanPath}"\\s*\\/?>`,
+        'gi'
+      );
+      
+      if (cssLinkRegex.test(htmlContent)) {
+        htmlContent = htmlContent.replace(cssLinkRegex, (match) => {
+          console.log(`Commenting out CSS: ${match}`);
+          return `<!-- ${match} -->`;
+        });
+        modified = true;
+      }
     }
   }
 
-  // Comment out JS files
+  // Comment out JS files (only if not already commented)
   for (const jsFile of jsFiles) {
     const relativePath = path.relative('.', jsFile).replace(/\\/g, '/');
-    const jsScriptRegex = new RegExp(
-      `<script\\s+src="\\.\/${relativePath.replace('./', '')}"[^>]*><\\/script>`,
+    const cleanPath = relativePath.replace('./', '');
+    
+    // Check if already commented out
+    const commentedJsRegex = new RegExp(
+      `<!--\\s*<script\\s+src="\\.\/${cleanPath}"[^>]*><\\/script>\\s*-->`,
       'gi'
     );
     
-    if (jsScriptRegex.test(htmlContent)) {
-      htmlContent = htmlContent.replace(jsScriptRegex, (match) => {
-        console.log(`Commenting out JS: ${match}`);
-        return `<!-- ${match} -->`;
+    // Only comment out if not already commented
+    if (!commentedJsRegex.test(htmlContent)) {
+      const jsScriptRegex = new RegExp(
+        `<script\\s+src="\\.\/${cleanPath}"[^>]*><\\/script>`,
+        'gi'
+      );
+      
+      if (jsScriptRegex.test(htmlContent)) {
+        htmlContent = htmlContent.replace(jsScriptRegex, (match) => {
+          console.log(`Commenting out JS: ${match}`);
+          return `<!-- ${match} -->`;
+        });
+        modified = true;
+      }
+    }
+  }
+
+  // Handle bundled CSS
+  if (cssFiles.length > 0) {
+    // First check for commented bundle CSS
+    const bundleCssCommentedRegex = /<!--\s*<link\s+rel="stylesheet"\s+href="\.\/assets\/css\/bundle\.min\.css"\s*\/?>\s*-->/i;
+    const hasCommentedBundleCss = bundleCssCommentedRegex.test(htmlContent);
+    
+    // Then check for active bundle CSS, but exclude the commented ones
+    let htmlWithoutComments = htmlContent;
+    if (hasCommentedBundleCss) {
+      htmlWithoutComments = htmlContent.replace(/<!--\s*<link\s+rel="stylesheet"\s+href="\.\/assets\/css\/bundle\.min\.css"\s*\/?>\s*-->/gi, '');
+    }
+    const bundleCssActiveRegex = /<link\s+rel="stylesheet"\s+href="\.\/assets\/css\/bundle\.min\.css"\s*\/?>/i;
+    const hasActiveBundleCss = bundleCssActiveRegex.test(htmlWithoutComments);
+    
+    if (hasCommentedBundleCss && !hasActiveBundleCss) {
+      // Uncomment the bundled CSS - use a more flexible regex for replacement
+      const flexibleCommentedRegex = /<!--\s*(<link\s+rel="stylesheet"\s+href="\.\/assets\/css\/bundle\.min\.css"\s*\/?>)\s*-->/gi;
+      htmlContent = htmlContent.replace(flexibleCommentedRegex, (match, linkTag) => {
+        return linkTag;
       });
       modified = true;
+    } else if (!hasActiveBundleCss && !hasCommentedBundleCss) {
+      // Add bundled CSS if not present at all
+      const headCloseIndex = htmlContent.indexOf('</head>');
+      if (headCloseIndex !== -1) {
+        const bundleCssLink = '  <link rel="stylesheet" href="./assets/css/bundle.min.css" />\n';
+        htmlContent = htmlContent.slice(0, headCloseIndex) + 
+                     bundleCssLink + 
+                     htmlContent.slice(headCloseIndex);
+        console.log('Added bundled CSS link');
+        modified = true;
+      }
     }
   }
 
-  // Add bundled CSS if not already present
-  if (cssFiles.length > 0 && !htmlContent.includes('bundle.min.css')) {
-    const headCloseIndex = htmlContent.indexOf('</head>');
-    if (headCloseIndex !== -1) {
-      const bundleCssLink = '  <link rel="stylesheet" href="./assets/css/bundle.min.css" />\n';
-      htmlContent = htmlContent.slice(0, headCloseIndex) + 
-                   bundleCssLink + 
-                   htmlContent.slice(headCloseIndex);
-      console.log('Added bundled CSS link');
+  // Handle bundled JS
+  if (jsFiles.length > 0) {
+    // First check for commented bundle JS
+    const bundleJsCommentedRegex = /<!--\s*<script\s+src="\.\/assets\/js\/bundle\.min\.js"[^>]*><\/script>\s*-->/i;
+    const hasCommentedBundleJs = bundleJsCommentedRegex.test(htmlContent);
+    
+    // Then check for active bundle JS, but exclude the commented ones
+    let htmlWithoutComments = htmlContent;
+    if (hasCommentedBundleJs) {
+      htmlWithoutComments = htmlContent.replace(/<!--\s*<script\s+src="\.\/assets\/js\/bundle\.min\.js"[^>]*><\/script>\s*-->/gi, '');
+    }
+    const bundleJsActiveRegex = /<script\s+src="\.\/assets\/js\/bundle\.min\.js"[^>]*><\/script>/i;
+    const hasActiveBundleJs = bundleJsActiveRegex.test(htmlWithoutComments);
+    
+    if (hasCommentedBundleJs && !hasActiveBundleJs) {
+      // Uncomment the bundled JS - use a more flexible regex for replacement
+      const flexibleCommentedRegex = /<!--\s*(<script\s+src="\.\/assets\/js\/bundle\.min\.js"[^>]*><\/script>)\s*-->/gi;
+      htmlContent = htmlContent.replace(flexibleCommentedRegex, (match, scriptTag) => {
+        return scriptTag;
+      });
       modified = true;
+    } else if (!hasActiveBundleJs && !hasCommentedBundleJs) {
+      // Add bundled JS if not present at all
+      const bodyCloseIndex = htmlContent.lastIndexOf('</body>');
+      if (bodyCloseIndex !== -1) {
+        const bundleJsScript = '  <script src="./assets/js/bundle.min.js"></script>\n';
+        htmlContent = htmlContent.slice(0, bodyCloseIndex) + 
+                     bundleJsScript + 
+                     htmlContent.slice(bodyCloseIndex);
+        console.log('Added bundled JS script');
+        modified = true;
+      } else {
+        // If no closing body tag, add at the end
+        htmlContent += '<script src="./assets/js/bundle.min.js"></script>\n';
+        modified = true;
+      }
     }
   }
 
-  // Add bundled JS if not already present
-  if (jsFiles.length > 0 && !htmlContent.includes('bundle.min.js')) {
-    const bodyCloseIndex = htmlContent.lastIndexOf('</body>');
-    if (bodyCloseIndex !== -1) {
-      const bundleJsScript = '  <script src="./assets/js/bundle.min.js"></script>\n';
-      htmlContent = htmlContent.slice(0, bodyCloseIndex) + 
-                   bundleJsScript + 
-                   htmlContent.slice(bodyCloseIndex);
-      console.log('Added bundled JS script');
-      modified = true;
-    } else {
-      // If no closing body tag, add at the end
-      htmlContent += '<script src="./assets/js/bundle.min.js"></script>\n';
-      console.log('Added bundled JS script at end of file');
-      modified = true;
-    }
-  }
-
-  if (modified) {
-    await fs.writeFile(config.htmlPath, htmlContent);
-    console.log('HTML updated successfully!');
-  } else {
-    console.log('No HTML modifications needed');
-  }
+  await fs.writeFile(config.htmlPath, htmlContent);
+  console.log('✅ HTML updated successfully!');
 }
 
 // Run the build
