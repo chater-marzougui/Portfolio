@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script>
+      // Redirect www to non-www
+      (function() {
+        if (window.location.hostname.startsWith('www.')) {
+          window.location.href = 'https://chater-marzougui.me' + window.location.pathname + window.location.search;
+        }
+      })();
+    </script>
     <meta
       name="description"
       content="ICT Engineering Student specializing in Web Development, Mobile Development, and AI. Explore my software, robotics projects, and other innovative projects."
