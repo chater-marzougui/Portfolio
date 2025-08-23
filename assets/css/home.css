@@ -2,11 +2,22 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial,
+    sans-serif;
   width: 100%;
   background-color: #1b2735;
   height: 100%;
   scroll-behavior: smooth;
+}
+
+.internal-link {
+  color: #0935ff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(9, 53, 255, 0.5);
+}
+
+.internal-link:hover {
+  text-decoration: underline;
 }
 
 body {
@@ -18,7 +29,7 @@ body {
 h2,
 p {
   color: aliceblue;
-  font-family: 'Orbitron', 'Lucida Console', 'Monaco', 'Courier New', monospace;
+  font-family: "Orbitron", "Lucida Console", "Monaco", "Courier New", monospace;
   text-shadow: 0 0 10px rgba(9, 53, 255, 0.3);
 }
 
@@ -27,14 +38,14 @@ h4,
 h5 {
   color: aliceblue;
   margin-block: 0;
-  font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 h3 {
   margin-block: 0.1rem;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
   line-height: 1.6;
 }
 
@@ -95,7 +106,7 @@ h3 {
   color: #0935ff;
   font-size: 21px;
   font-weight: 900;
-  font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
+  font-family: "Orbitron", "Lucida Console", "Monaco", monospace;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 0 0 15px rgba(9, 53, 255, 0.5);
@@ -136,7 +147,7 @@ h3 {
   text-decoration: none;
   transition: color 0.4s ease, font-weight 0.1s ease, text-shadow 0.3s ease;
   font-size: 17px;
-  font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
   font-weight: 500;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -173,7 +184,6 @@ h3 {
   #navbar {
     padding-inline: 0px;
     justify-content: space-around;
-
   }
   #navbar .main-btn {
     font-size: 13px !important;
@@ -228,7 +238,7 @@ h3 {
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease;
-  font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   box-shadow: 0 0 20px rgba(9, 53, 255, 0.3);
@@ -293,7 +303,8 @@ h3 {
 }
 
 @keyframes gradient-text {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
