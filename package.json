@@ -4,7 +4,8 @@
   "description": "My Portfolio",
   "main": "index.html",
   "scripts": {
-    "build": "node build.js"
+    "build": "node ./actions/build.js",
+    "dev": "node ./actions/dev.js"
   },
   "repository": {
     "type": "git",

@@ -344,6 +344,11 @@ hr {
     text-align: center;
   }
 
+  #footer .footer-info {
+    border-top: solid 1px var(--secondary-text-color);
+    padding-top: 10px;
+  }
+
   #footer .social-icons {
     font-size: 1.6rem;
   }
