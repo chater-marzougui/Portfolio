@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO --> 
 <br />
 <div align="center">
-    <h1 style="font-size:35px">My Portfolio <br><a style="font-size:20px" href="https://chater-marzougui.me/Portfolio/" target="_blank">chater-marzougui.io</a></h1>
+    <h1 style="font-size:35px">My Portfolio <br><a style="font-size:20px" href="https://chater-marzougui.me/Portfolio" target="_blank">chater-marzougui.io</a></h1>
     <br>
     <p style="font-size:20px" align="center">
         A showcase of my projects and skills
@@ -107,7 +107,7 @@ This portfolio showcases a diverse range of projects demonstrating expertise acr
 ## Installation
 
 ### Quick Start (Recommended)
-🌐 **Live Demo:** <a style="font-size:16px" href="https://chater-marzougui.me/Portfolio/" target="_blank">chater-marzougui.io</a>
+🌐 **Live Demo:** <a style="font-size:16px" href="https://chater-marzougui.me/Portfolio" target="_blank">chater-marzougui.io</a>
 
 ### Local Development Setup
 1. **Clone this repository** to your local machine:
