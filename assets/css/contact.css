@@ -46,8 +46,8 @@
     z-index: 1;
 }
 .contact-content input, textarea{
-    color: #971D96 !important;
-    font-weight: 600;
+    color: #fff !important;
+    font-weight: 500;
 }
   
 .contact-form {
@@ -55,38 +55,79 @@
     min-width: 300px;
     width: 70%;
     padding: 20px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 24px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
   
+.contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(151, 29, 150, 0.1) 0%,
+        rgba(9, 53, 255, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.contact-form:hover::before {
+    opacity: 1;
+}
+
 .contact-form label {
     float: left;
     font-size: 1.2em;
-    color: #000;
+    color: #fff;
     font-weight: 600;
     margin-bottom: 5px;
     font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(151, 29, 150, 0.4);
 }
   
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
     width: 95%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #971D96;
-    border-radius: 5px;
+    border: 1px solid rgba(151, 29, 150, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    transition: all 0.3s ease;
 }
 
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-    outline: 2px solid #971D96;
+    outline: none;
+    border: 1px solid #971D96;
+    box-shadow: 0 0 15px rgba(151, 29, 150, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .contact-form textarea {
@@ -95,11 +136,26 @@
 }
   
 .contact-form button[type="submit"] {
-    padding: 10px 20px;
-    margin: 0;
+    padding: 12px 24px;
+    margin: 10px 0;
     border: none;
     font-size: 1em;
     cursor: pointer;
+    background: linear-gradient(45deg, #0935ff, #971d96);
+    color: #fff;
+    border-radius: 8px;
+    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(151, 29, 150, 0.3);
+}
+
+.contact-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(151, 29, 150, 0.5);
+    background: linear-gradient(45deg, #764ba2, #971d96);
 }
 
 @media (max-width: 768px) {
@@ -201,8 +257,54 @@
     font-size: 18px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+#footer .footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#footer .footer-section h4 {
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(151, 29, 150, 0.4);
+}
+
+#footer .live-apps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#footer .live-apps a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#footer .live-apps a:hover {
+    color: #0935FF;
+    text-shadow: 0 0 10px rgba(9, 53, 255, 0.4);
+}
+
+#footer .live-apps a i {
+    font-size: 12px;
+    color: #0935FF;
 }
 #footer .social-icons{
     font-size: 30px;
@@ -234,11 +336,26 @@
 @media screen and (max-width: 420px) {
   #footer .container {
     font-size: 1rem;
-    flex-direction: column-reverse;
-    row-gap: 12px;
+    flex-direction: column;
+    row-gap: 16px;
+    text-align: center;
   }
+  
+  #footer .footer-section {
+    order: 1;
+  }
+  
   #footer .social-icons {
     font-size: 1.6rem;
+    order: 2;
+  }
+  
+  #footer .footer-section h4 {
+    font-size: 14px;
+  }
+  
+  #footer .live-apps a {
+    font-size: 13px;
   }
 }
 
