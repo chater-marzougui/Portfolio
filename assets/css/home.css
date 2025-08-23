@@ -159,10 +159,10 @@ h3 {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(120deg, #33139100, #081a4a00);
+  background: rgba(51, 19, 145, 0);
   backdrop-filter: blur(0px);
   z-index: 5000;
-  transition: background 0.8s ease-in-out, backdrop-filter 0.8s ease-in-out;
+  transition: background-color 0.8s ease-in-out, backdrop-filter 0.8s ease-in-out;
   padding: 5px 20px;
   display: flex;
   flex-direction: row;
@@ -170,35 +170,8 @@ h3 {
 }
 
 .navbar.scrolled {
+  background: rgba(51, 19, 145, 0.81);
   backdrop-filter: blur(5px);
-  animation: navbar-appear 0.4s ease-in-out forwards;
-}
-
-@keyframes navbar-appear {
-  0% {
-    background: linear-gradient(120deg, #33139100, #081a4a00);
-    backdrop-filter: blur(0px);
-  }
-  20% {
-    background: linear-gradient(120deg, #33139129, #081a4a29);
-    backdrop-filter: blur(1px);
-  }
-  40% {
-    background: linear-gradient(120deg, #33139152, #081a4a52);
-    backdrop-filter: blur(2px);
-  }
-  60% {
-    background: linear-gradient(120deg, #3313917b, #081a4a7b);
-    backdrop-filter: blur(3px);
-  }
-  80% {
-    background: linear-gradient(120deg, #331391a4, #081a4aa4);
-    backdrop-filter: blur(4px);
-  }
-  100% {
-    background: linear-gradient(120deg, #331391cd, #081a4acd);
-    backdrop-filter: blur(5px);
-  }
 }
 
 .navbar .barItems {
@@ -426,7 +399,7 @@ h3 {
 }
 
 .home .whiteline {
-  background-color: aliceblue;
+  background-color: #b0b0b0;
   width: 50px;
   height: 2px;
 }
@@ -570,7 +543,6 @@ h3 {
     padding-top: 50px;
   }
   #home .home-front {
-    height: 85vh !important;
     gap: 40px;
   }
   #home .basicInfo {
