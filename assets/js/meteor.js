@@ -8,12 +8,12 @@ function getRandomFloat(min, max) {
 
 function getRandomAsteroidImage() {
   const images = [
-    "https://chater-marzougui.github.io/Portfolio/assets/images/meteors/meteor1.png",
-    "https://chater-marzougui.github.io/Portfolio/assets/images/meteors/meteor2.png",
-    "https://chater-marzougui.github.io/Portfolio/assets/images/meteors/meteor3.png",
-    "https://chater-marzougui.github.io/Portfolio/assets/images/meteors/meteor4.png",
-    "https://chater-marzougui.github.io/Portfolio/assets/images/meteors/meteor5.png",
-    "https://chater-marzougui.github.io/Portfolio/assets/images/meteors/meteor6.png",
+    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor1.png",
+    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor2.png",
+    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor3.png",
+    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor4.png",
+    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor5.png",
+    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor6.png",
   ];
   return images[getRandomInt(0, images.length)];
 }
