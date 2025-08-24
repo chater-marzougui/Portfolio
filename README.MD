@@ -24,7 +24,7 @@
     <a href="https://github.com/chater-marzougui/Portfolio/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
   <br><br>
-  <a href="https://github.com/chater-marzougui/Portfolio/">
+  <a href="https://chater-marzougui.me/Portfolio/">
     <img src="./assets/images/forReadme.png" alt="Logo" width="70%">
   </a>
 </div>
