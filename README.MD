@@ -13,8 +13,7 @@
 <!-- PROJECT LOGO --> 
 <br />
 <div align="center">
-    <h1 style="font-size:35px">My Portfolio <br><a style="font-size:20px" href="https://chater-marzougui.me/Portfolio/" target="_blank">chater-marzougui.io</a></h1>
-    <br>
+    <h1 style="font-size:35px">My Portfolio <br><a style="font-size:20px" href="https://chater-marzougui.me/Portfolio/" target="_blank">chater-marzougui.me</a></h1>
     <p style="font-size:20px" align="center">
         A showcase of my projects and skills
     <br>
@@ -24,7 +23,7 @@
     <a href="https://github.com/chater-marzougui/Portfolio/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
   <br><br>
-  <a href="https://chater-marzougui.me/Portfolio/">
+  <a href="https://chater-marzougui.me/Portfolio/" target="_blank">
     <img src="./assets/images/forReadme.png" alt="Logo" width="70%">
   </a>
 </div>
