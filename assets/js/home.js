@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ? currentJob.substring(0, charIndex--)
         : currentJob.substring(0, charIndex++);
     }
-    console.log(displayedText);
 
     const fullText = `<span style="color: aliceblue;">${article}</span><span style="color: var(--primary-color);">${displayedText}</span>`;
 

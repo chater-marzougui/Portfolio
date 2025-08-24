@@ -167,7 +167,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px var(--box-shadow-color);
+    text-shadow: 0 0 10px var(--sec-shadow-color);
     font-size: 22px;
 }
 
