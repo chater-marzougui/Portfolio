@@ -290,7 +290,7 @@
     background: url(../images/projects/samsar.jpg) 0 0 / cover;
 }
 #projects .card:nth-child(3) .cover::before{
-    background: url(../images/projects/indabaX2024.jpg) 0 0 / 100% 100%;
+    background: url(../images/projects/indabaX-2024.jpg) 0 0 / 100% 100%;
 }
 #projects .card:nth-child(4) .cover::before{
     background: url(../images/projects/moodMuse.jpg) 0 0 / cover;
@@ -304,7 +304,7 @@
 }
 
 #projects .card:nth-child(7) .cover::before{
-    background: url(../images/projects/SkillIssue.png) 0 0 / 100% 100%;
+    background: url(../images/projects/Skill-Issue.png) 0 0 / 100% 100%;
 }
 
 #projects .card:nth-child(8) .cover::before{
@@ -312,7 +312,7 @@
 }
 
 #projects .card:nth-child(9) .cover::before{
-    background: url(../images/projects/educationHelp.png) 0 0 / 100% 100%;
+    background: url(../images/projects/education-Help.png) 0 0 / 100% 100%;
 }
 
 #projects .card:nth-child(10) .cover::before{
