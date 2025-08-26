@@ -121,8 +121,8 @@
       "cardBackStyle": "font-size: 17px;"
     },
     {
-      "title": "Real Time Simulation of PV Performance Using PIL",
-      "titleStyle": "font-size: 15px;",
+      "title": "Real Time Sim of PV Performance Using PIL",
+      "titleStyle": "font-size: 21px;",
       "technologies": "MATLAB, Simulink, Python, STM32",
       "description": "A project focused on simulating the performance of photovoltaic panels in real-time using a processor-in-the-loop approach with MATLAB and Simulink. With PV Fault Detection System. This project combines Digital Twin technology with Processor-in-the-Loop (PIL) testing to provide comprehensive fault detection, AI-powered analytics (Random Forest, XGBoost, Gradient Boosting...), trained with python, and embedded system validation.",
       "links": [
@@ -158,7 +158,7 @@
     },
     {
       "title": "The Flying Dutchman",
-      "titleStyle": "font-size: 24px;",
+      "titleStyle": "font-size: 30px;",
       "technologies": "Flutter, Gemini AI API",
       "description": "The Flying Dutchman is a Flutter-based mobile application that uses the Gemini AI API to provide users with instant answers to medical questions, specifically in the domain of human anatomy. Whether you're revising for an exam, teaching a class, or just curious, this app brings intelligent anatomy assistance right to your pocket.",
       "links": [

@@ -20,7 +20,7 @@
     />
     <meta
       name="keywords"
-      content="Chater Marzougui, ICT engineering Tunisia, web developer portfolio, mobile app developer, SUP'COM student, React developer, Node.js developer, AI enthusiast, robotics projects, telecommunications engineering, software development Tunisia, full stack developer"
+      content="Chater Marzougui, ICT engineering Tunisia, web developer portfolio, html css javascript, mobile app developer, SUP'COM student, React developer, Node.js developer, AI enthusiast, Gemini API, telecommunications engineering, flutter application developer, full stack developer"
     />
     <meta
       http-equiv="Strict-Transport-Security"
@@ -28,19 +28,20 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Chater Marzougui's Portfolio" />
-    <meta property="og:title" content="Chater Marzougui's Portfolio" />
+    <meta
+      property="og:site_name"
+      content="Chater Marzougui's Portfolio | AI x Software Engineer"
+    />
+    <meta
+      property="og:title"
+      content="Chater Marzougui's Portfolio | AI x Software Engineer"
+    />
     <meta property="og:image" content="./assets/icons/favicon.png" />
     <meta
       property="og:description"
       content="✨🌍This is my personal Portfolio, Feel free to get in touch with me anytime, whether for work inquiries or to just say hello! 🌍✨"
     />
     <meta property="og:url" content="https://chater-marzougui.me/Portfolio/" />
-
-    <meta
-      name="og:description"
-      content="✨🌍This is my personal Portfolio, Feel free to get in touch with me anytime, whether for work inquiries or to just say hello! 🌍✨"
-    />
 
     <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
     <link
@@ -70,12 +71,12 @@
     <link rel="canonical" href="https://chater-marzougui.me/Portfolio/" />
     <title>Chater Marzougui's Portfolio</title>
 
-    <link rel="stylesheet" href="./assets/css/vars.css" />
-    <link rel="stylesheet" href="./assets/css/home.css" />
-    <link rel="stylesheet" href="./assets/css/about.css" />
-    <link rel="stylesheet" href="./assets/css/projects.css" />
-    <link rel="stylesheet" href="./assets/css/resume.css" />
-    <link rel="stylesheet" href="./assets/css/contact.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/vars.css" /> -->
+    <!-- <link rel="stylesheet" href="./assets/css/home.css" /> -->
+    <!-- <link rel="stylesheet" href="./assets/css/about.css" /> -->
+    <!-- <link rel="stylesheet" href="./assets/css/projects.css" /> -->
+    <!-- <link rel="stylesheet" href="./assets/css/resume.css" /> -->
+    <!-- <link rel="stylesheet" href="./assets/css/contact.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -121,7 +122,20 @@
         }
       }
     </script>
-    <!-- <link rel="stylesheet" href="./assets/css/bundle.min.css" /> -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9WQPYNY73L"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-9WQPYNY73L");
+    </script>
+    <link rel="stylesheet" href="./assets/css/bundle.min.css" />
   </head>
   <body>
     <div id="toast-container"></div>
@@ -332,7 +346,7 @@
           <ul class="contact-list">
             <li class="list-item">
               <i class="fa-solid fa-location-dot fa-2x"
-                ><span class="contact-text place">El Ghazela, Ariana</span></i
+                ><span class="contact-text place" id="address">El Ghazela, Ariana</span></i
               >
             </li>
             <li class="list-item">
@@ -407,10 +421,10 @@
       <div class="whiteline"></div>
     </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="./assets/js/home.js"></script>
-    <script src="./assets/js/populate.js"></script>
-    <script src="./assets/js/mail.js"></script>
-    <script src="./assets/js/meteor.js"></script>
-    <!-- <script src="./assets/js/bundle.min.js"></script> -->
+    <!-- <script src="./assets/js/home.js"></script> -->
+    <!-- <script src="./assets/js/populate.js"></script> -->
+    <!-- <script src="./assets/js/mail.js"></script> -->
+    <!-- <script src="./assets/js/meteor.js"></script> -->
+    <script src="./assets/js/bundle.min.js"></script>
   </body>
 </html>

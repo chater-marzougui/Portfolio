@@ -123,6 +123,12 @@ h3 {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  #welcome-message {
+    font-size: 1.5em;
+  }
+}
+
 #loading-screen,
 #welcome-screen {
   display: flex;

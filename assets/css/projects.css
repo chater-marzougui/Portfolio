@@ -9,13 +9,12 @@
     user-select: none;
 }
 
-#projects h1 {
+#projects .title {
     font-size: 30px;
     color: var(--text-color);
-    font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
+    font-family: 'Lucida Console', 'Monaco', monospace;
     font-weight: 600;
     letter-spacing: 3px;
-    text-transform: uppercase;
     text-shadow: 0 0 25px var(--text-shadow-color);
     text-align: center;
 }
@@ -94,22 +93,19 @@
     transition: all 1.3s ease;
     transform-style: preserve-3d;
 }
-.cover h1 {
+.cover .title {
     font-weight: 600;
     position: absolute;
     align-self: center;
-    bottom: 70px;
+    top: 255px;
     text-align: center;
     margin: 5px;
-    color: var(--text-color);
     transform-style: preserve-3d;
-    font-family: 'Orbitron', 'Lucida Console', 'Monaco', monospace;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 0 0 15px rgba(9, 53, 255, 0.6);
     transition: all 1.3s ease;
     z-index: 3;
-    font-size: 1.65em;
 }
 
 .cover .job {
@@ -270,8 +266,6 @@
 
 @media screen and (max-width: 420px) {
     #projects .card {
-        width: 280px;
-        height: 380px;
         margin: 20px 0;
         transform: none;
         animation: cardFloatMobile 4s ease-in-out infinite;

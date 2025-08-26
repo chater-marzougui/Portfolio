@@ -99,8 +99,9 @@ function createProjectCard(project) {
   cover.className = "cover";
 
   // Create title
-  const title = document.createElement("h1");
+  const title = document.createElement("p");
   title.textContent = project.title;
+  title.className = "title";
   if (project.titleStyle) {
     title.style.cssText = project.titleStyle;
   }
