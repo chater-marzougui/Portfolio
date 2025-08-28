@@ -191,7 +191,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 [![Facebook](https://img.shields.io/badge/-Facebook-blue.svg?style=for-the-badge&logo=facebook&colorB=1877F2)](https://www.facebook.com/profile.php?id=100011887802388)
 [![Instagram](https://img.shields.io/badge/-Instagram-E4405F.svg?style=for-the-badge&logo=instagram&colorB=E4405F)](https://www.instagram.com/chater.mrezgui/)
 
-**Portfolio Website:** [chater-marzougui.io](https://chater-marzougui.me/Portfolio/)
+**Portfolio Website:** [chater-marzougui.me](https://chater-marzougui.me/Portfolio/)
 
 <br/>
 
