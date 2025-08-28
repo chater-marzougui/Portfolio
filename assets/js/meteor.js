@@ -111,19 +111,25 @@ function createAsteroid() {
 function spawnAsteroids() {
   createAsteroid();
 
-  // Variable timing between spawns
-  const nextSpawn = getRandomInt(1500, 4000);
+  // Variable timing between spawns - increased for mobile devices for better performance
+  const isMobile = window.innerWidth <= 768;
+  const minSpawn = isMobile ? 2000 : 1500; // Increased minimum spawn time for mobile
+  const maxSpawn = isMobile ? 5000 : 4000; // Increased maximum spawn time for mobile
+  const nextSpawn = getRandomInt(minSpawn, maxSpawn);
   setTimeout(spawnAsteroids, nextSpawn);
 }
 
 // Start the asteroid shower
 spawnAsteroids();
 
-// Occasionally create burst effects
+// Occasionally create burst effects - adjusted for mobile performance
 setInterval(() => {
-  if (Math.random() < 0.2) {
-    // 20% chance every 10 seconds
-    for (let i = 0; i < getRandomInt(3, 6); i++) {
+  const isMobile = window.innerWidth <= 768;
+  const burstProbability = isMobile ? 0.1 : 0.2; // Reduced burst frequency for mobile
+  const burstCount = isMobile ? getRandomInt(2, 4) : getRandomInt(3, 6); // Fewer asteroids in burst for mobile
+  
+  if (Math.random() < burstProbability) {
+    for (let i = 0; i < burstCount; i++) {
       setTimeout(() => createAsteroid(), i * 200);
     }
   }
@@ -148,9 +154,15 @@ function getStarProps() {
   return { startX, startY, size, duration, delay, endY };
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// Function to generate stars - moved to happen after DOM is fully rendered
+function generateStars() {
   const starrySky = document.querySelector(".starry-sky");
-  const starCount = 200;
+  if (!starrySky) return;
+  
+  // Adjust star count based on screen size - 60% for mobile devices
+  const isMobile = window.innerWidth <= 768;
+  const baseStarCount = 200;
+  const starCount = isMobile ? Math.floor(baseStarCount * 0.6) : baseStarCount;
 
   for (let i = 0; i < starCount; i++) {
     let star = document.createElement("div");
@@ -167,4 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     starrySky.appendChild(star);
   }
+}
+
+// Generate stars after DOM is fully loaded and rendered
+document.addEventListener("DOMContentLoaded", () => {
+  // Use setTimeout to ensure DOM height calculations are accurate
+  setTimeout(generateStars, 100);
 });
