@@ -94,27 +94,46 @@ h3 {
 }
 
 .spinner {
-  width: 100px;
-  height: 100px;
-  background-image: url("../images/meteors/loadingmeteor2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: spin 2s linear infinite;
+  position: relative;
+  width: 256px;
+  height: 256px;
+  background: transparent;
+  margin: auto;
 }
 
-.spinner img {
-  transform: rotateZ(180deg);
-  width: 250px;
+.spinner-inner,
+.spinner-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center; /* rotation pivot */
+  filter: drop-shadow(0 0 8px #53153c) drop-shadow(0 0 15px #ac1d77);
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
+.spinner-outer {
+  width: 256px;
+  height: 256px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: spin-outer 2s linear infinite;
 }
+
+.spinner-inner {
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: spin-inner 1.5s linear infinite;
+}
+
+@keyframes spin-outer {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spin-inner {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
 
 #welcome-message {
   font-size: 1.9em;
@@ -346,7 +365,7 @@ h3 {
   box-shadow: 0 0 10px aliceblue;
   opacity: 0.8;
   overflow: hidden;
-  animation: move-stars linear infinite;
+  animation: move-stars linear infinite, twinkle 2s ease-in-out infinite alternate;
   --start-y: 0;
   --end-y: 120vh;
 }
@@ -358,6 +377,11 @@ h3 {
   to {
     transform: translateY(var(--end-y));
   }
+}
+
+@keyframes twinkle {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1.1); }
 }
 
 .home .home-front {
@@ -627,9 +651,11 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
+  filter: drop-shadow(0 0 10px orange)
+          drop-shadow(0 0 20px red)
+          drop-shadow(0 0 30px yellow);
   opacity: 0.8;
   z-index: 5600;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .asteroid.small {
