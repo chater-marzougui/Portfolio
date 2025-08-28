@@ -1,3 +1,4 @@
+// Priority: 0.1
 function showToast(message, type, actions = []) {
   const container = document.getElementById("toast-container");
   if (!container) return;

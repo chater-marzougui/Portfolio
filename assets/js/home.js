@@ -1,3 +1,4 @@
+// Priority: 1.0
 const loadingScreen = document.getElementById("loading-screen");
 const welcomeScreen = document.getElementById("welcome-screen");
 welcomeScreen.style.display = "none";

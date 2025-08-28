@@ -380,8 +380,14 @@ h3 {
 }
 
 @keyframes twinkle {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1.1); }
+  from {
+    opacity: 0.5;
+    box-shadow: 0 0 5px aliceblue, 0 0 10px aliceblue, 0 0 20px aliceblue;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 10px aliceblue, 0 0 20px aliceblue, 0 0 40px aliceblue;
+  }
 }
 
 .home .home-front {

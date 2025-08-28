@@ -1,3 +1,4 @@
+// Priority: 0.8
 // Function to populate skills
 async function populateSkills(jsonFilePath = "./assets/json/skillset.json") {
   const response = await fetch(jsonFilePath);
@@ -297,4 +298,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadProjects();
   await populateSkills();
   await loadContributions();
+  generateStars();
 });

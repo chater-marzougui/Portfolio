@@ -8,6 +8,51 @@ const config = {
   htmlPath: './index.html'
 };
 
+// Function to extract priority from JS file
+async function getJsPriority(filePath) {
+  try {
+    const content = await fs.readFile(filePath, 'utf8');
+    const firstLine = content.split('\n')[0].trim();
+    
+    // Check if first line contains priority comment
+    const priorityMatch = firstLine.match(/\/\/\s*Priority:\s*([0-9]+(?:\.[0-9]+)?)/i);
+    if (priorityMatch) {
+      return parseFloat(priorityMatch[1]);
+    }
+  } catch (error) {
+    console.warn(`Could not read priority from ${filePath}:`, error.message);
+  }
+  
+  // Default priority if not found or error
+  return 0;
+}
+
+// Function to sort JS files by priority
+async function sortJsFilesByPriority(jsFiles) {
+  const filesWithPriority = [];
+  
+  for (const file of jsFiles) {
+    const priority = await getJsPriority(file);
+    filesWithPriority.push({ file, priority });
+  }
+  
+  // Sort by priority (higher priority first), then by filename for consistency
+  filesWithPriority.sort((a, b) => {
+    if (b.priority !== a.priority) {
+      return b.priority - a.priority; // Higher priority first
+    }
+    return a.file.localeCompare(b.file); // Alphabetical order for same priority
+  });
+  
+  // Log the sorting order
+  console.log('JS files development order:');
+  filesWithPriority.forEach(({ file, priority }) => {
+    console.log(`  Priority ${priority}: ${path.basename(file)}`);
+  });
+  
+  return filesWithPriority.map(item => item.file);
+}
+
 // Function to scan directory for files with specific extensions
 async function scanDirectory(dir, extensions) {
   const files = [];
@@ -39,12 +84,15 @@ async function dev() {
     const filteredCssFiles = cssFiles.filter(file => !file.includes('bundle.min.css'));
     const filteredJsFiles = jsFiles.filter(file => !file.includes('bundle.min.js'));
     
+    // Sort JS files by priority
+    const sortedJsFiles = await sortJsFilesByPriority(filteredJsFiles);
+    
     console.log('Found CSS files:', filteredCssFiles);
-    console.log('Found JS files:', filteredJsFiles);
+    console.log('Found JS files (sorted by priority):', sortedJsFiles);
 
-    // Update HTML file for development
+    // Update HTML file for development (using sorted JS files)
     if (await fs.pathExists(config.htmlPath)) {
-      await updateHtmlForDev(filteredCssFiles, filteredJsFiles);
+      await updateHtmlForDev(filteredCssFiles, sortedJsFiles);
     } else {
       console.warn(`HTML file not found at ${config.htmlPath}`);
     }
@@ -101,7 +149,7 @@ async function updateHtmlForDev(cssFiles, jsFiles) {
     modified = true;
   }
 
-  // Uncomment individual CSS files
+  // Uncomment individual CSS files (CSS files don't need priority sorting)
   for (const cssFile of cssFiles) {
     const relativePath = path.relative('.', cssFile).replace(/\\/g, '/');
     const cleanPath = relativePath.replace('./', '');
@@ -135,43 +183,50 @@ async function updateHtmlForDev(cssFiles, jsFiles) {
     }
   }
 
-  // Uncomment individual JS files
+  // Remove all existing individual JS script tags first to avoid duplicates when re-adding in priority order
+  const allJsFiles = jsFiles.map(file => {
+    const relativePath = path.relative('.', file).replace(/\\/g, '/');
+    return relativePath.replace('./', '');
+  });
+
+  // Remove commented and active JS script tags for all JS files
+  for (const cleanPath of allJsFiles) {
+    // Remove commented JS tags
+    const commentedJsRegex = new RegExp(
+      `<!--\\s*<script\\s+src="\\.\\/${cleanPath}"[^>]*><\\/script>\\s*-->\\s*`,
+      'gi'
+    );
+    htmlContent = htmlContent.replace(commentedJsRegex, '');
+    
+    // Remove active JS tags  
+    const activeJsRegex = new RegExp(
+      `<script\\s+src="\\.\\/${cleanPath}"[^>]*><\\/script>\\s*`,
+      'gi'
+    );
+    htmlContent = htmlContent.replace(activeJsRegex, '');
+    modified = true;
+  }
+
+  // Add JS files back in priority order
   for (const jsFile of jsFiles) {
     const relativePath = path.relative('.', jsFile).replace(/\\/g, '/');
     const cleanPath = relativePath.replace('./', '');
     
-    const commentedJsRegex = new RegExp(
-      `<!--\\s*(<script\\s+src="\\.\\/${cleanPath}"[^>]*><\\/script>)\\s*-->`,
-      'gi'
-    );
-    
-    if (commentedJsRegex.test(htmlContent)) {
-      htmlContent = htmlContent.replace(commentedJsRegex, (match, scriptTag) => {
-        console.log(`Uncommenting JS: ${scriptTag}`);
-        return scriptTag;
-      });
+    // Add JS file before closing body tag
+    const bodyCloseIndex = htmlContent.lastIndexOf('</body>');
+    if (bodyCloseIndex !== -1) {
+      const jsScript = `  <script src="./${cleanPath}"></script>\n`;
+      htmlContent = htmlContent.slice(0, bodyCloseIndex) + 
+                   jsScript + 
+                   htmlContent.slice(bodyCloseIndex);
+      console.log(`Added JS file in priority order: ${cleanPath}`);
       modified = true;
-    } else {
-      // Check if the JS file is not referenced at all, add it
-      const activeJsRegex = new RegExp(`<script\\s+src="\\.\\/${cleanPath}"[^>]*><\\/script>`, 'i');
-      if (!activeJsRegex.test(htmlContent)) {
-        // Add JS file before closing body tag
-        const bodyCloseIndex = htmlContent.lastIndexOf('</body>');
-        if (bodyCloseIndex !== -1) {
-          const jsScript = `  <script src="./${cleanPath}"></script>\n`;
-          htmlContent = htmlContent.slice(0, bodyCloseIndex) + 
-                       jsScript + 
-                       htmlContent.slice(bodyCloseIndex);
-          console.log(`Added JS file: ${cleanPath}`);
-          modified = true;
-        }
-      }
     }
   }
 
   if (modified) {
     await fs.writeFile(config.htmlPath, htmlContent);
-    console.log('HTML updated for development mode!');
+    console.log('✅ HTML updated for development mode with priority-sorted JS files!');
   } else {
     console.log('HTML already in development mode - no changes needed');
   }

@@ -14,6 +14,25 @@ const config = {
   htmlPath: './index.html'
 };
 
+// Function to extract priority from JS file
+async function getJsPriority(filePath) {
+  try {
+    const content = await fs.readFile(filePath, 'utf8');
+    const firstLine = content.split('\n')[0].trim();
+    
+    // Check if first line contains priority comment
+    const priorityMatch = firstLine.match(/\/\/\s*Priority:\s*([0-9]+(?:\.[0-9]+)?)/i);
+    if (priorityMatch) {
+      return parseFloat(priorityMatch[1]);
+    }
+  } catch (error) {
+    console.warn(`Could not read priority from ${filePath}:`, error.message);
+  }
+  
+  // Default priority if not found or error
+  return 0;
+}
+
 // Function to scan directory for files with specific extensions
 async function scanDirectory(dir, extensions) {
   const files = [];
@@ -35,6 +54,32 @@ async function scanDirectory(dir, extensions) {
   return files.sort(); // Sort for consistent order
 }
 
+// Function to sort JS files by priority
+async function sortJsFilesByPriority(jsFiles) {
+  const filesWithPriority = [];
+  
+  for (const file of jsFiles) {
+    const priority = await getJsPriority(file);
+    filesWithPriority.push({ file, priority });
+  }
+  
+  // Sort by priority (higher priority first), then by filename for consistency
+  filesWithPriority.sort((a, b) => {
+    if (b.priority !== a.priority) {
+      return b.priority - a.priority; // Higher priority first
+    }
+    return a.file.localeCompare(b.file); // Alphabetical order for same priority
+  });
+  
+  // Log the sorting order
+  console.log('JS files processing order:');
+  filesWithPriority.forEach(({ file, priority }) => {
+    console.log(`  Priority ${priority}: ${path.basename(file)}`);
+  });
+  
+  return filesWithPriority.map(item => item.file);
+}
+
 async function build() {
   try {
     // Scan for CSS and JS files
@@ -44,6 +89,9 @@ async function build() {
     // Filter out the bundle files themselves to avoid circular bundling
     const filteredCssFiles = cssFiles.filter(file => !file.includes('bundle.min.css'));
     const filteredJsFiles = jsFiles.filter(file => !file.includes('bundle.min.js'));
+    
+    // Sort JS files by priority
+    const sortedJsFiles = await sortJsFilesByPriority(filteredJsFiles);
     
     // Bundle and minify CSS
     if (filteredCssFiles.length > 0) {
@@ -59,10 +107,10 @@ async function build() {
       console.log('No CSS files found to bundle');
     }
 
-    // Bundle and minify JS
-    if (filteredJsFiles.length > 0) {
+    // Bundle and minify JS (using sorted files)
+    if (sortedJsFiles.length > 0) {
       let jsContent = '';
-      for (const file of filteredJsFiles) {
+      for (const file of sortedJsFiles) {
         const content = await fs.readFile(file, 'utf8');
         jsContent += `/* ${file} */\n${content}\n\n`;
       }
@@ -73,9 +121,9 @@ async function build() {
       console.log('No JS files found to bundle');
     }
 
-    // Update HTML file
+    // Update HTML file (pass sorted JS files)
     if (await fs.pathExists(config.htmlPath)) {
-      await updateHtmlFile(filteredCssFiles, filteredJsFiles);
+      await updateHtmlFile(filteredCssFiles, sortedJsFiles);
     } else {
       console.warn(`HTML file not found at ${config.htmlPath}`);
     }

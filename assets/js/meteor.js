@@ -1,3 +1,4 @@
+// Priority: 0.9
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -8,12 +9,12 @@ function getRandomFloat(min, max) {
 
 function getRandomAsteroidImage() {
   const images = [
-    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor1.png",
-    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor2.png",
-    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor3.png",
-    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor4.png",
-    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor5.png",
-    "https://chater-marzougui.me/Portfolio/assets/images/meteors/meteor6.png",
+    "./assets/images/meteors/meteor1.png",
+    "./assets/images/meteors/meteor2.png",
+    "./assets/images/meteors/meteor3.png",
+    "./assets/images/meteors/meteor4.png",
+    "./assets/images/meteors/meteor5.png",
+    "./assets/images/meteors/meteor6.png",
   ];
   return images[getRandomInt(0, images.length)];
 }
@@ -136,7 +137,6 @@ setInterval(() => {
 }, 10000);
 
 function getStarProps() {
-  const phoneAdjust = window.innerWidth < 768 ? 1.25 : 1.05;
   const prob = Math.random();
   const size = Math.random() * 3;
   const startX = Math.random() * 96 + 3;
@@ -144,13 +144,13 @@ function getStarProps() {
   const delay = Math.random() * 12;
 
   let startY = 0;
-  if (prob < 0.3) {
-    startY = Math.random() * 97;
+  if (prob < 0.4) {
+    startY = Math.random() * document.body.scrollHeight * 0.1;
   } else {
-    startY = (Math.random() * document.body.scrollHeight) / 2;
+    startY = Math.random() * document.body.scrollHeight * 0.45;
   }
 
-  const endY = document.body.scrollHeight * phoneAdjust - startY;
+  const endY = document.body.scrollHeight - startY - 10;
   return { startX, startY, size, duration, delay, endY };
 }
 
@@ -168,6 +168,10 @@ function generateStars() {
     let star = document.createElement("div");
     star.classList.add("star");
     const starProps = getStarProps();
+    if (starProps.startY > starProps.endY) {
+      console.log("Inverted star detected:", starProps);
+      console.log("Document body scroll height:", document.body.scrollHeight);
+    }
     star.style.width = `${starProps.size}px`;
     star.style.height = `${starProps.size}px`;
     star.style.top = `${starProps.startY}px`;
@@ -180,9 +184,3 @@ function generateStars() {
     starrySky.appendChild(star);
   }
 }
-
-// Generate stars after DOM is fully loaded and rendered
-document.addEventListener("DOMContentLoaded", () => {
-  // Use setTimeout to ensure DOM height calculations are accurate
-  setTimeout(generateStars, 100);
-});
