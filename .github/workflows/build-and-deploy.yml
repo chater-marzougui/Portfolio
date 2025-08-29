@@ -39,9 +39,11 @@ jobs:
           git config --local user.name "GitHub Action"
           git add ./index.html ./assets/css/bundle.min.css ./assets/js/bundle.min.js
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes to commit - bundles are already up to date"
           else
             commit_time="$(date -u +"%Y-%m-%d %H:%M:%S UTC")"
             git commit -m "Auto-Minify: Bundle updated at ${commit_time}"
+            echo "Pushing updated bundles to repository..."
             git push
+            echo "Successfully pushed changes"
           fi
