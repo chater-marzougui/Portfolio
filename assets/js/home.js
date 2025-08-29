@@ -98,11 +98,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const navbar = document.querySelector(".navbar");
+const scrollProgressBar = document.querySelector(".scroll-progress-bar");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
+  }
+  const scrollTop = window.scrollY;
+  const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / documentHeight) * 100;
+  
+  // Update progress bar width
+  if (scrollProgressBar) {
+    scrollProgressBar.style.width = `${Math.min(scrollPercent, 100)}%`;
   }
 });
 
