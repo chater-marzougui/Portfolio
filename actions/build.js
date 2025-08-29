@@ -199,8 +199,8 @@ async function updateHtmlFile(cssFiles, jsFiles) {
     }
   }
 
-  if (jsCommented) {
-    console.log("✅ JS commented.");
+  if (cssCommented) {
+    console.log("✅ CSS commented.");
   }
 
   // Comment out JS files (only if not already commented)
@@ -231,8 +231,8 @@ async function updateHtmlFile(cssFiles, jsFiles) {
     }
   }
 
-  if (cssCommented) {
-    console.log("✅ CSS commented.");
+  if (jsCommented) {
+    console.log("✅ JS commented.");
   }
 
   // Handle bundled CSS

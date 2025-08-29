@@ -206,9 +206,6 @@ async function updateHtmlForDev(cssFiles, jsFiles) {
     console.log("✅ Commented out minified files");
   }
 
-  // Store original content before JS modifications
-  const htmlBeforeJsChanges = htmlContent;
-
   // Check if JS files need reordering by comparing current order with desired order
   const currentJsOrder = [];
   const bodyContent = htmlContent.substring(
@@ -224,7 +221,15 @@ async function updateHtmlForDev(cssFiles, jsFiles) {
       `<script\\s+src="\\.\\/${cleanPath}"[^>]*><\\/script>`,
       "i"
     );
-    if (activeJsRegex.test(bodyContent)) {
+    const commentedJsRegex = new RegExp(
+      `<!--[\\s\\S]*?<script\\s+src="\\.\\/${cleanPath}"[^>]*><\\/script>[\\s\\S]*?-->`,
+      "i"
+    );
+    // Only add if not commented out
+    if (
+      activeJsRegex.test(bodyContent) &&
+      !commentedJsRegex.test(bodyContent)
+    ) {
       currentJsOrder.push(cleanPath);
     }
   }
@@ -255,14 +260,13 @@ async function updateHtmlForDev(cssFiles, jsFiles) {
       htmlContent = htmlContent.replace(activeJsRegex, "");
     }
 
-    // Add JS files back in priority order
     for (const jsFile of jsFiles) {
       const relativePath = path.relative(".", jsFile).replace(/\\/g, "/");
       const cleanPath = relativePath.replace("./", "");
 
       const bodyCloseIndex = htmlContent.lastIndexOf("</body>");
       if (bodyCloseIndex !== -1) {
-        const jsScript = `  <script src="./${cleanPath}"></script>\n`;
+        const jsScript = `    <script src="./${cleanPath}"></script>\n`;
         htmlContent =
           htmlContent.slice(0, bodyCloseIndex) +
           jsScript +
