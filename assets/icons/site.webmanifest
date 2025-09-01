@@ -1,6 +1,9 @@
 {
   "name": "Chater Marzougui Portfolio",
   "short_name": "Chater",
+  "description": "My personal portfolio showcasing projects and skills.",
+  "categories": ["portfolio", "software", "developer", "flutter", "web development", "gemini", "chater marzougui"],
+  "lang": "en",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
@@ -15,5 +18,5 @@
   ],
   "theme_color": "#0935ff",
   "background_color": "#1b2735",
-  "display": "standalone"
+  "display": "fullscreen"
 }
