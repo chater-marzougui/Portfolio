@@ -24,7 +24,7 @@
   </p>
   <br><br>
   <a href="https://chater-marzougui.me/Portfolio/" target="_blank">
-    <img src="./assets/images/forReadme.png" alt="Logo" width="70%">
+    <img src="./assets/images/forReadme.webp" alt="Logo" width="70%">
   </a>
 </div>
 
