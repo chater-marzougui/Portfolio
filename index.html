@@ -148,11 +148,13 @@
       <div class="spinner">
         <img
           class="spinner-outer"
+          fetchpriority="high"
           src="./assets/images/meteors/loadingmeteor1.png"
           alt="meteor"
         />
         <img
           class="spinner-inner"
+          fetchpriority="high"
           src="./assets/images/meteors/loadingmeteor2.png"
           alt="meteor"
         />
@@ -403,9 +405,9 @@
         <div class="footer-info">
           <div class="social-icons" id="social-icons-footer"></div>
           <small
-            >Copyright © Chater Marzougui
+            >Copyright © Chater Marzougui <span id="year"></span>
             <script>
-              document.write(new Date().getFullYear());
+              document.getElementById("year").textContent = new Date().getFullYear();
             </script>
           </small>
         </div>
@@ -443,7 +445,7 @@
     </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./assets/js/bundle.min.js"></script>
-            <!-- <script src="./assets/js/home.js"></script> -->
+                <!-- <script src="./assets/js/home.js"></script> -->
     <!-- <script src="./assets/js/meteor.js"></script> -->
     <!-- <script src="./assets/js/populate.js"></script> -->
     <!-- <script src="./assets/js/mail.js"></script> -->
