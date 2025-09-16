@@ -71,84 +71,145 @@
     row-gap: 5px;
 }
 
-.about-me .fac-btn {
-    margin-right: 0px !important;
+.about-me .education-btn {
+    margin-top: 15px;
     height: 35px;
     padding: 0 16px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.card {
-    width: 90%;
-    height: 250px;
-    background-color: transparent;
-    margin-bottom: 20px;
-}
-.card .image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.card .image img {
-    width: 100%;
-    height: 200px;
-    transition: .5s;
-}
-.card:hover .image img {
-    opacity: .5;
-    transform: translateX(30%);/*100%*/
-}
-.card .details {
-    width: 75%;
-    height: 200px;
-    transition: .5s;
-    transform-origin: left;
-    transform: translateY(-250px) rotateY(-90deg);
-}
-.card:hover .details {
-    transform: translateY(-250px) rotateY(0deg);
-}
-.card .details .center {
-    padding: 10px 3px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background: var(--text-color);
-    height: calc(100% - 20px);
-    justify-content: center;
-    align-items: center;
-}
-.card .details .center h2 {
-    margin: 0;
-    padding: 0;
+.about-me .education-btn:hover {
+    background: transparent;
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    line-height: 20px;
-    font-size: 18px;
+    text-shadow: 0 0 10px var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-box-shadow-color);
 }
-.card .details .center p {
-    margin: 10px 0;
-    font-size: 14px;
-    padding: 0;
-    color: black;
+
+.education-timeline {
+    width: 100%;
+    position: relative;
 }
-.card .details .center ul {
-    margin: 10px auto 0;
-    padding: 0;
-    display: table;
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px var(--primary-color);
 }
-.card .details .center ul li {
-    list-style: none;
-    margin: 0 5px;
-    float: left;
+
+.education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
 }
-.card .details .center ul li a {
-    display: block;
-    background: var(--background-color);
+
+.education-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.education-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.education-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    margin: 0 20px;
+    box-shadow: 0 0 20px var(--primary-box-shadow-color);
+}
+
+.education-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--text-color);
+}
+
+.education-content {
+    flex: 1;
+    max-width: 45%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.education-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translateY(-50%);
+}
+
+.education-item:nth-child(odd) .education-content::before {
+    right: 100%;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid rgba(255, 255, 255, 0.05);
+}
+
+.education-item:nth-child(even) .education-content::before {
+    left: 100%;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid rgba(255, 255, 255, 0.05);
+}
+
+.education-period {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px var(--secondary-color);
+}
+
+.education-content h3 {
     color: var(--text-color);
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    transform: .5s;
+    font-size: 1.3rem;
+    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    text-shadow: 0 0 10px var(--text-shadow-color);
+}
+
+.education-content h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 8px var(--primary-color);
+}
+
+.education-content p {
+    color: var(--secondary-text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 
@@ -194,15 +255,13 @@ td {
     #about-me .education {
         width: 90%;
     }
+    
+    .education-content {
+        max-width: 42%;
+    }
 }
 
 @media only screen and (max-width:768px) {
-    .card .details .center h2 {
-        font-size: 15px;
-    }
-    .card .details .center p {
-        font-size: 13px;
-    }
     #about-me {
         height: auto;
     }
@@ -216,5 +275,51 @@ td {
     }
     #about-me .education {
         width: 90%;
+    }
+    
+    .education-timeline::before {
+        left: 40px;
+    }
+    
+    .education-item {
+        flex-direction: row !important;
+        margin-left: 0;
+    }
+    
+    .education-item:nth-child(even) {
+        flex-direction: row !important;
+    }
+    
+    .education-icon {
+        margin: 0 20px 0 0;
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+    
+    .education-icon img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .education-content {
+        max-width: none;
+        flex: 1;
+    }
+    
+    .education-content::before {
+        display: none;
+    }
+    
+    .education-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .education-content h4 {
+        font-size: 1rem;
+    }
+    
+    .education-content p {
+        font-size: 0.9rem;
     }
 }
