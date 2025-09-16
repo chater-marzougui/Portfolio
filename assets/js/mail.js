@@ -68,28 +68,58 @@ function sendEmail() {
     }
   });
 }
-
 function sendVisitEmail() {
   if (typeof Email === "undefined") {
     return;
   }
 
-  if (localStorage.getItem("visited")) return;
-  const nowTime = new Date().toLocaleString();
-  Email.send({
-    SecureToken: "c99ebf76-7044-4a97-a3a3-986ee50089d5",
-    To: "chater.mrezgui2002@gmail.com",
-    From: "chater.forarduinouse@gmail.com",
-    Subject: "New Visitor Alert - " + nowTime,
-    Body: `
-      <h2>🚀 Someone visited your site!</h2>
-      <p>Time: ${nowTime}</p>
-      <p>This is an automated notification from your website.</p>
-    `,
-  }).then((message) => {
-    if (message === "OK") {
-      localStorage.setItem("visited", true);
-    }
-  });
+  const now = new Date();
+  const nowTime = now.toLocaleString();
+  const currentTimestamp = now.getTime();
+  
+  // Get visitor data from localStorage
+  const lastVisitTimestamp = parseInt(localStorage.getItem("visit-timestamp") || "0");
+  const visitCount = parseInt(localStorage.getItem("times-visited") || "0");
+  const threeDaysInMs = 3 * 24 * 60 * 60 * 1000;
+  
+  // Increment visit counter
+  const newVisitCount = visitCount + 1;
+  localStorage.setItem("times-visited", newVisitCount);
+  
+  // Determine if we should send an email
+  const isFirstVisit = !lastVisitTimestamp;
+  const isReturnAfterThreeDays = lastVisitTimestamp && (currentTimestamp - lastVisitTimestamp > threeDaysInMs);
+  
+  if (isFirstVisit || isReturnAfterThreeDays) {
+    const emailSubject = isFirstVisit 
+      ? "New Visitor Alert - " + nowTime
+      : "Returning Visitor Alert - " + nowTime;
+    
+    const emailBody = isFirstVisit
+      ? `
+        <h2>🚀 Someone visited your site!</h2>
+        <p>Time: ${nowTime}</p>
+        <p>This is an automated notification from your website.</p>
+      `
+      : `
+        <h2>👋 A visitor has returned!</h2>
+        <p>Time: ${nowTime}</p>
+        <p>This visitor has visited your site ${newVisitCount} times so far.</p>
+        <p>Last visit was ${Math.floor((currentTimestamp - lastVisitTimestamp) / (24 * 60 * 60 * 1000))} days ago.</p>
+      `;
+    
+    Email.send({
+      SecureToken: "c99ebf76-7044-4a97-a3a3-986ee50089d5",
+      To: "chater.mrezgui2002@gmail.com",
+      From: "chater.forarduinouse@gmail.com",
+      Subject: emailSubject,
+      Body: emailBody,
+    }).then((message) => {
+      if (message === "OK") {
+        // Update timestamp after successful email
+        localStorage.setItem("visit-timestamp", currentTimestamp);
+      }
+    });
+  }
 }
 sendVisitEmail();

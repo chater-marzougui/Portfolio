@@ -4,9 +4,9 @@
     align-items: center;
     width: 100%;
     user-select: none;
-    height: 100%;
+    height: auto;
     background: var(--bg-top);
-    padding: 60px 0;
+    padding: 0;
 }
 
 .about-me .section-title {
@@ -21,14 +21,15 @@
 }
 
 .about-me .content {
-    width: 90%;
+    width: 95%;
     justify-content: space-around;
     align-items: center;
     display: flex;
+    padding: 20px 0;
 }
 
 .about-me .content .intro{
-    width: 50%;
+    width: 45%;
 }
 
 .about-me h2 {
@@ -63,18 +64,22 @@
 }
 
 .about-me .education {
-    width: 35%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 5px;
+    padding: 20px 0;
 }
 
 .about-me .education-btn {
+    align-self: center;
+    text-align: center;
     margin-top: 15px;
     height: 35px;
-    padding: 0 16px;
+    width: 150px;
+    padding: 0 8px;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border: 2px solid transparent;
     transition: all 0.3s ease;
@@ -83,7 +88,6 @@
 .about-me .education-btn:hover {
     background: transparent;
     border: 2px solid var(--primary-color);
-    color: var(--primary-color);
     text-shadow: 0 0 10px var(--primary-color);
     box-shadow: 0 0 15px var(--primary-box-shadow-color);
 }
@@ -93,36 +97,16 @@
     position: relative;
 }
 
-.education-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px var(--primary-color);
-}
-
 .education-item {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
     position: relative;
-}
-
-.education-item:nth-child(odd) {
-    flex-direction: row;
-}
-
-.education-item:nth-child(even) {
-    flex-direction: row-reverse;
-}
+}   
 
 .education-icon {
-    width: 80px;
-    height: 80px;
+    width: 94px;
+    height: 94px;
     border-radius: 50%;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     display: flex;
@@ -135,16 +119,18 @@
 }
 
 .education-icon img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--text-color);
 }
 
 .education-content {
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    max-width: 45%;
+    max-width: 55%;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
@@ -152,6 +138,7 @@
     padding: 20px;
     position: relative;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    align-items: center;
 }
 
 .education-content::before {
@@ -163,18 +150,11 @@
     transform: translateY(-50%);
 }
 
-.education-item:nth-child(odd) .education-content::before {
+.education-item .education-content::before {
     right: 100%;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-right: 15px solid rgba(255, 255, 255, 0.05);
-}
-
-.education-item:nth-child(even) .education-content::before {
-    left: 100%;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid rgba(255, 255, 255, 0.05);
 }
 
 .education-period {
@@ -189,6 +169,10 @@
 
 .education-content h3 {
     color: var(--text-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
     font-size: 1.3rem;
     font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
     font-weight: 600;
@@ -206,6 +190,7 @@
 }
 
 .education-content p {
+    text-align: justify;
     color: var(--secondary-text-color);
     font-size: 0.95rem;
     line-height: 1.6;
@@ -276,11 +261,7 @@ td {
     #about-me .education {
         width: 90%;
     }
-    
-    .education-timeline::before {
-        left: 40px;
-    }
-    
+
     .education-item {
         flex-direction: row !important;
         margin-left: 0;
@@ -320,6 +301,6 @@ td {
     }
     
     .education-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
