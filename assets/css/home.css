@@ -461,10 +461,10 @@ h3 {
 
 @keyframes move-stars {
   from {
-    transform: translateY(var(--start-y));
+    transform: translateY(-10vh);
   }
   to {
-    transform: translateY(var(--end-y));
+    transform: translateY(calc(100vh + 10vh));
   }
 }
 
