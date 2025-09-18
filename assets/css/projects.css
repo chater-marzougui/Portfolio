@@ -1,314 +1,289 @@
 #projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: var(--bg-top);
-    height: auto;
-    min-height: 100%;
-    user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: var(--bg-top);
+  height: auto;
+  min-height: 100%;
+  user-select: none;
 }
 
 #projects .title {
-    font-size: 30px;
-    color: var(--text-color);
-    font-family: 'Lucida Console', 'Monaco', monospace;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-shadow: 0 0 25px var(--text-shadow-color);
-    text-align: center;
+  font-size: 30px;
+  color: var(--text-color);
+  font-family: "Lucida Console", "Monaco", monospace;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-shadow: 0 0 25px var(--text-shadow-color);
+  text-align: center;
 }
 
-#projects::after{
-    content: "";
-    display: block;
-    clear: both;
+#projects::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 #projects .projects-list {
-    display: flex;
-    gap: 2rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    padding-bottom: 20px;
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  padding-bottom: 20px;
 }
 
 #projects .card {
-    border-radius: 15px;
-    position: relative;
-    height: 400px;
-    background-color: transparent;
-    width: 300px;
-    border-color: transparent;
-    justify-self: center;
-    margin: 30px 0 auto;
-    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    perspective: 1200px;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    animation: cardFloat 5s ease-in-out infinite;
-    filter: drop-shadow(0 10px 20px var(--box-shadow-color));
+  border-radius: 15px;
+  position: relative;
+  height: 400px;
+  background-color: transparent;
+  width: 300px;
+  border-color: transparent;
+  justify-self: center;
+  margin: 30px 0 auto;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 20px var(--box-shadow-color));
 }
 
 #projects .card:hover p,
 #projects .card:hover .project-links,
 #projects .card:hover h2 {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 #projects .card:hover .cover {
-    transform: rotateX(0deg) rotateY(-180deg);
+  transform: rotateX(0deg) rotateY(-180deg);
 }
 
 #projects .card:hover .cover:after {
-    background-color: black;
+  background-color: black;
 }
 
 #projects .cover {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    transform-style: preserve-3d;
-    transition: all 1.3s ease;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: all 1.3s ease;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .cover:before {
-    content: '';
-    position: absolute;
-    border: 5px solid var(--secondary-color);
-    box-shadow: 0 0 12px rgba(0, 0, 0, .3);
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 150px;
-    z-index: 2;
-    transition: all 1.3s ease;
-    transform-style: preserve-3d;
+  content: "";
+  position: absolute;
+  border: 5px solid var(--secondary-color);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 150px;
+  z-index: 2;
+  transition: all 1.3s ease;
+  transform-style: preserve-3d;
 }
 .cover .title {
-    font-weight: 600;
-    position: absolute;
-    align-self: center;
-    top: 255px;
-    text-align: center;
-    margin: 5px;
-    transform-style: preserve-3d;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(9, 53, 255, 0.6);
-    transition: all 1.3s ease;
-    z-index: 3;
+  font-weight: 600;
+  position: absolute;
+  align-self: center;
+  top: 255px;
+  text-align: center;
+  margin: 5px;
+  transform-style: preserve-3d;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(9, 53, 255, 0.6);
+  transition: all 1.3s ease;
+  z-index: 3;
 }
 
 .cover .job {
-    font-weight: 200;
-    position: absolute;
-    margin-bottom: -0.5em;
-    bottom: 32px;
-    width: 90%;
-    color: var(--text-color);
-    transform-style: preserve-3d;
-    transition: all 1.3s ease;
-    z-index: 4;
-    font-size: 1.1em;
-    text-align: center;
+  font-weight: 200;
+  position: absolute;
+  margin-bottom: -0.5em;
+  bottom: 32px;
+  width: 90%;
+  color: var(--text-color);
+  transform-style: preserve-3d;
+  transition: all 1.3s ease;
+  z-index: 4;
+  font-size: 1.1em;
+  text-align: center;
 }
 
 .card-back {
-    position: absolute;
-    height: 100%;
-    border-radius: 15px;
-    width: 100%;
-    background: #1F385B;
-    transform-style: preserve-3d;
-    transition: all 1.3s ease;
-    transform: translateZ(-1px);
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
+  position: absolute;
+  height: 100%;
+  border-radius: 15px;
+  width: 100%;
+  background: #1f385b;
+  transform-style: preserve-3d;
+  transition: all 1.3s ease;
+  transform: translateZ(-1px);
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card-back p {
-    color: var(--text-color);
-    transform-style: preserve-3d;
-    transform: translateZ(-1px) rotateY(180deg) !important;
-    transition: opacity 1s;
-    font-size: 15px;
-    text-align: justify;
-    width: 92%;
-    opacity: 0;
-    top: 38px;
-    position: absolute;
+  color: var(--text-color);
+  transform-style: preserve-3d;
+  transform: translateZ(-1px) rotateY(180deg) !important;
+  transition: opacity 1s;
+  font-size: 15px;
+  text-align: justify;
+  width: 92%;
+  opacity: 0;
+  top: 38px;
+  position: absolute;
 }
 
 .card-back h2 {
-    color: var(--text-color);
-    transform-style: preserve-3d;
-    transform: translateZ(-1px) rotateY(180deg) !important;
-    opacity: 0;
-    transition: opacity 1s;
-    position: absolute;
-    top: 5px;
-    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px var(--sec-shadow-color);
-    font-size: 22px;
+  color: var(--text-color);
+  transform-style: preserve-3d;
+  transform: translateZ(-1px) rotateY(180deg) !important;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  top: 5px;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--sec-shadow-color);
+  font-size: 22px;
 }
 
 .card-back .project-links {
-    transform-style: preserve-3d;
-    transform: translateZ(-1px) rotateY(180deg) !important;
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    bottom: 16px;
-    border-radius: 15px;
-    justify-content: space-around;
-    width: 90%;
-    height: 95px;
-    border: 2px solid var(--secondary-color);
-    flex-direction: row;
-    opacity: 0;
-    box-shadow: 4px 4px 15px var(--secondary-color);
-    background-color: #971D9615;
-    transition: opacity 1s;
-    z-index: 5;
+  transform-style: preserve-3d;
+  transform: translateZ(-1px) rotateY(180deg) !important;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  bottom: 16px;
+  border-radius: 15px;
+  justify-content: space-around;
+  width: 90%;
+  height: 95px;
+  border: 2px solid var(--secondary-color);
+  flex-direction: row;
+  opacity: 0;
+  box-shadow: 4px 4px 15px var(--secondary-color);
+  background-color: #971d9615;
+  transition: opacity 1s;
+  z-index: 5;
 }
 
 .card-back .project-links a {
-    transform-style: preserve-3d;
-    transition: transform 1.3s ease, scale 0.4s ease;
-    transform: translateZ(-1px);
-    background: transparent;
-    font-weight: 200;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 1em;
-    column-gap: 10px;
-    color: aliceblue;
-    z-index: 5550;
+  transform-style: preserve-3d;
+  transition: transform 1.3s ease, scale 0.4s ease;
+  transform: translateZ(-1px);
+  background: transparent;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1em;
+  column-gap: 10px;
+  color: aliceblue;
+  z-index: 5550;
 }
 
 .card-back .project-links h3 {
-    font-size: 0.9rem;
-    font-family: 'Rajdhani', 'Impact', 'Arial Black', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  font-family: "Rajdhani", "Impact", "Arial Black", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .card-back .project-links i {
-    font-size: 1.35rem;
+  font-size: 1.35rem;
 }
 
 .card-back .project-links a:hover {
-    color: var(--secondary-color);
-    scale: 1.2;
+  color: var(--secondary-color);
+  scale: 1.2;
 }
 
 .card-back button {
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    width: 130px;
-    height: 40px;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 75px;
-    color: var(--text-color);
-    border-color: transparent;
-    font-size: 17px;
-    box-shadow: -1px 3px 4px #971D9689;
-    transition: all 0.4s ease-in;
-    background-color: var(--secondary-color);
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 75px;
+  color: var(--text-color);
+  border-color: transparent;
+  font-size: 17px;
+  box-shadow: -1px 3px 4px #971d9689;
+  transition: all 0.4s ease-in;
+  background-color: var(--secondary-color);
 }
 
 .card-back button:hover {
-    background-color: var(--text-color);
-    color: #051a34;
+  background-color: var(--text-color);
+  color: #051a34;
 }
 
-.projects-list .cover::before{
-    border-radius: 15px;
+.projects-list .cover::before {
+  border-radius: 15px;
 }
-
-
-@keyframes backgroundFloat {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(0.5deg); }
-    66% { transform: translateY(10px) rotate(-0.5deg); }
-}
-
-@keyframes cardFloat {
-    0%, 100% { transform: translateY(0px) rotateY(0deg); }
-    25% { transform: translateY(-6px) rotateY(8deg); }
-    50% { transform: translateY(0px) rotateY(0deg); }
-    75% { transform: translateY(-3px) rotateY(-6deg); }
-}
-
-    @keyframes cardFloatMobile {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-    }
 
 @media screen and (max-width: 420px) {
-    #projects .card {
-        margin: 20px 0;
-        transform: none;
-        animation: cardFloatMobile 4s ease-in-out infinite;
-    }
-
-    @keyframes cardFloatMobile {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-    }
+  #projects .card {
+    margin: 20px 0;
+    transform: none;
+    animation: none;
+  }
 }
 
-#projects .card:nth-child(1) .cover::before{
-    background: url(../images/projects/portfolio.webp) 0 0 / 100% 100%;
+#projects .card:nth-child(1) .cover::before {
+  background: url(../images/projects/portfolio.webp) 0 0 / 100% 100%;
 }
-#projects .card:nth-child(2) .cover::before{
-    background: url(../images/projects/samsar.webp) 0 0 / cover;
+#projects .card:nth-child(2) .cover::before {
+  background: url(../images/projects/samsar.webp) 0 0 / cover;
 }
-#projects .card:nth-child(3) .cover::before{
-    background: url(../images/projects/indabaX-2024.webp) 0 0 / 100% 100%;
+#projects .card:nth-child(3) .cover::before {
+  background: url(../images/projects/indabaX-2024.webp) 0 0 / 100% 100%;
 }
-#projects .card:nth-child(4) .cover::before{
-    background: url(../images/projects/moodMuse.webp) 0 0 / cover;
+#projects .card:nth-child(4) .cover::before {
+  background: url(../images/projects/moodMuse.webp) 0 0 / cover;
 }
-#projects .card:nth-child(5) .cover::before{
-    background: url(../images/projects/RCCar.webp) 0 0 / cover;
-}
-
-#projects .card:nth-child(6) .cover::before{
-    background: url(../images/projects/CLITools.webp) 0 0 / cover;
+#projects .card:nth-child(5) .cover::before {
+  background: url(../images/projects/RCCar.webp) 0 0 / cover;
 }
 
-#projects .card:nth-child(7) .cover::before{
-    background: url(../images/projects/Skill-Issue.webp) 0 0 / 100% 100%;
+#projects .card:nth-child(6) .cover::before {
+  background: url(../images/projects/CLITools.webp) 0 0 / cover;
 }
 
-#projects .card:nth-child(8) .cover::before{
-    background: url(../images/projects/pv_pipeline.svg) 0 0 / 105% 100%;
+#projects .card:nth-child(7) .cover::before {
+  background: url(../images/projects/Skill-Issue.webp) 0 0 / 100% 100%;
 }
 
-#projects .card:nth-child(9) .cover::before{
-    background: url(../images/projects/education-Help.webp) 0 0 / 100% 100%;
+#projects .card:nth-child(8) .cover::before {
+  background: url(../images/projects/pv_pipeline.svg) 0 0 / 105% 100%;
 }
 
-#projects .card:nth-child(10) .cover::before{
-    background: url(../images/projects/AI-Anatomy.webp) 0 0 / 50% 100%;
+#projects .card:nth-child(9) .cover::before {
+  background: url(../images/projects/education-Help.webp) 0 0 / 100% 100%;
+}
+
+#projects .card:nth-child(10) .cover::before {
+  background: url(../images/projects/AI-Anatomy.webp) 0 0 / 50% 100%;
 }

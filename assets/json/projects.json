@@ -1,26 +1,6 @@
 {
   "projects": [
     {
-      "title": "Portfolio",
-      "technologies": "HTML, CSS, JavaScript",
-      "description": "A portfolio website made from scratch that showcases my skills and My different projects. Developed using HTML, CSS, JS, and Github Actions.",
-      "links": [
-        {
-          "type": "github",
-          "url": "https://github.com/chater-marzougui/Portfolio/",
-          "label": "Repo Link",
-          "icon": "fa-brands fa-github"
-        },
-        {
-          "type": "live",
-          "url": "#",
-          "label": "Live Link",
-          "icon": "fa-solid fa-globe"
-        }
-      ],
-      "cardBackStyle": "font-size: 17px;"
-    },
-    {
       "title": "Samsar",
       "technologies": "Flutter, Firebase, NOMINATIM, OverPass Turbo",
       "description": "A Flutter application tailored for the Tunisian real estate market. It serves as a platform for homeowners and real estate agents to list properties while allowing buyers and renters to browse listings on an interactive map. The app’s flagship features are the many filters available, positioning, and search capabilities. Samsar aims to streamline property transactions and enhance transparency and accessibility.",

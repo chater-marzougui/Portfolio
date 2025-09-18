@@ -7,16 +7,23 @@ function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+const asteroidImages = [
+  "./assets/images/meteors/meteor1.png",
+  "./assets/images/meteors/meteor2.png",
+  "./assets/images/meteors/meteor3.png",
+  "./assets/images/meteors/meteor4.png",
+  "./assets/images/meteors/meteor5.png",
+  "./assets/images/meteors/meteor6.png",
+];
+
+const asteroidImageCache = asteroidImages.map(src => {
+  const img = new Image();
+  img.src = src;
+  return src;
+});
+
 function getRandomAsteroidImage() {
-  const images = [
-    "./assets/images/meteors/meteor1.png",
-    "./assets/images/meteors/meteor2.png",
-    "./assets/images/meteors/meteor3.png",
-    "./assets/images/meteors/meteor4.png",
-    "./assets/images/meteors/meteor5.png",
-    "./assets/images/meteors/meteor6.png",
-  ];
-  return images[getRandomInt(0, images.length)];
+  return asteroidImageCache[getRandomInt(0, asteroidImageCache.length)];
 }
 
 function createAsteroid() {
@@ -86,6 +93,8 @@ function createAsteroid() {
   if (midX !== undefined && midY !== undefined) {
     asteroid.style.setProperty("--mid-x", `${midX}px`);
     asteroid.style.setProperty("--mid-y", `${midY}px`);
+    asteroid.style.setProperty("--mid-x-15", `${startX + midX * 0.15}px`);
+    asteroid.style.setProperty("--mid-y-15", `${startY + midY * 0.15}px`);
   }
 
   // Apply animation
@@ -112,12 +121,14 @@ function createAsteroid() {
 function spawnAsteroids() {
   createAsteroid();
 
-  // Variable timing between spawns - increased for mobile devices for better performance
   const isMobile = window.innerWidth <= 768;
-  const minSpawn = isMobile ? 2000 : 1500; // Increased minimum spawn time for mobile
-  const maxSpawn = isMobile ? 5000 : 4000; // Increased maximum spawn time for mobile
+  const minSpawn = isMobile ? 2500 : 1500;
+  const maxSpawn = isMobile ? 6000 : 4000;
   const nextSpawn = getRandomInt(minSpawn, maxSpawn);
-  setTimeout(spawnAsteroids, nextSpawn);
+
+  requestAnimationFrame(() => {
+    setTimeout(spawnAsteroids, nextSpawn);
+  });
 }
 
 // Start the asteroid shower
@@ -163,15 +174,12 @@ function generateStars() {
   const isMobile = window.innerWidth <= 768;
   const baseStarCount = 200;
   const starCount = isMobile ? Math.floor(baseStarCount * 0.6) : baseStarCount;
+  const frag = document.createDocumentFragment();
 
   for (let i = 0; i < starCount; i++) {
     let star = document.createElement("div");
     star.classList.add("star");
     const starProps = getStarProps();
-    if (starProps.startY > starProps.endY) {
-      console.log("Inverted star detected:", starProps);
-      console.log("Document body scroll height:", document.body.scrollHeight);
-    }
     star.style.width = `${starProps.size}px`;
     star.style.height = `${starProps.size}px`;
     star.style.top = `${starProps.startY}px`;
@@ -181,6 +189,7 @@ function generateStars() {
     star.style.setProperty("--start-y", starProps.startY + "px");
     star.style.setProperty("--end-y", starProps.endY + "px");
 
-    starrySky.appendChild(star);
+    frag.appendChild(star);
   }
+  starrySky.appendChild(frag);
 }

@@ -76,7 +76,7 @@ p {
   text-shadow: 0 0 10px var(--secondary-text-shadow-color);
 }
 
-h1, 
+h1,
 h2,
 h4,
 h5 {
@@ -125,15 +125,22 @@ h3 {
 }
 
 @keyframes spin-outer {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes spin-inner {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
 }
-
 
 #welcome-message {
   font-size: 1.9em;
@@ -262,7 +269,7 @@ h3 {
 }
 
 .scroll-progress-bar::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -294,11 +301,14 @@ h3 {
   transform: translate(50%, -50%);
   width: 12px;
   height: 12px;
-  background: radial-gradient(circle, #fff 0%, var(--primary-color) 40%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    #fff 0%,
+    var(--primary-color) 40%,
+    transparent 70%
+  );
   border-radius: 50%;
-  box-shadow: 
-    0 0 8px var(--primary-color),
-    0 0 15px var(--secondary-color),
+  box-shadow: 0 0 8px var(--primary-color), 0 0 15px var(--secondary-color),
     0 0 25px var(--secondary-color);
   animation: flicker 1.5s infinite alternate;
 }
@@ -313,7 +323,6 @@ h3 {
     opacity: 1;
   }
 }
-
 
 @media only screen and (max-width: 900px) {
   #navbar .barItems {
@@ -442,10 +451,10 @@ h3 {
   z-index: 9999;
   background: aliceblue;
   border-radius: 50%;
-  box-shadow: 0 0 10px aliceblue;
   opacity: 0.8;
   overflow: hidden;
-  animation: move-stars linear infinite, twinkle 2s ease-in-out infinite alternate;
+  animation: move-stars linear infinite,
+    twinkle 2s ease-in-out infinite alternate;
   --start-y: 0;
   --end-y: 120vh;
 }
@@ -462,11 +471,9 @@ h3 {
 @keyframes twinkle {
   from {
     opacity: 0.5;
-    box-shadow: 0 0 5px aliceblue, 0 0 10px aliceblue, 0 0 20px aliceblue;
   }
   to {
     opacity: 1;
-    box-shadow: 0 0 10px aliceblue, 0 0 20px aliceblue, 0 0 40px aliceblue;
   }
 }
 
@@ -737,11 +744,14 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
-  filter: drop-shadow(0 0 10px orange)
-          drop-shadow(0 0 20px red)
-          drop-shadow(0 0 30px yellow);
+  filter: drop-shadow(0 0 12px orange) drop-shadow(0 0 24px red);
+  will-change: transform, opacity;
   opacity: 0.8;
   z-index: 5600;
+  --mid-x: 0;
+  --mid-y: 0;
+  --mid-x-15: 0;
+  --mid-y-15: 0;
 }
 
 .asteroid.small {
@@ -761,7 +771,7 @@ h3 {
 
 @keyframes diagonal-fall {
   0% {
-    transform: translate(var(--start-x), var(--start-y));
+    transform: translate3d(var(--start-x), var(--start-y), 0);
     opacity: 0;
   }
   10% {
@@ -771,53 +781,45 @@ h3 {
     opacity: 0.6;
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y));
+    transform: translate3d(var(--end-x), var(--end-y), 0);
     opacity: 0;
   }
 }
 
 @keyframes steep-fall {
   0% {
-    transform: translate(var(--start-x), var(--start-y)) scale(0.5);
+    transform: translate3d(var(--start-x), var(--start-y), 0) scale(0.5);
     opacity: 0;
   }
   15% {
     opacity: 0.9;
-    transform: translate(
-        calc(var(--start-x) + var(--mid-x) * 0.15),
-        calc(var(--start-y) + var(--mid-y) * 0.15)
-      )
-      scale(1);
+    transform: translate3d(var(--mid-x-15), var(--mid-y-15), 0) scale(1);
   }
   85% {
     opacity: 0.7;
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y)) scale(0.8);
+    transform: translate3d(var(--end-x), var(--end-y), 0) scale(0.8);
     opacity: 0;
   }
 }
 
 @keyframes curved-fall {
   0% {
-    transform: translate(var(--start-x), var(--start-y));
+    transform: translate3d(var(--start-x), var(--start-y), 0);
     opacity: 0;
   }
   20% {
     opacity: 0.9;
   }
   50% {
-    transform: translate(
-        calc(var(--start-x) + var(--mid-x)),
-        calc(var(--start-y) + var(--mid-y))
-      )
-      scale(1);
+    transform: translate3d(var(--mid-x), var(--mid-y), 0) scale(1);
   }
   80% {
     opacity: 0.5;
   }
   100% {
-    transform: translate(var(--end-x), var(--end-y));
+    transform: translate3d(var(--end-x), var(--end-y), 0);
     opacity: 0;
   }
 }
