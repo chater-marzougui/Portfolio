@@ -93,7 +93,6 @@ function createProjectCard(project) {
   // Create card container
   const card = document.createElement("div");
   card.className = "card";
-  card.style.animationDelay = `${Math.random() * 3}s`; // Random delay for floating effect
 
   // Create cover container
   const cover = document.createElement("div");

@@ -131,14 +131,12 @@ function spawnAsteroids() {
   });
 }
 
-// Start the asteroid shower
 spawnAsteroids();
 
-// Occasionally create burst effects - adjusted for mobile performance
 setInterval(() => {
   const isMobile = window.innerWidth <= 768;
-  const burstProbability = isMobile ? 0.1 : 0.2; // Reduced burst frequency for mobile
-  const burstCount = isMobile ? getRandomInt(2, 4) : getRandomInt(3, 6); // Fewer asteroids in burst for mobile
+  const burstProbability = isMobile ? 0.1 : 0.2;
+  const burstCount = isMobile ? getRandomInt(2, 4) : getRandomInt(3, 6);
   
   if (Math.random() < burstProbability) {
     for (let i = 0; i < burstCount; i++) {
@@ -152,13 +150,13 @@ function getStarProps() {
   const size = Math.random() * 3;
   const startX = Math.random() * 96 + 3;
   const duration = Math.random() * 10 + 12;
-  const delay = Math.random() * 12;
+  const delay = Math.random() * 8;
 
   let startY = 0;
   if (prob < 0.4) {
     startY = Math.random() * document.body.scrollHeight * 0.1;
   } else {
-    startY = Math.random() * document.body.scrollHeight * 0.45;
+    startY = Math.random() * document.body.scrollHeight * 0.3;
   }
 
   const endY = document.body.scrollHeight - startY - 10;
