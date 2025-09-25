@@ -252,38 +252,38 @@
   }
 }
 
-#projects .card:nth-child(1) .cover::before {
+/* #projects .card:nth-child(1) .cover::before {
   background: url(../images/projects/portfolio.webp) 0 0 / 100% 100%;
-}
-#projects .card:nth-child(2) .cover::before {
+} */
+#projects .card:nth-child(1) .cover::before {
   background: url(../images/projects/samsar.webp) 0 0 / cover;
 }
-#projects .card:nth-child(3) .cover::before {
+#projects .card:nth-child(2) .cover::before {
   background: url(../images/projects/indabaX-2024.webp) 0 0 / 100% 100%;
 }
-#projects .card:nth-child(4) .cover::before {
+#projects .card:nth-child(3) .cover::before {
   background: url(../images/projects/moodMuse.webp) 0 0 / cover;
 }
-#projects .card:nth-child(5) .cover::before {
+#projects .card:nth-child(4) .cover::before {
   background: url(../images/projects/RCCar.webp) 0 0 / cover;
 }
 
-#projects .card:nth-child(6) .cover::before {
+#projects .card:nth-child(5) .cover::before {
   background: url(../images/projects/CLITools.webp) 0 0 / cover;
 }
 
-#projects .card:nth-child(7) .cover::before {
+#projects .card:nth-child(6) .cover::before {
   background: url(../images/projects/Skill-Issue.webp) 0 0 / 100% 100%;
 }
 
-#projects .card:nth-child(8) .cover::before {
+#projects .card:nth-child(7) .cover::before {
   background: url(../images/projects/pv_pipeline.svg) 0 0 / 105% 100%;
 }
 
-#projects .card:nth-child(9) .cover::before {
+#projects .card:nth-child(8) .cover::before {
   background: url(../images/projects/education-Help.webp) 0 0 / 100% 100%;
 }
 
-#projects .card:nth-child(10) .cover::before {
+#projects .card:nth-child(9) .cover::before {
   background: url(../images/projects/AI-Anatomy.webp) 0 0 / 50% 100%;
 }
