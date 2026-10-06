@@ -153,8 +153,8 @@
     },
     {
       "title": "ScreenSolver",
-      "technologies": "Python",
-      "description": "A security-testing platform that checks how well websites resist cheating, built to expose weaknesses in online exam and quiz setups.",
+      "technologies": "Python, Tkinter, Gemini API",
+      "description": "A Python desktop utility for timed multiple-choice quizzes. It captures your screen every few seconds, sends it to Gemini to find the likely answer, and shows it in a tiny always-on-top, draggable overlay (countdown + answer) with global hotkeys and custom context. Built as a study aid.",
       "links": [
         {
           "type": "github",
@@ -167,8 +167,8 @@
     },
     {
       "title": "Kaggle Lint",
-      "technologies": "TypeScript",
-      "description": "A tool that lints your Python code right inside Kaggle notebooks, catching errors and style issues without leaving the editor.",
+      "technologies": "TypeScript, WebAssembly, Pyodide",
+      "description": "A Chrome extension that lints Python right inside Kaggle notebooks, with no copy-pasting. Choose Ruff (WebAssembly) or Flake8 (Pyodide); it understands variables across cells, re-lints as you type, and click-to-jump takes you to the exact line. Runs entirely in your browser.",
       "links": [
         {
           "type": "github",
@@ -181,8 +181,8 @@
     },
     {
       "title": "ClusterRoute",
-      "technologies": "TypeScript",
-      "description": "A privacy-first web app that builds the shortest multi-stop errand route near you, grouping nearby stops into an efficient trip.",
+      "technologies": "React, TypeScript, Leaflet, Gemini API",
+      "description": "A privacy-first web app that turns errands like “ATM, coffee, pharmacy” into the shortest multi-stop route near you. Free-text search (Photon + Nominatim), Gemini or local parsing, Haversine route scoring, swappable stops on an interactive map, and EN/FR/AR with RTL. No backend; settings stay in your browser.",
       "links": [
         {
           "type": "github",
@@ -195,8 +195,8 @@
     },
     {
       "title": "Form Filler",
-      "technologies": "JavaScript, Gemini API",
-      "description": "A Chrome extension that auto-fills Google Forms and Microsoft Forms using Gemini 2.5 Flash.",
+      "technologies": "JavaScript, Chrome Extension, Gemini API",
+      "description": "A Chrome extension (Manifest V3) that fills Google Forms and Microsoft Forms for you. Gemini 2.5 Flash matches your saved profile to each question: text, radio, checkbox, dropdown and date fields. Trigger it from the popup or a floating button, with a learning mode that improves future answers.",
       "links": [
         {
           "type": "github",
@@ -209,8 +209,8 @@
     },
     {
       "title": "MLS GOAT",
-      "technologies": "Python",
-      "description": "A support platform built for the MLS Gathering of AI Talents event.",
+      "technologies": "FastAPI, React, TypeScript, Docker, ONNX",
+      "description": "The platform behind the GOAT (Gathering Of AI Talent) hackathon. Teams submit image reconstructions (scored by PSNR) and ONNX models (benchmarked on a GPU service with Redis queues) through a Python SDK or web UI, with JWT auth, live leaderboard and an admin dashboard.",
       "links": [
         {
           "type": "github",
@@ -223,8 +223,8 @@
     },
     {
       "title": "Auto CV",
-      "technologies": "Python, LLM",
-      "description": "Updates your CV and generates a cover letter from your GitHub repositories and the targeted job, exporting a ready-to-send PDF so you never edit your CV by hand per application.",
+      "technologies": "Python, FastAPI, React, Gemini API, LaTeX",
+      "description": "Generates a tailored CV and cover letter for any job description. It scrapes your GitHub repos, summarizes them with Gemini, matches the most relevant projects with sentence transformers and FAISS, then compiles PDFs through LaTeX. Live WebSocket progress and an application tracker included.",
       "links": [
         {
           "type": "github",
