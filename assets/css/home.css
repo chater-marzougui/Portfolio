@@ -145,7 +145,7 @@ h3 {
 #welcome-message {
   font-size: 1.9em;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--link-color);
   text-align: center;
 }
 
@@ -179,7 +179,7 @@ h3 {
 }
 .navbar .nameOnNav {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--link-color);
   flex-grow: 3;
   font-size: 21px;
   font-weight: 900;
@@ -237,7 +237,7 @@ h3 {
 }
 
 .navbar .barItems a.active {
-  color: var(--secondary-color);
+  color: var(--accent-text-color);
   font-weight: 900;
   text-shadow: 0 0 15px var(--highlight-color);
 }
@@ -502,9 +502,9 @@ h3 {
   margin: 0.2rem 0;
   background: linear-gradient(
     45deg,
-    var(--primary-color),
-    var(--secondary-color),
-    var(--primary-color)
+    var(--link-color),
+    var(--accent-text-color),
+    var(--link-color)
   );
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -550,7 +550,7 @@ h3 {
 
 .home .social-icons a {
   transition: scale 0.4s ease, color 0.4s ease;
-  color: var(--primary-color);
+  color: var(--link-color);
 }
 
 .home .social-icons img {
@@ -563,7 +563,7 @@ h3 {
 
 .home .social-icons a:hover {
   scale: 1.5;
-  color: var(--secondary-color);
+  color: var(--accent-text-color);
 }
 
 .home .whiteline {

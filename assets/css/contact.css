@@ -303,13 +303,13 @@ hr {
 }
 
 #footer .live-apps a:hover {
-  color: var(--primary-color);
+  color: var(--link-color);
   text-shadow: 0 0 10px var(--text-shadow-color);
 }
 
 #footer .live-apps a i {
   font-size: 12px;
-  color: var(--primary-color);
+  color: var(--link-color);
 }
 #footer .social-icons {
   font-size: 30px;
@@ -329,13 +329,13 @@ hr {
 
 #footer .social-icons i,
 #footer .social-icons img {
-  color: var(--primary-color);
+  color: var(--link-color);
   transition: color 0.2s ease, scale 0.4s ease;
 }
 #footer .social-icons i:hover,
 #footer .social-icons img:hover {
   scale: 1.2;
-  color: var(--secondary-color);
+  color: var(--accent-text-color);
 }
 
 @media screen and (max-width: 420px) {

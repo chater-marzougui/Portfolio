@@ -219,7 +219,7 @@
 }
 
 .card-back .project-links a:hover {
-  color: var(--secondary-color);
+  color: var(--accent-text-color);
   scale: 1.2;
 }
 
@@ -290,4 +290,28 @@
 
 #projects .card:nth-child(9) .cover::before {
   background: url(../images/projects/AI-Anatomy.webp) 0 0 / 50% 100%;
+}
+
+#projects .card:nth-child(10) .cover::before {
+  background: url(../images/projects/ScreenSolver.webp) 0 0 / cover;
+}
+
+#projects .card:nth-child(11) .cover::before {
+  background: url(../images/projects/kaggle-lint.webp) 0 0 / cover;
+}
+
+#projects .card:nth-child(12) .cover::before {
+  background: url(../images/projects/ClusterRoute.webp) 0 0 / cover;
+}
+
+#projects .card:nth-child(13) .cover::before {
+  background: url(../images/projects/Form-Filler.webp) 0 0 / cover;
+}
+
+#projects .card:nth-child(14) .cover::before {
+  background: url(../images/projects/MLS-GOAT.webp) 0 0 / cover;
+}
+
+#projects .card:nth-child(15) .cover::before {
+  background: url(../images/projects/Auto-CV.webp) 0 0 / cover;
 }
