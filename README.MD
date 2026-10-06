@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO --> 
 <br />
 <div align="center">
-    <h1 style="font-size:35px">My Portfolio <br><a style="font-size:20px" href="https://chater-marzougui.me/Portfolio/" target="_blank">chater-marzougui.me</a></h1>
+    <h1 style="font-size:35px">My Portfolio <br><a style="font-size:20px" href="https://chater-marzougui.github.io/Portfolio/" target="_blank">chater-marzougui.github.io</a></h1>
     <p style="font-size:20px" align="center">
         A showcase of my projects and skills
     <br>
@@ -23,7 +23,7 @@
     <a href="https://github.com/chater-marzougui/Portfolio/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
   <br><br>
-  <a href="https://chater-marzougui.me/Portfolio/" target="_blank">
+  <a href="https://chater-marzougui.github.io/Portfolio/" target="_blank">
     <img src="./assets/images/forReadme.webp" alt="Logo" width="70%">
   </a>
 </div>
@@ -93,8 +93,8 @@ This portfolio showcases a diverse range of projects demonstrating expertise acr
 
 ### 🌐 **Live Applications**
 - [IndabaX Tunisia 2024](https://www.indabaxtunisia.com/2024/) - Professional event website
-- [Skill Issue Check](https://chater-marzougui.me/Skill-Issue-Check/) - AI-powered document analysis tool
-- [Education Help Gemini](https://chater-marzougui.me/Education-Help-Gemini/) - Interactive learning assistant
+- [Skill Issue Check](https://chater-marzougui.github.io/Skill-Issue-Check/) - AI-powered document analysis tool
+- [Education Help Gemini](https://chater-marzougui.github.io/Education-Help-Gemini/) - Interactive learning assistant
 
 <div align="right">
   <a href="#readme-top">
@@ -105,7 +105,7 @@ This portfolio showcases a diverse range of projects demonstrating expertise acr
 ## Installation
 
 ### Quick Start (Recommended)
-🌐 **Live Demo:** <a style="font-size:16px" href="https://chater-marzougui.me/Portfolio/" target="_blank">chater-marzougui.io</a>
+🌐 **Live Demo:** <a style="font-size:16px" href="https://chater-marzougui.github.io/Portfolio/" target="_blank">chater-marzougui.github.io</a>
 
 ### Local Development Setup
 1. **Clone this repository** to your local machine:
@@ -191,7 +191,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 [![Facebook](https://img.shields.io/badge/-Facebook-blue.svg?style=for-the-badge&logo=facebook&colorB=1877F2)](https://www.facebook.com/profile.php?id=100011887802388)
 [![Instagram](https://img.shields.io/badge/-Instagram-E4405F.svg?style=for-the-badge&logo=instagram&colorB=E4405F)](https://www.instagram.com/chater.mrezgui/)
 
-**Portfolio Website:** [chater-marzougui.me](https://chater-marzougui.me/Portfolio/)
+**Portfolio Website:** [chater-marzougui.github.io](https://chater-marzougui.github.io/Portfolio/)
 
 <br/>
 

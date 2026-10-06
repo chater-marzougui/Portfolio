@@ -75,7 +75,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chater-marzougui-342125299/)  
 [![Gmail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chater.mrezgui2002@gmail.com)  
-[![Portfolio](https://img.shields.io/badge/Portfolio-D14836?style=for-the-badge&logo=web&logoColor=white)](https://chater-marzougui.me/Portfolio/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-D14836?style=for-the-badge&logo=web&logoColor=white)](https://chater-marzougui.github.io/Portfolio/)
 
 ---
 
