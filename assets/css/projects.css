@@ -189,7 +189,7 @@
 .card-back .project-links a {
   transform-style: preserve-3d;
   transition: transform 1.3s ease, scale 0.4s ease;
-  transform: translateZ(-1px);
+  transform: translateZ(1px);
   background: transparent;
   font-weight: 200;
   display: flex;
