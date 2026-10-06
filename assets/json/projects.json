@@ -150,6 +150,90 @@
         }
       ],
       "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "ScreenSolver",
+      "technologies": "Python",
+      "description": "A security-testing platform that checks how well websites resist cheating, built to expose weaknesses in online exam and quiz setups.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/ScreenSolver",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "Kaggle Lint",
+      "technologies": "TypeScript",
+      "description": "A tool that lints your Python code right inside Kaggle notebooks, catching errors and style issues without leaving the editor.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/kaggle-lint",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "ClusterRoute",
+      "technologies": "TypeScript",
+      "description": "A privacy-first web app that builds the shortest multi-stop errand route near you, grouping nearby stops into an efficient trip.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/ClusterRoute",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "CraftHero",
+      "technologies": "TypeScript, AI",
+      "description": "An AI-powered mobile-first platform for handmade creators and artisan micro-businesses that turns raw product photos into clean marketing visuals.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/CraftHero",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "SmartParkTN",
+      "technologies": "TypeScript, OCR, RAG",
+      "description": "A Tunisian ALPR system with an AI assistant that enforces parking rules via RAG: it detects vehicles, reads plates with OCR and identifies the vehicle type.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/SmartParkTN",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "Form Filler",
+      "technologies": "JavaScript, Gemini API",
+      "description": "A Chrome extension that auto-fills Google Forms and Microsoft Forms using Gemini 2.5 Flash.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Form-Filler",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
     }
   ]
 }
