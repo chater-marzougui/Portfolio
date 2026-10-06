@@ -158,7 +158,7 @@
 }
 
 .education-period {
-    color: var(--secondary-color);
+    color: var(--accent-text-color);
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -181,7 +181,7 @@
 }
 
 .education-content h4 {
-    color: var(--primary-color);
+    color: var(--link-color);
     font-size: 1.1rem;
     font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
     font-weight: 500;
@@ -230,7 +230,7 @@ td {
 .contrib-color-1 { background-color: var(--contrib-color-1); }
 .contrib-color-2 { background-color: var(--contrib-color-2); }
 .contrib-color-3 { background-color: var(--contrib-color-3); }
-.contrib-color-4 { background-color: var(--contrib-color-4); }
+.contrib-color-4 { background-color: var(--contrib-color-4); color: #fff; }
 
 @media only screen and (max-width:900px) and (min-width:768px){
     #about-me .content .intro {

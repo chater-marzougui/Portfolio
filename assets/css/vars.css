@@ -1,5 +1,7 @@
 :root {
   --primary-color: #0935ff;
+  --link-color: #8fb0ff; /* primary tint, >=4.5:1 on the dark background */
+  --accent-text-color: #e3a6e3; /* secondary tint for text */
   --secondary-color: #971d97;
   --background-color: #1b2735;
   --bg-top: radial-gradient(ellipse at top, var(--background-color) 0%, #090a0f 100%);

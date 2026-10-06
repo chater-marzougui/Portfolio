@@ -11,14 +11,14 @@ html {
 }
 
 .internal-link {
-  color: var(--primary-color);
+  color: var(--link-color);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .internal-link:hover {
-  color: #764ba2;
+  color: #d9b8ff;
   text-decoration: underline;
 }
 
@@ -853,7 +853,7 @@ h3 {
 
 #footer .social-icons a,
 #social-icons a {
-  padding: 8px 10px;
+  padding: 8px 12px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -870,4 +870,26 @@ h3 {
   .starry-sky {
     display: none;
   }
+}
+
+/* Touch targets: inline links and form fields reach >=44px; 16px inputs stop iOS auto-zoom */
+.internal-link,
+.email-text,
+a[href^="tel:"] {
+  padding-block: 13px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.about-me .education-btn {
+  height: 44px;
+}
+
+#footer .live-apps-container a {
+  display: inline-block;
+  padding-block: 14px;
 }
