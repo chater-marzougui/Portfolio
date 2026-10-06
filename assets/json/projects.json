@@ -234,6 +234,34 @@
         }
       ],
       "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "MLS GOAT",
+      "technologies": "Python",
+      "description": "A support platform built for the MLS Gathering of AI Talents event.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/MLS-GOAT",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
+    },
+    {
+      "title": "Auto CV",
+      "technologies": "Python, LLM",
+      "description": "Updates your CV and generates a cover letter from your GitHub repositories and the targeted job, exporting a ready-to-send PDF so you never edit your CV by hand per application.",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chater-marzougui/Auto-CV",
+          "label": "Repo Link",
+          "icon": "fa-brands fa-github"
+        }
+      ],
+      "cardBackStyle": "font-size: 16px;"
     }
   ]
 }
