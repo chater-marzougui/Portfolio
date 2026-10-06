@@ -142,3 +142,39 @@ window.addEventListener("scroll", function () {
     }
   });
 });
+
+// Wheel scrolling travels 1/WHEEL_RESISTANCE as far per notch, eased toward its target.
+(() => {
+  const WHEEL_RESISTANCE = 1.4;
+  let target = window.scrollY;
+  let raf = 0;
+  const maxScroll = () => document.documentElement.scrollHeight - window.innerHeight;
+
+  let last = 0;
+  function tick(now) {
+    const diff = target - window.scrollY;
+    if (Math.abs(diff) < 0.5) return void (raf = 0);
+    // time-based easing (~90ms time constant) so it feels the same at any frame rate
+    const k = 1 - Math.exp(-Math.min(now - last, 100) / 90);
+    last = now;
+    // behavior "instant" because the page sets scroll-behavior: smooth
+    const step = Math.sign(diff) * Math.min(Math.abs(diff), Math.max(1, Math.abs(diff) * k));
+    window.scrollTo({ top: window.scrollY + step, behavior: "instant" });
+    raf = requestAnimationFrame(tick);
+  }
+
+  // keyboard, scrollbar drag and nav jumps move the page themselves: resync
+  window.addEventListener("scroll", () => { if (!raf) target = window.scrollY; }, { passive: true });
+
+  window.addEventListener("wheel", (e) => {
+    if (e.ctrlKey || e.defaultPrevented) return; // pinch / ctrl+wheel zoom
+    for (let el = e.target; el && el !== document.body; el = el.parentElement) {
+      if (/(auto|scroll)/.test(getComputedStyle(el).overflowY) && el.scrollHeight > el.clientHeight) return; // inner scroller (textarea)
+    }
+    e.preventDefault();
+    const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1;
+    if (!raf) target = window.scrollY;
+    target = Math.min(maxScroll(), Math.max(0, target + (e.deltaY * unit) / WHEEL_RESISTANCE));
+    if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); }
+  }, { passive: false });
+})();
