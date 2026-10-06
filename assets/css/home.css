@@ -823,3 +823,51 @@ h3 {
     opacity: 0;
   }
 }
+
+/* Accessibility: focus rings, touch targets, skip link, reduced motion */
+:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 12px;
+  z-index: 100000;
+  padding: 10px 16px;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 8px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* inline padding grows the hit area (>=44px) without changing layout height */
+.navbar .barItems a {
+  padding: 14px 6px;
+}
+
+#footer .social-icons a,
+#social-icons a {
+  padding: 8px 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  #asteroid-container,
+  .starry-sky {
+    display: none;
+  }
+}

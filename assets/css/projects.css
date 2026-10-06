@@ -54,11 +54,15 @@
 
 #projects .card:hover p,
 #projects .card:hover .project-links,
-#projects .card:hover h2 {
+#projects .card:hover h2,
+#projects .card:focus-within p,
+#projects .card:focus-within .project-links,
+#projects .card:focus-within h2 {
   opacity: 1 !important;
 }
 
-#projects .card:hover .cover {
+#projects .card:hover .cover,
+#projects .card:focus-within .cover {
   transform: rotateX(0deg) rotateY(-180deg);
 }
 

@@ -93,6 +93,7 @@ function createProjectCard(project) {
   // Create card container
   const card = document.createElement("div");
   card.className = "card";
+  card.tabIndex = 0; // keyboard users flip the card via :focus-within
 
   // Create cover container
   const cover = document.createElement("div");
@@ -271,6 +272,7 @@ async function loadSocials() {
     // Populate social icons
     socials.socials.forEach((social) => {
       const a = document.createElement("a");
+      a.setAttribute("aria-label", social.platform);
       if (social.faIcon) {
         const i = document.createElement("i");
         i.className = social.faIcon;
